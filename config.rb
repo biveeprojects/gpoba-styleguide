@@ -18,6 +18,20 @@ page '/*.txt', layout: false
 
 # General configuration
 
+config[:images_dir] = 'assets/images'
+config[:css_dir] = 'stylesheets'
+config[:js_dir] = 'javascripts'
+
+# ignore css and js, b/c we're handling with external pipeline
+ignore 'assets/stylesheets/*'
+ignore 'assets/javascripts/*'
+
+activate :external_pipeline,
+    name: :npm,
+    command: build? ? 'npm run build' : 'npm run dev',
+    source: ".tmp/dist",
+    latency: 1
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
