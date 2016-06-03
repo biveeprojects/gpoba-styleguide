@@ -1,0 +1,127 @@
+/* =============================================================================
+//  Webfonts
+// ========================================================================== */
+
+/*doc
+---
+title: Fonts
+name: fonts
+category: Core
+---
+
+Fonts are accessed through SASS placeholders. Just extend the appropriate one. Fonts are applied to type, globally, in _type.scss, and individual modules can set up their own font styles.
+
+Please DO NOT use your own font-family attributes in any circumstance. Always use the mixins.
+
+```
+// display fonts
+// -> headlines, buttons, labels, etc.
+
+@include font-display
+@include font-display(bold)
+
+// body fonts
+// -> paragraphs, captions, etc.
+
+@include font-body
+@include font-body(normal, italic)
+@include font-body(bold)
+```
+
+*/
+
+@import "libs";
+@import "paths";
+
+
+// Config & mixins
+// -----------------------------------------------------------------------------
+
+// default type sizes
+$type-size--default: 16px;
+$type-size-amp: 1.1em; // size of ampersands relative to their context
+$type-line_height: 1.4;
+
+// set type to default body size using REMs
+// -> useful for resetting type size on a container to override parents
+@mixin type-size-default {
+  @include rem(type-size, $type-size--default);
+}
+
+// global type scale
+// -> 1:1.2 scale
+// -> http://www.modularscale.com/?16&&1.2&sass&text
+$type-scale: (
+    'alpha'   : 48px,
+    'beta'    : 39px,
+    'cappa'   : 33px,
+    'delta'   : 28px,
+    'epsilon' : 23px,
+    'zeta'    : 16px,
+    'eta'     : 13px,
+    'theta'   : 11px
+);
+
+@function type-scale($size) {
+    @return map-get($type-scale, $size);
+}
+
+@mixin type-scale($size) {
+    @include rem(font-size, $size);
+}
+
+
+/* Fonts
+// -------------------------------------------------------------------------- */
+
+/* ----- Example @Font-face ------------------------------------------------- */
+// -> uses Bourbon
+// @include font-face("aspira-bold", "#{$asset-path-fonts}/Aspira-Demi-webfont", bold, $file-formats: eot svg woff woff2 ttf);
+
+/* Font styles
+// -> PUBLIC, use these to style type globally & in modules
+// -------------------------------------------------------------------------- */
+
+/* ----- Display type ------------------------------------------------------- */
+
+@mixin font-display($weight: normal, $style: normal) {
+    // use this setup for a system font
+    font-family: $helvetica;
+    font-weight: #{$weight};
+    font-style: #{$style};
+
+    // use this for a custom font
+    // -> font style and weight are set in the @font-face declaration above
+    // @if ($style == normal) {
+    //     font-family: "aspira-#{$weight}", $helvetica;
+    // } @else {
+    //     font-family: "aspira-#{$weight}-#{$style}", $helvetica;
+    // }
+}
+
+/* ----- Body type ---------------------------------------------------------- */
+
+@mixin font-body($weight: normal, $style: normal) {
+    // use this setup for a system font
+    font-family: $helvetica;
+    font-weight: #{$weight};
+    font-style: #{$style};
+
+    // use this for a custom font
+    // -> font style and weight are set in the @font-face declaration above
+    // @if ($style == normal) {
+    //     font-family: "copernicus-#{$weight}", $georgia;
+    // } @else {
+    //     font-family: "copernicus-#{$weight}-#{$style}", $georgia;
+    // }
+}
+
+/* ----- Ampersands --------------------------------------------------------- */
+// -> if you'd like to "use the best ampersand"
+// -> http://vault.simplebits.com/notebook/2008/08/14/ampersands-2/
+
+// @mixin font-ampersand {
+//   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
+//   font-style: italic;
+//   font-weight: normal;
+// }

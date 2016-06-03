@@ -1,0 +1,240 @@
+/* =============================================================================
+// Global layout styles
+// ===========================================================================*/
+
+/*doc
+---
+title: Global layout helpers
+name: layout
+category: core
+---
+
+Global layout styles.
+
+```html_example
+<a href="#" class="button l-abs top right">Button @ top right</a>
+```
+
+*/
+
+// @import "libs";
+// @import "breakpoints";
+// @import "fonts";
+
+// Globals
+// -----------------------------------------------------------------------------
+
+$sides: top, right, bottom, left;
+
+
+/* Gutters and spacing
+// -------------------------------------------------------------------------- */
+
+// --- config & mixins ---------------------------------------------------------
+// -> uses font-scale, see _fonts.scss
+
+$gutter: fs(4); // based on font scale (see _fonts.scss)
+$gutter--wide: fs(6); // based on font scale (see _fonts.scss)
+
+@function add_outside_gutters($w) {
+    // compensate with for outside margins (ie padding) and split gutters
+    @return ($w + ($gutter--wide * 2));
+}
+
+// --- utility classes ---------------------------------------------------------
+
+.l-padding {
+    @each $side in $sides {
+        &--#{$side} { padding-#{$side}: $gutter; }
+        &--#{$side}.l-padding--wide { padding-#{$side}: $gutter--wide; }
+    }
+
+    &--all { padding: $gutter; }
+    &--all.l-padding--wide { padding: $gutter--wide; }
+}
+
+.l-margin {
+    @each $side in $sides {
+        // @debug($side);
+        &--#{$side} { margin-#{$side}: $gutter; }
+        &--#{$side}.l-margin--wide { margin-#{$side}: $gutter--wide; }
+    }
+
+    &--all { margin: $gutter; }
+    &--all.l-margin--wide { margin: $gutter--wide; }
+}
+
+
+/* Content width
+// -------------------------------------------------------------------------- */
+
+// --- config & mixins ---------------------------------------------------------
+
+$layout-w: 1000px; // max width of main layout
+$layout-w--narrow: 680px; // max width of 'narrow' elements (e.g. body type)
+$layout-w--wide: 1200px;
+
+%l-base-w {
+    max-width: add_outside_gutters($layout-w);
+}
+
+%l-base-w--narrow {
+    max-width: add_outside_gutters($layout-w--narrow);
+}
+
+%l-base-w--wide {
+    max-width: add_outside_gutters($layout-w--wide);
+}
+
+// --- utility classes ---------------------------------------------------------
+
+// basic layout wrapper, for constraining at large screen sizes
+.l-wrapper, %l-wrapper {
+    @extend %l-base-w;
+    @include clearfix;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutter--wide;
+    padding-right: $gutter--wide;
+
+    // narrow version of layout wrapper
+    &--narrow {
+        @extend %l-base-w--narrow;
+    }
+
+    &--wide {
+        @extend %l-base-w--wide;
+    }
+}
+
+// wrap video objects so they're fluid and stick to an aspect ratio
+/* https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
+.l-wrapper-video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-top: 25px;
+    height: 0;
+
+    & > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Global z-indexes
+// -------------------------------------------------------------------------- */
+
+// --- config & mixins ---------------------------------------------------------
+
+$z: (
+    bottom : -1,
+    low    : 0,
+    middle : 1,
+    top    : 2
+);
+
+// getter function
+// -> usage: z-index: z('low');
+@function z($index) { @return map-get($z, $index); }
+
+// --- utility classes ---------------------------------------------------------
+
+// utility classes
+// -> e.g. ".l-z_index--top", ".l-z_index--low"
+@each $index, $value in $z {
+    .l-z_index--#{$index} { z-index: #{$value} !important; }
+}
+
+
+/* Display
+// -------------------------------------------------------------------------- */
+
+.l-inline { display: inline !important; }
+.l-inline_block { display: inline-block !important; }
+.l-block { display: block !important; }
+
+
+/* Lists
+// -------------------------------------------------------------------------- */
+
+// --- config & mixins ---------------------------------------------------------
+
+@mixin l-list-undecorated {
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin l-list-inline {
+    li, dt, dd {
+        display: inline-block;
+        margin-right: 1em;
+
+        &:last-child { margin-right: 0; }
+    }
+}
+
+// --- utility classes ---------------------------------------------------------
+
+.l-list-undecorated {
+    @include l-list-undecorated;
+}
+
+.l-list-inline {
+    @include l-list-undecorated;
+    @include l-list-inline;
+
+    // make inline only above a certain breakpoint
+    @each $breakpoint, $size in $breakpoints {
+        &\@#{$breakpoint} {
+            li, dt, dd {
+                display: block;
+                margin-right: 0;
+            }
+
+            @include media(">#{$breakpoint}") { @include l-list-inline; }
+        }
+    }
+}
+
+/* Visibility
+// -------------------------------------------------------------------------- */
+
+// --- config & mixins ---------------------------------------------------------
+
+@mixin visually_hidden($focusable: false) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
+    /*
+     * Extends the .visuallyhidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */
+    @if ($focusable == true) {
+        &:active,
+        &:focus {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+    }
+}
+
+// --- utility classes ---------------------------------------------------------
+
+.l-visually_hidden { @include visually_hidden; }
+.l-visually_hidden--focusable { @include visually_hidden(true); }

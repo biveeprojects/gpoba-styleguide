@@ -1,0 +1,104 @@
+/* =============================================================================
+// Border settings & helpers
+// ===========================================================================*/
+
+/*doc
+---
+title: Border settings & helpers
+name: borders
+category: core
+---
+
+Some mixins that allow us to keep our border styles DRY and control them from one place. Use these mixins and placeholders instead of writing your own CSS.
+
+```
+.your-selector {
+    // add the default border radius
+    @extend %base-radius;
+
+    // add a thin border on all sides
+    @include border(all, thin);
+
+    // add a thick border on the top and left sides with the highlight color
+    @include border(top left, thick, theme(highlight));
+}
+```
+
+*/
+
+// @import "libs";
+// @import "color";
+// @import "layout";
+
+// Rounded corners
+// -----------------------------------------------------------------------------
+
+$base-radius: 3px !default;
+
+%base-radius {
+  border-radius: $base-radius;
+}
+
+// Border width & style
+// -----------------------------------------------------------------------------
+
+$border-w--default: 'thin' !default;
+
+$border-widths: (
+    'thin'  : 1px,
+    'mid'   : 2px,
+    'thick' : 4px,
+);
+
+$border-style: solid !default;
+
+// get function for border widths
+@function border-w($w: $border-w--default) {
+    @if (type-of($w) == "number") {
+        @return #{$w};
+    } @else {
+        @each $name, $value in $border-widths {
+            @if ($w == $name) {
+                @return map-get($border-widths, $name);
+            }
+        }
+    }
+}
+
+// make a standard border/hairline that works with the parent color theme
+// make a standard border/hairline that works with the parent color theme
+@mixin border($sides: all, $w: $border-w--default, $color: theme('border'), $style: $border-style) {
+    @if ($sides == all) {
+        border: border-w($w) #{$style} #{$color};
+    } @else {
+        @each $side in $sides {
+            border-#{$side}: border-w($w) #{$style} #{$color};
+        }
+    }
+}
+
+// Helper classes
+// -----------------------------------------------------------------------------
+
+.border {
+
+    $sides: top right bottom left;
+
+    @each $side in $sides {
+        &--#{$side} {
+            @include border($side);
+            padding-#{$side}: $gutter;
+        }
+    }
+
+    &--all {
+        @include border;
+        padding: $gutter;
+    }
+}
+
+.no-borders {
+    border: none !important;
+}
+
+.border-round { border-radius: 50%; }

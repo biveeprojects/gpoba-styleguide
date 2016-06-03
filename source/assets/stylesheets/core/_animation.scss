@@ -1,0 +1,39 @@
+/* =============================================================================
+//  Global animation styles
+// ========================================================================== */
+
+/*doc
+---
+title: Animation
+name: animation
+category: core
+---
+
+The animation library sets global defaults for CSS transitions. Use it in your modules like this:
+
+```
+.your-selector {
+    @extend %base-transition;
+}
+```
+
+*/
+
+// @import "libs";
+
+// Config & mixins
+// -----------------------------------------------------------------------------
+
+$base-duration: 0.5s !default; // in seconds
+
+%base-transition {
+  // base transition used globally
+  @include transition (all $base-duration);
+}
+
+/* Globals
+// -------------------------------------------------------------------------- */
+
+a {
+    @extend %base-transition;
+}

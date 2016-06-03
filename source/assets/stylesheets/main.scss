@@ -1,0 +1,66 @@
+/*
+ * GPOBA styleguide
+ *
+ * Designed & built by Bivee
+ * http://bivee.co
+ * https://github.com/biveeco
+ */
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Core style helpers
+// -> global settings, helpers, and utility classes
+///////////////////////////////////////////////////////////////////////////// */
+
+@import "core/libs"; // external/vendor libraries
+@import "core/settings"; // global settings
+@import "core/breakpoints"; // global breakpoints
+@import "core/animation"; // global animation/behaviors
+@import "core/fonts"; // all @font-face things and base type scale
+@import "core/color"; // global/base color schemes
+@import "core/borders"; // global border styles
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Base styles
+// -> global element styles: lists, text, images, etc.
+///////////////////////////////////////////////////////////////////////////// */
+
+@import "base/text";
+@import "base/list";
+@import "base/media";
+@import "base/form";
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Layout styles
+// -> global utility classes for basic layout
+///////////////////////////////////////////////////////////////////////////// */
+
+@import "layout/spacing";
+@import "layout/positioning";
+@import "layout/grid";
+@import "layout/wrapper";
+@import "layout/sidebar";
+@import "layout/visibility";
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Components
+// -> reusable, composable, self-contained interface elements
+///////////////////////////////////////////////////////////////////////////// */
+
+/* --- Atoms ---------------------------------------------------------------- */
+@import "components/button";
+
+/* --- Molecules ------------------------------------------------------------ */
+
+/* --- Organisms ------------------------------------------------------------ */
+@import "components/main_header";
+@import "components/main_footer";
+
+/* --- Regions -------------------------------------------------------------- */
+
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Styles of Shame
+// -> put quick and dirty hacks here, then clean up & organize later
+///////////////////////////////////////////////////////////////////////////// */
+
+
