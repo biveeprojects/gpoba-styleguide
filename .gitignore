@@ -12,6 +12,7 @@
 
 # Ignore npm things
 /node_modules
+npm-debug.log
 
 # Ignore cache
 /.sass-cache
