@@ -1,2 +1,3 @@
-# gpoba-styleguide
-Branding &amp; tone styleguide for GPOBA
+# GPOBA styleguide
+
+Branding &amp; tone guidelines for GPOBA
