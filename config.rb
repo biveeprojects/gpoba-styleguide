@@ -28,7 +28,7 @@ ignore 'assets/javascripts/*'
 
 activate :external_pipeline,
     name: :npm,
-    command: build? ? 'npm run build' : 'npm run dev',
+    command: build? ? 'npm run build' : 'npm start',
     source: ".tmp/dist",
     latency: 1
 
