@@ -24,11 +24,13 @@ To access a specific breakpoint value in Sass, use the `screen()` function, as i
 
 */
 
-// @import "libs";
+@import "libs";
 
 // Config & mixins
 // -----------------------------------------------------------------------------
 
+// Global breakpoints map
+// -> also used by include-media library
 $breakpoints: (
     'xsmall' : 30em,
     'small'  : 42em,
@@ -43,25 +45,43 @@ $breakpoints: (
     // @debug map-get($breakpoints, $size);
 }
 
-/* Utility classes
-// -------------------------------------------------------------------------- */
+// Breakpointify mixin by Hugo Giraudel, lightly modified
+// -> https://twitter.com/HugoGiraudel/status/696707047946108929
+// -> Helper mixin to create suffixed modifiers of a class
+// -> to make it effective starting certain breakpoints.
+// -> @param {String} $class - Class to “breakpointify”
+@mixin breakpointify($class, $default: false, $sizes: all, $direction: '>') {
+    @if $default == true {
+       #{$class} { @content; }
+    }
 
-%hide { display: none; }
-
-// screen-size helper classes
-// usage: <span class="show@small">
-.show\@small {
-    @extend %hide;
-
-    @include media(">small") {
-        display: block;
+    @if $sizes == 'all' {
+        @each $name, $size in $breakpoints {
+            @include media("#{$direction}#{$name}") {
+               #{$class}\@#{$name} { @content; }
+            }
+        }
+    } @else {
+        @each $name in $sizes {
+            @include media("#{$direction}#{$name}") {
+               #{$class}\@#{$name} { @content; }
+            }
+        }
     }
 }
 
-.show\@medium {
-    @extend %hide;
+/* Utility classes
+// -------------------------------------------------------------------------- */
 
-    @include media(">medium") {
-        display: block;
+// screen-size helper classes
+// -> hide content until screen reaches specified breakpoint size
+// usage: <span class="show@small">
+@each $name, $size in $breakpoints {
+    .show\@#{$name} {
+        @include media("<#{$size}") { display: none !important; }
+    }
+
+    .hide\@#{$name} {
+        @include media(">#{$size}") { display: none !important; }
     }
 }

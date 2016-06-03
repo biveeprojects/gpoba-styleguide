@@ -11,13 +11,7 @@
 // -> global settings, helpers, and utility classes
 ///////////////////////////////////////////////////////////////////////////// */
 
-@import "core/libs"; // external/vendor libraries
-@import "core/settings"; // global settings
-@import "core/breakpoints"; // global breakpoints
-@import "core/animation"; // global animation/behaviors
-@import "core/fonts"; // all @font-face things and base type scale
-@import "core/color"; // global/base color schemes
-@import "core/borders"; // global border styles
+@import "core/all";
 
 /* /////////////////////////////////////////////////////////////////////////////
 // Base styles
