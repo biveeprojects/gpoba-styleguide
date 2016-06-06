@@ -32,6 +32,21 @@ activate :external_pipeline,
     source: ".tmp/dist",
     latency: 1
 
+# Set up the blogging extensions
+activate :blog do |blog|
+  blog.name = "chapters"
+  blog.sources = "chapters/{chapter}/{title}.html"
+
+  blog.custom_collections = {
+    chapter: {
+        link: "{chapter}.html",
+        template: "chapter.html"
+    }
+  }
+end
+
+activate :directory_indexes
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -42,11 +57,24 @@ end
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+    def build_chapters(articles)
+        chapters = []
+        articles.each do |article|
+            chapter = article.metadata[:page]['chapter']
+            chapters.push(chapter) unless chapters.include? chapter
+        end
+        return chapters
+    end
+
+    def active_link_to(caption, url, options = {})
+        if current_page.url == "#{url}/"
+            options[:class] = "main_nav-item is-active"
+        end
+
+        link_to(caption, url, options)
+    end
+end
 
 # Build-specific configuration
 configure :build do
