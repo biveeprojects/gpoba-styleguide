@@ -6,6 +6,8 @@
  * https://github.com/biveeco
  */
 
+@import "normalize-css/normalize.css";
+
 /* /////////////////////////////////////////////////////////////////////////////
 // Core style helpers
 // -> global settings, helpers, and utility classes
@@ -46,7 +48,7 @@
 /* --- Molecules ------------------------------------------------------------ */
 
 /* --- Organisms ------------------------------------------------------------ */
-// @import "components/main_header";
+@import "components/main_header";
 // @import "components/main_footer";
 
 /* --- Regions -------------------------------------------------------------- */
@@ -56,5 +58,4 @@
 // Styles of Shame
 // -> put quick and dirty hacks here, then clean up & organize later
 ///////////////////////////////////////////////////////////////////////////// */
-
 

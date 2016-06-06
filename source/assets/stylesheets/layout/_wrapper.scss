@@ -65,27 +65,27 @@ $layout-widths: (
 
 // a child element of a layout wrapper which is actually wider than its parent
 // -> it sticks out on either side
-.l-wrapper-outcrop {
-    margin-left: $outcrop-margin;
-    margin-right: $outcrop-margin;
-}
+// .l-wrapper-outcrop {
+//     margin-left: $outcrop-margin;
+//     margin-right: $outcrop-margin;
+// }
 
-.l-wrapper-outcrop\@medium {
-    margin-left: 0;
-    margin-right: 0;
+// .l-wrapper-outcrop\@medium {
+//     margin-left: 0;
+//     margin-right: 0;
 
-    @include media(">medium") {
-        margin-left: $outcrop-margin;
-        margin-right: $outcrop-margin;
-    }
-}
+//     @include media(">medium") {
+//         margin-left: $outcrop-margin;
+//         margin-right: $outcrop-margin;
+//     }
+// }
 
-.l-wrapper-outcrop\@large {
-    margin-left: 0;
-    margin-right: 0;
+// .l-wrapper-outcrop\@large {
+//     margin-left: 0;
+//     margin-right: 0;
 
-    @include media(">large") {
-        margin-left: $outcrop-margin;
-        margin-right: $outcrop-margin;
-    }
-}
+//     @include media(">large") {
+//         margin-left: $outcrop-margin;
+//         margin-right: $outcrop-margin;
+//     }
+// }

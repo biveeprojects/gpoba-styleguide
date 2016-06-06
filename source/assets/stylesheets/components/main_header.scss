@@ -1,0 +1,51 @@
+/* =============================================================================
+//  Main header
+// ========================================================================== */
+
+/*doc
+---
+title: Main Header
+name: main header
+category: organisms
+---
+
+Documentation here
+
+*/
+
+@import "../core/all";
+
+$main_header-w: 250px; // always scope to namespace
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.main_header {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $main_header-w;
+}
+
+/* Subcomponents
+// -------------------------------------------------------------------------- */
+
+/* --- section -------------------------------------------------------------- */
+// .main_header-subcomponent {}
+
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+// .main_header--modifier {}
+
+
+/* State
+// -------------------------------------------------------------------------- */
+
+.has-main_header-margin {
+    display: block;
+    margin-left: $main-header-w;
+}
