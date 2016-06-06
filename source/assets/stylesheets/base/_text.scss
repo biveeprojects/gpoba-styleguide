@@ -52,6 +52,8 @@ p {
 a {
     @include color('highlight');
     text-decoration: none;
+
+    &:hover { text-decoration: underline; }
 }
 
 strong,

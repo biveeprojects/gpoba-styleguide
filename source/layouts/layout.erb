@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <!-- Use title if it's in the page YAML frontmatter -->
-        <title><%= current_page.data.title || "GPOBA Styleguide" %></title>
+        <title>GPOBA Styleguide<% if current_page.data.title.present? && current_page.data.title != "home" %> | <%= current_page.data.title %><% end %></title>
 
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,28 @@
     </head>
 
     <body>
-        <%= yield %>
+        <!-- Main header -->
+        <header class="main_header">
+            <!-- GPOBA logo -->
+            <picture class="logo">
+                GPOBA
+            </picture>
 
+            <!-- Main navigation -->
+            <nav class="main_nav">
+                <ul>
+                    <li><a href="">logo etc</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="has-main_header-margin">
+            <%= yield %>
+
+            <footer class="border-top">
+                <small>&copy; Copyright <%= Time.now.year %> GPOBA | <a href="http://www.worldbank.org/legalinfo">Legal</a></small>
+            </footer>
+        </div>
         <%= javascript_include_tag "javascripts/bundle" %>
     </body>
 </html>

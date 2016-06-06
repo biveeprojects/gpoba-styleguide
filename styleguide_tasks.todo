@@ -5,12 +5,12 @@ Front-end dev/theming: @jay
       @scott: might need some help on logic for all this. not if best to use blogging extension, etc.
 
   update in boilerplate:
-      ☐ borders
-      ☐ positioning
-      ☐ libs
-      ☐ text
+      ✔ borders @done (16-06-06 12:58)
+      ✔ positioning @done (16-06-06 12:58)
+      ✔ libs @done (16-06-06 12:58)
+      ✔ text @done (16-06-06 12:59)
       ✔ form @done (16-06-06 12:44)
-      ☐
+      ✔ spacing @done (16-06-06 13:02)
 
 Hosting/server config: @scott
   ☐ get build script set up on Heroku or wherever
