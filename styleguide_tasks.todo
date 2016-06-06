@@ -1,4 +1,10 @@
-Front-end dev:
-  ☐ pull in KL styleguide CSS & templates
-  ☐ set up webpack, pipeline
+Front-end dev/theming: @jay
+  ✔ pull in KL styleguide CSS & templates @done (16-06-06 10:55)
+  ✔ set up webpack, pipeline @done (16-06-06 10:55)
   ☐ middleman template skeleton
+      @scott: might need some help on logic for all this. not if best to use blogging extension, etc.
+
+Hosting/server config: @scott
+  ☐ get build script set up on Heroku or wherever
+      @scott: a complication we may need to consider is the node pipeline for JS and CSS. right now the middleman build script automatically runs node-sass and webpack to compile all that stuff. this is fine locally, where NPM is available, but unnecessary on the server (where we can prob just deploy CSS and JS and let them be static assets). the solution, i think, is to set up a special config.rb file for the server which tells middleman to ignore external pipeline stuff. can talk about this later.
+  ☐ config github pages branch and DNS
