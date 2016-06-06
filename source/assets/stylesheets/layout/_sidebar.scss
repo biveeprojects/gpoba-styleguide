@@ -38,7 +38,7 @@ $l-sidebar-w: column-w(1, ms(1) $l-sidebar-ratio);
     // -> used for both sides
     .l-sidebar {
         // @include column(1, ms(1) $l-sidebar-ratio, $split: false);
-        @include font-size-default;
+        @include type-size-default;
 
         display: inline-block;
         width: $l-sidebar-w;
@@ -76,7 +76,7 @@ $l-sidebar-w: column-w(1, ms(1) $l-sidebar-ratio);
 
     // the 'main' area beside the sidebar
     .l-sidebar-main {
-        @include font-size-default;
+        @include type-size-default;
         width: column-w(2, ms(1) $l-sidebar-ratio);
 
         @include yep("flexbox") {

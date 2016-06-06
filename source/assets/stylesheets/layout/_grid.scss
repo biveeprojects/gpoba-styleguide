@@ -73,7 +73,7 @@ $grid-default: ms(1) ms(4);
 // @PARAM (boolean) $last_fill: should the last item expand to fill the remaining space? defaults to true.
 // -> requires SassyLists, Modernizr and modernizr-mixin libraries
 @mixin column($loc, $grid: $grid-default, $gutter: $gutter, $last_fill: true, $split: true) {
-    @include font-size-default;
+    @include type-size-default;
     display: inline-block;
     width: column-w($loc, $grid);
 
@@ -117,7 +117,7 @@ $grid-default: ms(1) ms(4);
 }
 
 @mixin kill-column-wrapper($display: block) {
-    @include font-size-default;
+    @include type-size-default;
     display: $display;
 }
 

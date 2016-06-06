@@ -6,9 +6,9 @@
 @import "../core/libs";
 
 // standard spacing for margins and padding, etc.
-$l-margin: fs(5);
-$l-margin--narrow: fs(2);
-$l-margin--wide: fs(7);
+$l-margin: type-scale('epsilon');
+$l-margin--narrow: type-scale('eta');
+$l-margin--wide: type-scale('beta');
 
 $l-sides: left right top bottom;
 

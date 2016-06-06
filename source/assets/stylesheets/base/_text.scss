@@ -16,20 +16,21 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 
 */
 
-@import "../core/all";
-
+@import "../core/libs";
+@import "../core/type";
 
 /* Globals
 // -------------------------------------------------------------------------- */
 
 body {
     @include font-body;
-    line-height: $font-line_height;
+    line-height: $type-line_height;
 }
 
 // headings
 h1, h2, h3, h4, h5, h6,
 .t-heading {
+    @include font-display;
     line-height: 1.2;
     margin: 0;
 
@@ -99,8 +100,8 @@ address,
 .t-right { text-align: right; }
 
 /* use the best ampersands from common system fonts... */
-.t-amp {
-    @include amp-system;
-    font-size: $type-size-amp; /* relative to whatever type surrounds it -- it renders slightly bigger */
-    color: inherit;
-}
+// .t-amp {
+//     @include font-ampersand;
+//     font-size: $type-size-amp; /* relative to whatever type surrounds it -- it renders slightly bigger */
+//     color: inherit;
+// }
