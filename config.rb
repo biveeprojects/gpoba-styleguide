@@ -56,3 +56,9 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+# For heroku use https else default to http
+ENV['RACK_ENV'] == 'production' ? http = 'https' : http = 'http'
+
+# For Heroku Builds
+set :url_root, "#{http}://#{ENV['APP_DOMAIN'] ? ENV['APP_DOMAIN'] : 'localhost:4567'}"
