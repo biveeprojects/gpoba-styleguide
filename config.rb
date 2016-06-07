@@ -9,9 +9,6 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
-
 # General configuration
 
 config[:images_dir] = 'assets/images'
@@ -29,9 +26,11 @@ activate :external_pipeline,
     latency: 1
 
 # Set up the blogging extensions
+# -> blog posts get no layout because we're rendering them as sections on chapter pages
 activate :blog do |blog|
   blog.name = "chapters"
   blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
+  blog.layout = false
 
   blog.custom_collections = {
     chapter: {
