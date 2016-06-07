@@ -25,3 +25,13 @@ Content is organized in "chapters" and "sections." Essentially, a page of the st
 
 1. The folder name should start with a number, e.g. "01," which will be the "weight" of the chapter. Just as with sections, it's weight determines the order in which it is placed in the main navigation.
 2. After the number, add a dash and then the title of the chapter, such as "01-Logo" or "02-Typography." Note that the title is capitalized. If the title has more than one word, just use hyphens, e.g. "03-Tone-and-Style." Try to keep the title relatively short, as it will be used in the navigation.
+
+## Development
+
+### To create a local copy:
+
+1. Clone this repository.
+2. Install [Ruby](https://www.ruby-lang.org/en/), [Bundler](http://bundler.io), and [Node.js](https://nodejs.org/en/) if you don't already have them.
+3. Open Terminal and run `bundle install` and then `npm install` to install dependencies.
+4. If all that went okay, run `bundle exec middleman` to start a Middleman server and watch for changes. (Middleman will automatically run the NPM pipeline for CSS, JS and such.)
+5. `Control + C` to shut down the server.
