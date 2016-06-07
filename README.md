@@ -3,7 +3,7 @@
 
 ## Content
 
-Content is organized in "chapters" and "sections." Essentially, a page of the styleguide is a "chapter" and each scrolling section on the page is a "section." Each section is a separate markdown file with its own front-matter. They are grouped in folders which are used to generate chapter pages.
+Content is organized in "chapters" and "sections." Essentially, a page of the styleguide is a "chapter" and each scrolling section on the page is a "section." Each section is a separate markdown file with its own front-matter. They are grouped in folders which are used to generate chapter pages. Content is managed by Middleman's [blogging extension](https://middlemanapp.com/basics/blogging/) using [collections](https://middlemanapp.com/basics/blogging/#custom-article-collections).
 
 ### To edit content:
 
