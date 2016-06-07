@@ -12,10 +12,6 @@ page '/*.txt', layout: false
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
-
 # General configuration
 
 config[:images_dir] = 'assets/images'
@@ -35,22 +31,17 @@ activate :external_pipeline,
 # Set up the blogging extensions
 activate :blog do |blog|
   blog.name = "chapters"
-  blog.sources = "chapters/{chapter}/{title}.html"
+  blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
 
-  blog.custom_collections = {
-    chapter: {
-        link: "{chapter}.html",
-        template: "chapter.html"
-    }
-  }
+  # blog.custom_collections = {
+  #   chapter: {
+  #       link: "{chapter_weight}/{chapter}.html",
+  #       template: "chapter.html"
+  #   }
+  # }
 end
 
 activate :directory_indexes
-
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :livereload
-end
 
 ###
 # Helpers
@@ -58,6 +49,7 @@ end
 
 # Methods defined in the helpers block are available in templates
 helpers do
+    # instead of using blog collections, we need to extract chapter data from blog article frontmatter for our proxy pages (see below)
     def build_chapters(articles)
         chapters = []
         articles.each do |article|
@@ -76,13 +68,25 @@ helpers do
     end
 end
 
+# Generate proxy pages from the blog articles' "chapter" frontmatter
+build_chapters(blog("chapters").articles.sort_by()).each do |chapter| {
+    proxy "/#{chapter}.html", "/template-file.html", locals: {
+        which_fake_page: "Rendering a fake page with a local variable"
+    } :ignore => true
+}
+
+# Reload the browser automatically whenever files change
+configure :development do
+    activate :livereload
+end
+
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
+    # Minify CSS on build
+    # activate :minify_css
 
-  # Minify Javascript on build
-  # activate :minify_javascript
+    # Minify Javascript on build
+    # activate :minify_javascript
 end
 
 # For heroku use https else default to http
