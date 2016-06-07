@@ -33,12 +33,12 @@ activate :blog do |blog|
   blog.name = "chapters"
   blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
 
-  # blog.custom_collections = {
-  #   chapter: {
-  #       link: "{chapter_weight}/{chapter}.html",
-  #       template: "chapter.html"
-  #   }
-  # }
+  blog.custom_collections = {
+    chapter: {
+        link: "{chapter_weight}/{chapter}.html",
+        template: "/chapter.html"
+    }
+  }
 end
 
 activate :directory_indexes
@@ -49,11 +49,11 @@ activate :directory_indexes
 
 # Methods defined in the helpers block are available in templates
 helpers do
-    # instead of using blog collections, we need to extract chapter data from blog article frontmatter for our proxy pages (see below)
+    # build an array of the chapters from blog article frontmatter
     def build_chapters(articles)
         chapters = []
-        articles.each do |article|
-            chapter = article.metadata[:page]['chapter']
+        articles.sort_by {|article| article.data.chapter_weight}.each do |article|
+            chapter = article.data.chapter
             chapters.push(chapter) unless chapters.include? chapter
         end
         return chapters
@@ -69,11 +69,11 @@ helpers do
 end
 
 # Generate proxy pages from the blog articles' "chapter" frontmatter
-build_chapters(blog("chapters").articles.sort_by()).each do |chapter| {
-    proxy "/#{chapter}.html", "/template-file.html", locals: {
-        which_fake_page: "Rendering a fake page with a local variable"
-    } :ignore => true
-}
+# build_chapters(blog("chapters").articles).each do |chapter, chapter_weight|
+#     proxy "/#{chapter}.html", "/chapter.html", :locals => {
+#         weight: chapter_weight
+#     }, :ignore => true
+# end
 
 # Reload the browser automatically whenever files change
 configure :development do
