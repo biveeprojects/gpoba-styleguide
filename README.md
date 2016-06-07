@@ -16,7 +16,7 @@ Content is organized in "chapters" and "sections." Essentially, a page of the st
 2. Add front matter:
     - `title`: your section title
     - `weight`: the order where you'd like your section to appear. The higher the number the more "weight" it has and therefore the lower it will sink on the page. A weight of 0 or 1, for instance, will place it at or near the top, while a weight of 1000 will place it at or near the bottom.
-    - `date`: this is required by Middleman but not used otherwise. It's easiest to just put in today's date in this format: `MM-DD-YYYY`
+    - `date`: this is required by Middleman but not used otherwise. It's easiest to just put in today's date in this format: `MM-DD-YYYY`. (Note that if two sections have the same `weight` number, the one with the more recent date will rise higher.)
 3. Commit your changes and behold the terrible glory of the monster you have created.
 
 ### To add a new chapter:
@@ -25,6 +25,7 @@ Content is organized in "chapters" and "sections." Essentially, a page of the st
 
 1. The folder name should start with a number, e.g. "01," which will be the "weight" of the chapter. Just as with sections, it's weight determines the order in which it is placed in the main navigation.
 2. After the number, add a dash and then the title of the chapter, such as "01-Logo" or "02-Typography." Note that the title is capitalized. If the title has more than one word, just use hyphens, e.g. "03-Tone-and-Style." Try to keep the title relatively short, as it will be used in the navigation.
+3. Add sections to your new folder (see instructions above). Note that Git does not recognize empty folders, so your chapter cannot be committed to the repository until it contains at least 1 section.
 
 ## Development
 
