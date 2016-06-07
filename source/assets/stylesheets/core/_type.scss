@@ -161,8 +161,10 @@ $type-scale: (
     // -> font style and weight are set in the @font-face declaration above
     @if ($style == bold) {
         font-family: "newslab", $helvetica;
+        weight: bold;
     } @else {
         font-family: "newslab-#{$weight}", $helvetica;
+        weight: normal;
     }
 }
 
@@ -176,8 +178,10 @@ $type-scale: (
     // -> font style and weight are set in the @font-face declaration above
     @if ($style == bold) {
         font-family: "gibson-bold", $helvetica;
+        weight: bold;
     } @else {
         font-family: "gibson", $helvetica;
+        weight: normal;
     }
 }
 
@@ -195,6 +199,8 @@ $type-scale: (
         font-family: "source_sans-#{$weight}", "Trebuchet", $verdana;
     } @else {
         font-family: "source_sans-#{$weight}-#{$style}", "Trebuchet", $verdana;
+        weight: #{$weight};
+        style: #{$style};
     }
 }
 
