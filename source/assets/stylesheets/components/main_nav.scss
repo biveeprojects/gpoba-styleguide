@@ -14,28 +14,58 @@ Documentation here
 */
 
 @import "../core/all";
-@import "../layout/spacing";
 
 $main_header-w: 250px; // always scope to namespace
 
 /* Base
 // -------------------------------------------------------------------------- */
 
-.main_header {
+.main_nav {
     display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: $main_header-w;
-    padding: $l-margin;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    > ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    > li {
+        margin-bottom: 1em;
+    }
 }
 
 /* Subcomponents
 // -------------------------------------------------------------------------- */
 
-/* --- section -------------------------------------------------------------- */
-// .main_header-subcomponent {}
+.main_nav-subnav {
+    margin: 0.5em 0 1.5em 0;
+
+    > ul, > li {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0.6em;
+    }
+}
+
+.main_nav-item {
+    @include type-scale('eta');
+    @include font-body('bold');
+    @include color('text' 'primary');
+    text-transform: uppercase;
+
+    &.is-active {
+        @include color('highlight');
+    }
+}
+
+    .main_nav-item--secondary {
+        // @include type-scale('theta');
+        @include font-body;
+        @include color('text' 'tertiary');
+    }
 
 
 /* Modifiers

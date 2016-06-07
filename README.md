@@ -24,7 +24,7 @@ Content is organized in "chapters" and "sections." Essentially, a page of the st
 "Chapters" are really just folders of section files. They need to be named a certain way, however.
 
 1. The folder name should start with a number, e.g. "01," which will be the "weight" of the chapter. Just as with sections, it's weight determines the order in which it is placed in the main navigation.
-2. After the number, add a dash and then the title of the chapter, such as "01-Logo" or "02-Typography." Note that the title is capitalized. If the title has more than one word, just use hyphens, e.g. "03-Tone-and-Style." Try to keep the title relatively short, as it will be used in the navigation.
+2. After the number, add a dash and then the title of the chapter, such as "01-logo" or "02-typography." The title will be capitalized in the templates. If the title has more than one word, just use hyphens, e.g. "03-tone-and-style." Try to keep the title relatively short, as it will be used in the navigation.
 3. Add sections to your new folder (see instructions above). Note that Git does not recognize empty folders, so your chapter cannot be committed to the repository until it contains at least 1 section.
 
 ## Development

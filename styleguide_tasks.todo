@@ -4,7 +4,7 @@ Front-end dev/theming: @jay
   ✔ middleman template skeleton @done (16-06-07 16:38)
       @scott: might need some help on logic for all this. not if best to use blogging extension, etc.
   ✔ fonts @done (16-06-07 16:44)
-  ☐ color theme
+  ✔ color theme @done (16-06-07 17:32)
   ☐ header/nav layout
   ☐ footer
   ☐ sections/panels/chapter layout

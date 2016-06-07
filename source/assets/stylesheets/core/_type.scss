@@ -67,7 +67,7 @@ $type-scale: (
 }
 
 @mixin type-scale($size) {
-    @include rem(font-size, $size);
+    @include rem(font-size, type-scale($size));
 }
 
 
@@ -151,7 +151,7 @@ $type-scale: (
 
 /* ----- Display type ------------------------------------------------------- */
 
-@mixin font-display($weight: thin, $style: normal) {
+@mixin font-display($weight: 'thin', $style: 'normal') {
     // use this setup for a system font
     // font-family: $helvetica;
     // font-weight: #{$weight};
@@ -159,7 +159,7 @@ $type-scale: (
 
     // use this for a custom font
     // -> font style and weight are set in the @font-face declaration above
-    @if ($style == bold) {
+    @if ($weight == 'bold') {
         font-family: "newslab", $helvetica;
         weight: bold;
     } @else {
@@ -168,7 +168,7 @@ $type-scale: (
     }
 }
 
-@mixin font-accent($weight: normal, $style: normal) {
+@mixin font-accent($weight: 'normal', $style: 'normal') {
     // use this setup for a system font
     // font-family: $helvetica;
     // font-weight: #{$weight};
@@ -176,7 +176,7 @@ $type-scale: (
 
     // use this for a custom font
     // -> font style and weight are set in the @font-face declaration above
-    @if ($style == bold) {
+    @if ($weight == 'bold') {
         font-family: "gibson-bold", $helvetica;
         weight: bold;
     } @else {
@@ -187,7 +187,7 @@ $type-scale: (
 
 /* ----- Body type ---------------------------------------------------------- */
 
-@mixin font-body($weight: normal, $style: normal) {
+@mixin font-body($weight: 'normal', $style: 'normal') {
     // use this setup for a system font
     // font-family: $helvetica;
     // font-weight: #{$weight};
@@ -195,7 +195,7 @@ $type-scale: (
 
     // use this for a custom font
     // -> font style and weight are set in the @font-face declaration above
-    @if ($style == normal) {
+    @if ($style == 'normal') {
         font-family: "source_sans-#{$weight}", "Trebuchet", $verdana;
     } @else {
         font-family: "source_sans-#{$weight}-#{$style}", "Trebuchet", $verdana;

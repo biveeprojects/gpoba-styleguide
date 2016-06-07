@@ -20,6 +20,7 @@
 // -> global element styles: lists, text, images, etc.
 ///////////////////////////////////////////////////////////////////////////// */
 
+@import "base/html";
 @import "base/text";
 @import "base/list";
 @import "base/media";
@@ -46,6 +47,7 @@
 // @import "components/button";
 
 /* --- Molecules ------------------------------------------------------------ */
+@import "components/main_nav";
 
 /* --- Organisms ------------------------------------------------------------ */
 @import "components/main_header";

@@ -5,10 +5,10 @@ layout: layout
 <% current_page.data.title = chapter %>
 
 <article>
-    <h1 class="t-heading t-scale-alpha"><%= chapter %></h1>
+    <h1 class="t-heading t-scale-alpha"><%= chapter.titleize %></h1>
 
     <% blog("chapters").articles.select {|a| a.data.chapter == chapter }.sort_by {|a| a.data.weight }.each do |section| %>
-        <section class="panel">
+        <section class="panel" id="<%= section.title.urlize %>">
             <div class="l-wrapper">
                 <h2 class="t-heading t-scale-beta"><%= section.title %></h2>
                 <div class="content">

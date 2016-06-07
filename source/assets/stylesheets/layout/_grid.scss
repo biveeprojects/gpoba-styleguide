@@ -23,7 +23,7 @@ Grids
 // -------------------------------------------------------------------------- */
 
 $gutter: $l-margin; // local reference to global spacing -> see layout/spacing
-$gutter-outside: $l-margin--wide; // local reference to global spacing -> see layout/spacing
+$gutter-outside: $l-margin-wide; // local reference to global spacing -> see layout/spacing
 
 @function add_outside_gutters($w) {
     // compensate for outside margins (ie padding) and split gutters

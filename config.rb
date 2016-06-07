@@ -59,12 +59,12 @@ helpers do
         return chapters
     end
 
-    def active_link_to(caption, url, options = {})
-        if current_page.url == "#{url}/"
-            options[:class] = "main_nav-item is-active"
+    def current_page?(url)
+        if current_page.url == url then
+            return true
+        else
+            return false
         end
-
-        link_to(caption, url, options)
     end
 end
 
