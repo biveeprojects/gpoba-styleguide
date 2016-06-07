@@ -35,13 +35,14 @@ activate :blog do |blog|
 
   blog.custom_collections = {
     chapter: {
-        link: "{chapter_weight}/{chapter}.html",
+        link: "chapters/{chapter}.html",
         template: "/chapter.html"
     }
   }
 end
 
 activate :directory_indexes
+page "404.html", :directory_index => false
 
 ###
 # Helpers
