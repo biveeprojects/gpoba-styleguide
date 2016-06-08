@@ -31,6 +31,8 @@ if ENV['RACK_ENV'] == 'production'
   end
 end
 
+ONE_WEEK = 604_800
+
 # Serve files from the build directory
 use Rack::TryStatic,
     root: 'build',
