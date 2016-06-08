@@ -5,7 +5,7 @@
   "main": "index.js",
   "config": {
     "css_src": "source/assets/stylesheets",
-    "css_bundle": ".tmp/dist/stylesheets",
+    "css_bundle": "source/assets/stylesheets/build",
     "js_src": "source/assets/javascripts",
     "icons_src": "./source/assets/images/icons/_sprites",
     "icons_dest": "./source/layouts/partials"

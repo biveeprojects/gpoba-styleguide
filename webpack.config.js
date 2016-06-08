@@ -13,7 +13,7 @@ module.exports = {
         root: __dirname + modulePath,
     },
     output: {
-        path: __dirname + '/.tmp/dist/javascripts',
+        path: __dirname + '/source/assets/javascripts/build',
         filename: "bundle.js",
     },
     module: {

@@ -1,0 +1,2097 @@
+/*
+ * GPOBA styleguide
+ *
+ * Designed & built by Bivee
+ * http://bivee.co
+ * https://github.com/biveeco
+ */
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Core style helpers
+// -> global settings, helpers, and utility classes
+///////////////////////////////////////////////////////////////////////////// */
+/* =============================================================================
+//  External Libraries
+// ========================================================================== */
+/* ==========================================================================
+ * Helpers for converting units (rems, percent, etc.)
+ * ========================================================================== */
+/*doc
+---
+title: Global Variables
+name: settings
+category: Core
+---
+
+We keep global settings to a minimum, to keep variables closely tied to the relevant modules/libraries.
+
+Right now, the only globals we need are a few file path helpers: `$asset-path-images`, `$asset-path-icons`, and `$asset-path-fonts`.
+
+*/
+/* =============================================================================
+// Global breakpoints
+// -> uses include-media library (http://include-media.com)
+// ===========================================================================*/
+/*doc
+---
+title: Global Breakpoints
+name: breakpoints
+category: Core
+---
+
+A series of global breakpoints are used throughout the site. Note that components often use their own local breakpoints (or "tweakpoints") to handle their layout, but the overall layout is based on the globals.
+
+The breakpoints are simply labelled by size: "xsmall," "small," "medium," "large," and "xlarge."
+
+Utility classes are available for each: `.show@[SIZE]`, e.g. `.show@small` These will hide an element below a particular screen width.
+
+```html_example
+<div class="show@medium">You can only see me above "medium" screen sizes.</div>
+```
+
+To access a specific breakpoint value in Sass, use the `screen()` function, as in `max-width: screen('large');`, which will compile to `max-width: 75em;`
+
+*/
+/* Utility classes
+// -------------------------------------------------------------------------- */
+@media (max-width: 29.99em) {
+  .show\@xsmall {
+    display: none !important; } }
+
+@media (min-width: 30.01em) {
+  .hide\@xsmall {
+    display: none !important; } }
+
+@media (max-width: 41.99em) {
+  .show\@small {
+    display: none !important; } }
+
+@media (min-width: 42.01em) {
+  .hide\@small {
+    display: none !important; } }
+
+@media (max-width: 61.99em) {
+  .show\@medium {
+    display: none !important; } }
+
+@media (min-width: 62.01em) {
+  .hide\@medium {
+    display: none !important; } }
+
+@media (max-width: 74.99em) {
+  .show\@large {
+    display: none !important; } }
+
+@media (min-width: 75.01em) {
+  .hide\@large {
+    display: none !important; } }
+
+@media (max-width: 99.99em) {
+  .show\@huge {
+    display: none !important; } }
+
+@media (min-width: 100.01em) {
+  .hide\@huge {
+    display: none !important; } }
+
+/* =============================================================================
+//  Global animation styles
+// ========================================================================== */
+/*doc
+---
+title: Animation
+name: animation
+category: core
+---
+
+The animation library sets global defaults for CSS transitions. Use it in your modules like this:
+
+```
+.your-selector {
+    @include transition-default;
+}
+```
+
+*/
+/* =============================================================================
+//  Type config & scale
+// ========================================================================== */
+/*doc
+---
+title: Fonts
+name: fonts
+category: Core
+---
+
+Fonts are accessed through SASS placeholders. Just extend the appropriate one. Fonts are applied to type, globally, in _type.scss, and individual modules can set up their own font styles.
+
+Please DO NOT use your own font-family attributes in any circumstance. Always use the mixins.
+
+```
+// display fonts
+// -> headlines, buttons, labels, etc.
+
+@include font-display
+@include font-display(bold)
+
+// body fonts
+// -> paragraphs, captions, etc.
+
+@include font-body
+@include font-body(normal, italic)
+@include font-body(bold)
+```
+
+*/
+/* Fonts
+// -------------------------------------------------------------------------- */
+/* ----- Newslab ------------------------------------------------------------ */
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Latinotype
+ * License URL: http://www.fontspring.com/licenses/latinotype/webfont
+ *
+ *
+ */
+@font-face {
+  font-family: "newslab-thin";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/newslab/NewslabThin-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/NewslabThin-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/NewslabThin-webfont.woff") format("woff"), url("/assets/fonts/newslab/NewslabThin-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/NewslabThin-webfont.svg#newslab-thin") format("svg"); }
+
+@font-face {
+  font-family: "newslab";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/newslab/Newslab-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/Newslab-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/Newslab-webfont.woff") format("woff"), url("/assets/fonts/newslab/Newslab-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/Newslab-webfont.svg#newslab") format("svg"); }
+
+/* ----- Gibson ------------------------------------------------------------- */
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Canada Type
+ * License URL: http://www.fontspring.com/fflicense/canada-type
+ *
+ *
+ */
+@font-face {
+  font-family: "gibson";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/gibson/Gibson-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Light-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Light-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Light-webfont.svg#gibson") format("svg"); }
+
+@font-face {
+  font-family: "gibson-bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/gibson/Gibson-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.svg#gibson-bold") format("svg"); }
+
+/* ----- Source Sans Pro ---------------------------------------------------- */
+@font-face {
+  font-family: "source_sans-light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/source_sans/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.svg#source_sans-light") format("svg"); }
+
+@font-face {
+  font-family: "source_sans-normal";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.svg#source_sans-normal") format("svg"); }
+
+@font-face {
+  font-family: "source_sans-normal-italic";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.svg#source_sans-normal-italic") format("svg"); }
+
+@font-face {
+  font-family: "source_sans-bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.svg#source_sans-bold") format("svg"); }
+
+/* Font styles
+// -> PUBLIC, use these to style type globally & in modules
+// -------------------------------------------------------------------------- */
+/* ----- Display type ------------------------------------------------------- */
+/* ----- Body type ---------------------------------------------------------- */
+/* ----- Ampersands --------------------------------------------------------- */
+/* ==========================================================================
+//  Global color styles
+// -> base colors are set here on global elements, but modules apply their own
+// -> refer to colors ONLY via the $theme maps
+// ========================================================================== */
+/*doc
+---
+title: Color
+name: color
+category: core
+---
+
+Some functions and globals to keep the color scheme DRY and easy to manage in one place. Color for the entire site is handled through structured SASS maps, assigning each color a role:
+
+```
+$themes: (
+    'default': (
+        'text': (
+            'primary'    : $black,
+            'secondary'  : darken($gray, 10),
+            'tertiary'   : $gray
+        ),
+        'bg'             : #fff,
+        'well'           : lighten($gray, 20),
+        'border'         : lighten($gray, 20),
+        'highlight'      : $gray
+    ),
+);
+
+```
+
+You can assign these colors in your CSS with the `color` mixin, like so:
+
+```
+.your-component {
+    @include color('highlight', 'background-color');
+}
+```
+
+This will generate selectors all the site's color schemes. If you need a specific color to place in your own selectors, you can use the `theme()` function, like this:
+
+```
+background-color: theme(bg, reverse);
+```
+
+The second parameter is optional, and theme() will default to the 'default' theme map.
+
+*/
+/* Themes
+// -> use the helper class to apply a theme to a module
+// -------------------------------------------------------------------------- */
+body, .c-theme-default {
+  color: #4d384b;
+  background-color: #fff;
+  border-color: #DBD9DA !important; }
+  body ::selection, .c-theme-default ::selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+  body ::-moz-selection, .c-theme-default ::-moz-selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+
+.c-theme-reverse {
+  color: #a9b3bd;
+  background-color: #4d384b;
+  border-color: #886385 !important; }
+  .c-theme-reverse ::selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+  .c-theme-reverse ::-moz-selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+
+.c-theme-wash {
+  color: #332732;
+  background-color: #5eabbc;
+  border-color: #4d384b !important; }
+  .c-theme-wash ::selection {
+    background: #fff;
+    color: #fff;
+    text-shadow: none; }
+  .c-theme-wash ::-moz-selection {
+    background: #fff;
+    color: #fff;
+    text-shadow: none; }
+
+/* Helper classes
+// -> use on individual elements to apply special color treatment
+// -------------------------------------------------------------------------- */
+.c-text-primary {
+  color: #332732 !important; }
+  .c-text-primary.c-theme-reverse, .c-theme-reverse .c-text-primary {
+    color: #fff !important; }
+  .c-text-primary.c-theme-wash, .c-theme-wash .c-text-primary {
+    color: #fff !important; }
+
+.c-text-secondary {
+  color: #4d384b !important; }
+  .c-text-secondary.c-theme-reverse, .c-theme-reverse .c-text-secondary {
+    color: #a9b3bd !important; }
+  .c-text-secondary.c-theme-wash, .c-theme-wash .c-text-secondary {
+    color: #332732 !important; }
+
+.c-text-tertiary {
+  color: #8C9AA7 !important; }
+  .c-text-tertiary.c-theme-reverse, .c-theme-reverse .c-text-tertiary {
+    color: #ab8ca8 !important; }
+  .c-text-tertiary.c-theme-wash, .c-theme-wash .c-text-tertiary {
+    color: #665664 !important; }
+
+.c-highlight {
+  color: #5eabbc !important; }
+  .c-highlight.c-theme-reverse, .c-theme-reverse .c-highlight {
+    color: #5eabbc !important; }
+  .c-highlight.c-theme-wash, .c-theme-wash .c-highlight {
+    color: #fff !important; }
+
+.c-highlight-bg {
+  background-color: #5eabbc; }
+  .c-highlight-bg.c-theme-reverse, .c-theme-reverse .c-highlight-bg {
+    background-color: #5eabbc; }
+  .c-highlight-bg.c-theme-wash, .c-theme-wash .c-highlight-bg {
+    background-color: #fff; }
+
+.c-accent {
+  color:  !important; }
+  .c-accent.c-theme-reverse, .c-theme-reverse .c-accent {
+    color:  !important; }
+  .c-accent.c-theme-wash, .c-theme-wash .c-accent {
+    color:  !important; }
+
+.c-well {
+  background-color: #F2F2F2; }
+  .c-well.c-theme-reverse, .c-theme-reverse .c-well {
+    background-color: #332732; }
+  .c-well.c-theme-wash, .c-theme-wash .c-well {
+    background-color: #665664; }
+
+.c-bg {
+  color: #fff; }
+  .c-bg.c-theme-reverse, .c-theme-reverse .c-bg {
+    color: #4d384b; }
+  .c-bg.c-theme-wash, .c-theme-wash .c-bg {
+    color: #5eabbc; }
+
+@media print {
+  [class^="c-"] {
+    background-color: transparent !important; } }
+
+/* =============================================================================
+// Border settings & helpers
+// ===========================================================================*/
+/*doc
+---
+title: Border settings & helpers
+name: borders
+category: core
+---
+
+Some mixins that allow us to keep our border styles DRY and control them from one place. Use these mixins and placeholders instead of writing your own CSS.
+
+```
+.your-selector {
+    // add the default border radius
+    @extend %border-radius;
+
+    // add a thin border on all sides
+    @include border(all, thin);
+
+    // add a thick border on the top and left sides with the highlight color
+    @include border(top left, thick, theme(highlight));
+}
+```
+
+There are also utility classes that allow you to quickly add a border to a container:
+
+```html_example
+<div class="border">
+    <p>I have borders on all sides!</p>
+</div>
+
+<div class="border border-round">
+    <p>I have rounded corners!</p>
+</div>
+
+<div class="border-top">
+    <p>I have borders on just the top!</p>
+</div>
+
+<div class="border-bottom border-right">
+    <p>I have borders on a couple sides. You can combine border classes to cover as many sides as you like.</p>
+</div>
+
+<div class="no-border">
+    <p>I have no borders! Even if I normally would.</p>
+</div>
+```
+
+*/
+.border {
+  border: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border.c-theme-reverse, .c-theme-reverse .border {
+    border-color: #886385; }
+  .border.c-theme-wash, .c-theme-wash .border {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border\@xsmall {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@xsmall.c-theme-reverse, .c-theme-reverse .border\@xsmall {
+      border-color: #886385; }
+    .border\@xsmall.c-theme-wash, .c-theme-wash .border\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border\@small {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@small.c-theme-reverse, .c-theme-reverse .border\@small {
+      border-color: #886385; }
+    .border\@small.c-theme-wash, .c-theme-wash .border\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border\@medium {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@medium.c-theme-reverse, .c-theme-reverse .border\@medium {
+      border-color: #886385; }
+    .border\@medium.c-theme-wash, .c-theme-wash .border\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border\@large {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@large.c-theme-reverse, .c-theme-reverse .border\@large {
+      border-color: #886385; }
+    .border\@large.c-theme-wash, .c-theme-wash .border\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border\@huge {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@huge.c-theme-reverse, .c-theme-reverse .border\@huge {
+      border-color: #886385; }
+    .border\@huge.c-theme-wash, .c-theme-wash .border\@huge {
+      border-color: #4d384b; } }
+
+.border-top {
+  border-top: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-top.c-theme-reverse, .c-theme-reverse .border-top {
+    border-color: #886385; }
+  .border-top.c-theme-wash, .c-theme-wash .border-top {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-top\@xsmall {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@xsmall.c-theme-reverse, .c-theme-reverse .border-top\@xsmall {
+      border-color: #886385; }
+    .border-top\@xsmall.c-theme-wash, .c-theme-wash .border-top\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-top\@small {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@small.c-theme-reverse, .c-theme-reverse .border-top\@small {
+      border-color: #886385; }
+    .border-top\@small.c-theme-wash, .c-theme-wash .border-top\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-top\@medium {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@medium.c-theme-reverse, .c-theme-reverse .border-top\@medium {
+      border-color: #886385; }
+    .border-top\@medium.c-theme-wash, .c-theme-wash .border-top\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-top\@large {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@large.c-theme-reverse, .c-theme-reverse .border-top\@large {
+      border-color: #886385; }
+    .border-top\@large.c-theme-wash, .c-theme-wash .border-top\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-top\@huge {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@huge.c-theme-reverse, .c-theme-reverse .border-top\@huge {
+      border-color: #886385; }
+    .border-top\@huge.c-theme-wash, .c-theme-wash .border-top\@huge {
+      border-color: #4d384b; } }
+
+.border-right {
+  border-right: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-right.c-theme-reverse, .c-theme-reverse .border-right {
+    border-color: #886385; }
+  .border-right.c-theme-wash, .c-theme-wash .border-right {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-right\@xsmall {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@xsmall.c-theme-reverse, .c-theme-reverse .border-right\@xsmall {
+      border-color: #886385; }
+    .border-right\@xsmall.c-theme-wash, .c-theme-wash .border-right\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-right\@small {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@small.c-theme-reverse, .c-theme-reverse .border-right\@small {
+      border-color: #886385; }
+    .border-right\@small.c-theme-wash, .c-theme-wash .border-right\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-right\@medium {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@medium.c-theme-reverse, .c-theme-reverse .border-right\@medium {
+      border-color: #886385; }
+    .border-right\@medium.c-theme-wash, .c-theme-wash .border-right\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-right\@large {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@large.c-theme-reverse, .c-theme-reverse .border-right\@large {
+      border-color: #886385; }
+    .border-right\@large.c-theme-wash, .c-theme-wash .border-right\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-right\@huge {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@huge.c-theme-reverse, .c-theme-reverse .border-right\@huge {
+      border-color: #886385; }
+    .border-right\@huge.c-theme-wash, .c-theme-wash .border-right\@huge {
+      border-color: #4d384b; } }
+
+.border-bottom {
+  border-bottom: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-bottom.c-theme-reverse, .c-theme-reverse .border-bottom {
+    border-color: #886385; }
+  .border-bottom.c-theme-wash, .c-theme-wash .border-bottom {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-bottom\@xsmall {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@xsmall.c-theme-reverse, .c-theme-reverse .border-bottom\@xsmall {
+      border-color: #886385; }
+    .border-bottom\@xsmall.c-theme-wash, .c-theme-wash .border-bottom\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-bottom\@small {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@small.c-theme-reverse, .c-theme-reverse .border-bottom\@small {
+      border-color: #886385; }
+    .border-bottom\@small.c-theme-wash, .c-theme-wash .border-bottom\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-bottom\@medium {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@medium.c-theme-reverse, .c-theme-reverse .border-bottom\@medium {
+      border-color: #886385; }
+    .border-bottom\@medium.c-theme-wash, .c-theme-wash .border-bottom\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-bottom\@large {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@large.c-theme-reverse, .c-theme-reverse .border-bottom\@large {
+      border-color: #886385; }
+    .border-bottom\@large.c-theme-wash, .c-theme-wash .border-bottom\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-bottom\@huge {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@huge.c-theme-reverse, .c-theme-reverse .border-bottom\@huge {
+      border-color: #886385; }
+    .border-bottom\@huge.c-theme-wash, .c-theme-wash .border-bottom\@huge {
+      border-color: #4d384b; } }
+
+.border-left {
+  border-left: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-left.c-theme-reverse, .c-theme-reverse .border-left {
+    border-color: #886385; }
+  .border-left.c-theme-wash, .c-theme-wash .border-left {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-left\@xsmall {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@xsmall.c-theme-reverse, .c-theme-reverse .border-left\@xsmall {
+      border-color: #886385; }
+    .border-left\@xsmall.c-theme-wash, .c-theme-wash .border-left\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-left\@small {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@small.c-theme-reverse, .c-theme-reverse .border-left\@small {
+      border-color: #886385; }
+    .border-left\@small.c-theme-wash, .c-theme-wash .border-left\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-left\@medium {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@medium.c-theme-reverse, .c-theme-reverse .border-left\@medium {
+      border-color: #886385; }
+    .border-left\@medium.c-theme-wash, .c-theme-wash .border-left\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-left\@large {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@large.c-theme-reverse, .c-theme-reverse .border-left\@large {
+      border-color: #886385; }
+    .border-left\@large.c-theme-wash, .c-theme-wash .border-left\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-left\@huge {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@huge.c-theme-reverse, .c-theme-reverse .border-left\@huge {
+      border-color: #886385; }
+    .border-left\@huge.c-theme-wash, .c-theme-wash .border-left\@huge {
+      border-color: #4d384b; } }
+
+.no-border {
+  border: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border\@xsmall {
+    border: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border\@small {
+    border: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border\@medium {
+    border: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border\@large {
+    border: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border\@huge {
+    border: none !important; } }
+
+.no-border-top {
+  border-top: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-top\@xsmall {
+    border-top: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-top\@small {
+    border-top: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-top\@medium {
+    border-top: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-top\@large {
+    border-top: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-top\@huge {
+    border-top: none !important; } }
+
+.no-border-right {
+  border-right: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-right\@xsmall {
+    border-right: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-right\@small {
+    border-right: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-right\@medium {
+    border-right: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-right\@large {
+    border-right: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-right\@huge {
+    border-right: none !important; } }
+
+.no-border-bottom {
+  border-bottom: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-bottom\@xsmall {
+    border-bottom: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-bottom\@small {
+    border-bottom: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-bottom\@medium {
+    border-bottom: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-bottom\@large {
+    border-bottom: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-bottom\@huge {
+    border-bottom: none !important; } }
+
+.no-border-left {
+  border-left: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-left\@xsmall {
+    border-left: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-left\@small {
+    border-left: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-left\@medium {
+    border-left: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-left\@large {
+    border-left: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-left\@huge {
+    border-left: none !important; } }
+
+/* --- Modifiers ------------------------------------------------------------ */
+.border--thick {
+  border-width: 4px; }
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Base styles
+// -> global element styles: lists, text, images, etc.
+///////////////////////////////////////////////////////////////////////////// */
+/* =============================================================================
+// Global box model and scaling
+// ========================================================================== */
+html {
+  font-size: 95%;
+  box-sizing: border-box; }
+  @media (min-width: 42.01em) {
+    html {
+      font-size: 100%; } }
+  @media (min-width: 62.01em) {
+    html {
+      font-size: 110%; } }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/* =============================================================================
+//  Global type styles
+// ========================================================================== */
+/*doc
+
+Inline text is mostly styled globally and doesn't change a whole lot from one context to another. If you mark it up with relevant tags it should take care of itself. But there are a few helper classes to define special styles:
+
+`.intro`: an italicized introduction to an article. Pretty common in Handshake's features and interviews.
+
+`.caption`: small, secondary text appearing in sidebars and, of course, captions.
+
+`.callout`: a featured passage. It isn't a header, per se, but it's the most important part of the article body. Used, for example, to highlight the question in _1 Question, 9 Experts_.
+
+`.lead`: the first paragraph of an article, decorated with a drop cap, etc. This is usually selected via `.content > p:first-child`, but if you need to imitate those styles in another context, use this class.
+
+*/
+/* Globals
+// -------------------------------------------------------------------------- */
+body {
+  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  line-height: 1.4; }
+
+h1, h2, h3, h4, h5, h6,
+.t-heading {
+  font-family: "newslab-thin", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  weight: normal;
+  line-height: 1.2;
+  margin: 0; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+  .t-heading a {
+    color: inherit; }
+  h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+  .t-heading strong {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal; }
+
+p {
+  font-size: 16px;
+  font-size: 1rem;
+  color: #4d384b; }
+  p.c-theme-reverse, .c-theme-reverse p {
+    color: #a9b3bd; }
+  p.c-theme-wash, .c-theme-wash p {
+    color: #332732; }
+
+a {
+  color: #5eabbc;
+  text-decoration: none; }
+  a.c-theme-reverse, .c-theme-reverse a {
+    color: #5eabbc; }
+  a.c-theme-wash, .c-theme-wash a {
+    color: #fff; }
+  a:hover {
+    text-decoration: underline; }
+
+strong,
+.t-strong {
+  font-family: "source_sans-bold", "Trebuchet", "Verdana", "Geneva", sans-serif; }
+
+em,
+.t-em {
+  font-family: "source_sans-normal-italic", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  weight: normal;
+  style: italic; }
+
+small,
+.t-small {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  color: #8C9AA7; }
+  small.c-theme-reverse, .c-theme-reverse small,
+  .t-small.c-theme-reverse, .c-theme-reverse
+  .t-small {
+    color: #ab8ca8; }
+  small.c-theme-wash, .c-theme-wash small,
+  .t-small.c-theme-wash, .c-theme-wash
+  .t-small {
+    color: #665664; }
+
+figcaption,
+.t-caption {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  color: #4d384b; }
+  figcaption.c-theme-reverse, .c-theme-reverse figcaption,
+  .t-caption.c-theme-reverse, .c-theme-reverse
+  .t-caption {
+    color: #a9b3bd; }
+  figcaption.c-theme-wash, .c-theme-wash figcaption,
+  .t-caption.c-theme-wash, .c-theme-wash
+  .t-caption {
+    color: #332732; }
+
+address,
+.t-address {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #4d384b; }
+  address.c-theme-reverse, .c-theme-reverse address,
+  .t-address.c-theme-reverse, .c-theme-reverse
+  .t-address {
+    color: #a9b3bd; }
+  address.c-theme-wash, .c-theme-wash address,
+  .t-address.c-theme-wash, .c-theme-wash
+  .t-address {
+    color: #332732; }
+
+/* Utilities
+// -------------------------------------------------------------------------- */
+.t-scale-alpha { }
+
+.t-scale-beta { }
+
+.t-scale-cappa { }
+
+.t-scale-delta { }
+
+.t-scale-epsilon { }
+
+.t-scale-zeta { }
+
+.t-scale-eta { }
+
+.t-scale-theta { }
+
+.t-lead {
+  font-size: 23px;
+  font-size: 1.4375rem;
+  color: #332732; }
+  .t-lead.c-theme-reverse, .c-theme-reverse .t-lead {
+    color: #fff; }
+  .t-lead.c-theme-wash, .c-theme-wash .t-lead {
+    color: #fff; }
+
+.t-caps {
+  text-transform: uppercase !important; }
+
+.t-centered {
+  text-align: center; }
+
+.t-left {
+  text-align: left; }
+
+.t-right {
+  text-align: right; }
+
+/* use the best ampersands from common system fonts... */
+/* =============================================================================
+//  Global list styles
+// ========================================================================== */
+/* Globals
+// -------------------------------------------------------------------------- */
+li {
+  font-size: 13px;
+  font-size: 0.8125rem; }
+  li strong {
+    font-weight: bold; }
+
+li {
+  margin-bottom: 0.5em; }
+
+ol, ul {
+  margin-left: 1.5em;
+  /* bump to the right a little @ mobile sizes so the numbers/bullets don't run off */
+  padding-left: 0; }
+
+/* ==========================================================================
+//  Global media styles
+// ========================================================================== */
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+  max-width: 100%; }
+
+/* =============================================================================
+//  Base form styles
+// ========================================================================== */
+/*doc
+---
+title: Forms
+name: Form
+category: atoms
+---
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.form,
+form {
+  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif; }
+
+.form-field, .form-textarea,
+textarea,
+input, textarea, select {
+  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: none;
+  text-shadow: none; }
+  .form-field:focus, .form-textarea:focus,
+  textarea:focus,
+  input:focus, textarea:focus, select:focus {
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    box-shadow: none; }
+
+.form-checkbox,
+[type="checkbox"] {
+  width: 1em;
+  height: 1em; }
+
+.form-textarea,
+textarea {
+  resize: vertical; }
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Layout styles
+// -> global utility classes for basic layout
+///////////////////////////////////////////////////////////////////////////// */
+/* =============================================================================
+// Global spacing
+// -> used to keep whitespace in the layout consistent
+// ========================================================================== */
+/* Margins
+// -------------------------------------------------------------------------- */
+.l-margin {
+  margin: 23px;
+  margin: 1.4375rem; }
+
+.l-margin-narrow {
+  margin: 13px !important;
+  margin: 0.8125rem !important; }
+
+.l-margin-wide {
+  margin: 39px !important;
+  margin: 2.4375rem !important; }
+
+.l-margin-left {
+  margin-left: 23px !important;
+  margin-left: 1.4375rem !important; }
+
+.l-margin-left-narrow {
+  margin-left: 13px !important;
+  margin-left: 0.8125rem !important; }
+
+.l-margin-left-wide {
+  margin-left: 39px !important;
+  margin-left: 2.4375rem !important; }
+
+.l-margin-right {
+  margin-right: 23px !important;
+  margin-right: 1.4375rem !important; }
+
+.l-margin-right-narrow {
+  margin-right: 13px !important;
+  margin-right: 0.8125rem !important; }
+
+.l-margin-right-wide {
+  margin-right: 39px !important;
+  margin-right: 2.4375rem !important; }
+
+.l-margin-top {
+  margin-top: 23px !important;
+  margin-top: 1.4375rem !important; }
+
+.l-margin-top-narrow {
+  margin-top: 13px !important;
+  margin-top: 0.8125rem !important; }
+
+.l-margin-top-wide {
+  margin-top: 39px !important;
+  margin-top: 2.4375rem !important; }
+
+.l-margin-bottom {
+  margin-bottom: 23px !important;
+  margin-bottom: 1.4375rem !important; }
+
+.l-margin-bottom-narrow {
+  margin-bottom: 13px !important;
+  margin-bottom: 0.8125rem !important; }
+
+.l-margin-bottom-wide {
+  margin-bottom: 39px !important;
+  margin-bottom: 2.4375rem !important; }
+
+.l-no-margin {
+  margin: 0 !important;
+  margin: 0 !important; }
+
+.l-no-margin-left {
+  margin-left: 0 !important;
+  margin-left: 0 !important; }
+
+.l-no-margin-right {
+  margin-right: 0 !important;
+  margin-right: 0 !important; }
+
+.l-no-margin-top {
+  margin-top: 0 !important;
+  margin-top: 0 !important; }
+
+.l-no-margin-bottom {
+  margin-bottom: 0 !important;
+  margin-bottom: 0 !important; }
+
+/* Padding
+// -------------------------------------------------------------------------- */
+.l-padding {
+  padding: 23px !important;
+  padding: 1.4375rem !important; }
+
+.l-padding-narrow {
+  padding: 13px !important;
+  padding: 0.8125rem !important; }
+
+.l-padding-wide {
+  padding: 39px !important;
+  padding: 2.4375rem !important; }
+
+.l-padding-left {
+  padding-left: 23px !important;
+  padding-left: 1.4375rem !important; }
+
+.l-padding-left-narrow {
+  padding-left: 13px !important;
+  padding-left: 0.8125rem !important; }
+
+.l-padding-left-wide {
+  padding-left: 39px !important;
+  padding-left: 2.4375rem !important; }
+
+.l-padding-right {
+  padding-right: 23px !important;
+  padding-right: 1.4375rem !important; }
+
+.l-padding-right-narrow {
+  padding-right: 13px !important;
+  padding-right: 0.8125rem !important; }
+
+.l-padding-right-wide {
+  padding-right: 39px !important;
+  padding-right: 2.4375rem !important; }
+
+.l-padding-top {
+  padding-top: 23px !important;
+  padding-top: 1.4375rem !important; }
+
+.l-padding-top-narrow {
+  padding-top: 13px !important;
+  padding-top: 0.8125rem !important; }
+
+.l-padding-top-wide {
+  padding-top: 39px !important;
+  padding-top: 2.4375rem !important; }
+
+.l-padding-bottom {
+  padding-bottom: 23px !important;
+  padding-bottom: 1.4375rem !important; }
+
+.l-padding-bottom-narrow {
+  padding-bottom: 13px !important;
+  padding-bottom: 0.8125rem !important; }
+
+.l-padding-bottom-wide {
+  padding-bottom: 39px !important;
+  padding-bottom: 2.4375rem !important; }
+
+.l-no-padding {
+  padding: 0 !important;
+  padding: 0 !important; }
+
+.l-no-padding-left {
+  padding-left: 0 !important;
+  padding-left: 0 !important; }
+
+.l-no-padding-right {
+  padding-right: 0 !important;
+  padding-right: 0 !important; }
+
+.l-no-padding-top {
+  padding-top: 0 !important;
+  padding-top: 0 !important; }
+
+.l-no-padding-bottom {
+  padding-bottom: 0 !important;
+  padding-bottom: 0 !important; }
+
+/* =============================================================================
+// Global positioning utilities
+// -> place an element relative to its parent
+// ========================================================================== */
+/* Mixins
+// -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+.l-display-inline {
+  display: inline; }
+
+.l-display-inline_block {
+  display: inline-block; }
+
+.l-display-block {
+  display: block; }
+
+.l-centered {
+  text-align: center; }
+  .csstransforms .l-centered {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+
+.l-centered-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.l-float-right {
+  float: right; }
+
+.l-float-left {
+  float: left; }
+
+.l-z-top {
+  z-index: 2 !important; }
+
+/* =============================================================================
+// Grid layout classes
+// ===========================================================================*/
+/*doc
+---
+title: Grids
+name: grids
+category: Layout
+---
+
+Grids
+
+```html_example
+<a href="#" class="button l-abs top right">Button @ top right</a>
+```
+
+*/
+/* Gutters
+// -------------------------------------------------------------------------- */
+/* Grid columns
+// -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+/* =============================================================================
+// Wrapper layout classes
+// ===========================================================================*/
+/*doc
+---
+title: Wrapper
+name: wrapper
+category: Layout
+---
+
+Wrappers
+
+```html_example
+<a href="#" class="button l-abs top right">Button @ top right</a>
+```
+
+*/
+/* Settings & mixins
+// -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+.l-wrapper {
+  max-width: 678px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 39px;
+  padding-right: 39px; }
+  .l-wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.l-wrapper--wide {
+  max-width: 1102px; }
+
+/* =============================================================================
+// Sidebar layout classes
+// ========================================================================== */
+/*doc
+---
+title: Sidebar
+name: sidebar
+category: Layout
+---
+
+Sidebars
+
+```html_example
+<a href="#" class="button l-abs top right">Button @ top right</a>
+```
+
+*/
+/* Utilities
+// -------------------------------------------------------------------------- */
+@media (min-width: 42.01em) {
+  .l-has-sidebar\@small {
+    display: block;
+    font-size: 0;
+    position: relative; } }
+  @media (min-width: 42.01em) and (min-width: 42.01em) {
+    .flexbox .l-has-sidebar\@small {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  @media (min-width: 42.01em) and (min-width: 75.01em) {
+    .l-has-sidebar\@small {
+      display: block; } }
+
+@media (min-width: 42.01em) {
+    .l-has-sidebar\@small .l-sidebar {
+      type-size: 16px;
+      type-size: 1rem;
+      display: inline-block;
+      width: 36.65689%; }
+      .flexbox .l-has-sidebar\@small .l-sidebar {
+        display: block; } }
+    @media (min-width: 42.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@small .l-sidebar {
+        display: block;
+        position: relative;
+        top: 0; } }
+
+@media (min-width: 42.01em) {
+    .l-has-sidebar\@small .l-sidebar--left {
+      -webkit-box-ordinal-group: -1;
+      box-ordinal-group: -1;
+      -moz-order: -1;
+      order: -1;
+      -ms-flex-order: -1;
+      padding-right: 23px; } }
+    @media (min-width: 42.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@small .l-sidebar--left {
+        float: left;
+        margin-left: -36.65689%;
+        padding-right: 23px; } }
+
+@media (min-width: 42.01em) {
+    .l-has-sidebar\@small .l-sidebar--right {
+      -webkit-box-ordinal-group: 1;
+      box-ordinal-group: 1;
+      -moz-order: 1;
+      order: 1;
+      -ms-flex-order: 1;
+      padding-left: 23px; } }
+    @media (min-width: 42.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@small .l-sidebar--right {
+        float: right;
+        margin-right: -36.65689%;
+        padding-left: 23px; } }
+
+@media (min-width: 42.01em) {
+    .l-has-sidebar\@small .l-sidebar-main {
+      type-size: 16px;
+      type-size: 1rem;
+      width: 63.34311%; }
+      .flexbox .l-has-sidebar\@small .l-sidebar-main {
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: auto; } }
+    @media (min-width: 42.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@small .l-sidebar-main {
+        display: block;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
+        width: auto; } }
+
+@media (min-width: 62.01em) {
+  .l-has-sidebar\@medium {
+    display: block;
+    font-size: 0;
+    position: relative; } }
+  @media (min-width: 62.01em) and (min-width: 42.01em) {
+    .flexbox .l-has-sidebar\@medium {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  @media (min-width: 62.01em) and (min-width: 75.01em) {
+    .l-has-sidebar\@medium {
+      display: block; } }
+
+@media (min-width: 62.01em) {
+    .l-has-sidebar\@medium .l-sidebar {
+      type-size: 16px;
+      type-size: 1rem;
+      display: inline-block;
+      width: 36.65689%; }
+      .flexbox .l-has-sidebar\@medium .l-sidebar {
+        display: block; } }
+    @media (min-width: 62.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@medium .l-sidebar {
+        display: block;
+        position: relative;
+        top: 0; } }
+
+@media (min-width: 62.01em) {
+    .l-has-sidebar\@medium .l-sidebar--left {
+      -webkit-box-ordinal-group: -1;
+      box-ordinal-group: -1;
+      -moz-order: -1;
+      order: -1;
+      -ms-flex-order: -1;
+      padding-right: 23px; } }
+    @media (min-width: 62.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@medium .l-sidebar--left {
+        float: left;
+        margin-left: -36.65689%;
+        padding-right: 23px; } }
+
+@media (min-width: 62.01em) {
+    .l-has-sidebar\@medium .l-sidebar--right {
+      -webkit-box-ordinal-group: 1;
+      box-ordinal-group: 1;
+      -moz-order: 1;
+      order: 1;
+      -ms-flex-order: 1;
+      padding-left: 23px; } }
+    @media (min-width: 62.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@medium .l-sidebar--right {
+        float: right;
+        margin-right: -36.65689%;
+        padding-left: 23px; } }
+
+@media (min-width: 62.01em) {
+    .l-has-sidebar\@medium .l-sidebar-main {
+      type-size: 16px;
+      type-size: 1rem;
+      width: 63.34311%; }
+      .flexbox .l-has-sidebar\@medium .l-sidebar-main {
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: auto; } }
+    @media (min-width: 62.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@medium .l-sidebar-main {
+        display: block;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
+        width: auto; } }
+
+@media (min-width: 75.01em) {
+  .l-has-sidebar\@large {
+    display: block;
+    font-size: 0;
+    position: relative; } }
+  @media (min-width: 75.01em) and (min-width: 42.01em) {
+    .flexbox .l-has-sidebar\@large {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+  @media (min-width: 75.01em) and (min-width: 75.01em) {
+    .l-has-sidebar\@large {
+      display: block; } }
+
+@media (min-width: 75.01em) {
+    .l-has-sidebar\@large .l-sidebar {
+      type-size: 16px;
+      type-size: 1rem;
+      display: inline-block;
+      width: 36.65689%; }
+      .flexbox .l-has-sidebar\@large .l-sidebar {
+        display: block; } }
+    @media (min-width: 75.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@large .l-sidebar {
+        display: block;
+        position: relative;
+        top: 0; } }
+
+@media (min-width: 75.01em) {
+    .l-has-sidebar\@large .l-sidebar--left {
+      -webkit-box-ordinal-group: -1;
+      box-ordinal-group: -1;
+      -moz-order: -1;
+      order: -1;
+      -ms-flex-order: -1;
+      padding-right: 23px; } }
+    @media (min-width: 75.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@large .l-sidebar--left {
+        float: left;
+        margin-left: -36.65689%;
+        padding-right: 23px; } }
+
+@media (min-width: 75.01em) {
+    .l-has-sidebar\@large .l-sidebar--right {
+      -webkit-box-ordinal-group: 1;
+      box-ordinal-group: 1;
+      -moz-order: 1;
+      order: 1;
+      -ms-flex-order: 1;
+      padding-left: 23px; } }
+    @media (min-width: 75.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@large .l-sidebar--right {
+        float: right;
+        margin-right: -36.65689%;
+        padding-left: 23px; } }
+
+@media (min-width: 75.01em) {
+    .l-has-sidebar\@large .l-sidebar-main {
+      type-size: 16px;
+      type-size: 1rem;
+      width: 63.34311%; }
+      .flexbox .l-has-sidebar\@large .l-sidebar-main {
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: auto; } }
+    @media (min-width: 75.01em) and (min-width: 75.01em) {
+      .l-has-sidebar\@large .l-sidebar-main {
+        display: block;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
+        width: auto; } }
+
+/* =============================================================================
+// Visibility
+// -> hide and show things in various ways
+// ========================================================================== */
+.is-visually_hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  /*
+     * Extends the .visuallyhidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */ }
+  .is-visually_hidden.focusable {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    /*
+     * Extends the .visuallyhidden class to allow the element
+     * to be focusable when navigated to via the keyboard:
+     * https://www.drupal.org/node/897638
+     */ }
+    .is-visually_hidden.focusable:active, .is-visually_hidden.focusable:focus {
+      -webkit-clip-path: auto;
+              clip-path: auto;
+      height: auto;
+      overflow: visible;
+      position: static;
+      width: auto; }
+
+.is-hidden {
+  display: none !important; }
+
+/* /////////////////////////////////////////////////////////////////////////////
+// Components
+// -> reusable, composable, self-contained interface elements
+///////////////////////////////////////////////////////////////////////////// */
+/* --- Atoms ---------------------------------------------------------------- */
+/* --- Molecules ------------------------------------------------------------ */
+/* =============================================================================
+//  Main header
+// ========================================================================== */
+/*doc
+---
+title: Main Header
+name: main header
+category: organisms
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.main_nav {
+  display: block;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+  .main_nav > ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0; }
+  .main_nav > li {
+    margin-bottom: 1em; }
+
+/* Subcomponents
+// -------------------------------------------------------------------------- */
+.main_nav-subnav {
+  margin: 0.5em 0 1.5em 0; }
+  .main_nav-subnav > ul, .main_nav-subnav > li {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0.6em; }
+
+.main_nav-item {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-family: "source_sans-bold", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  color: #332732;
+  text-transform: uppercase; }
+  .main_nav-item.c-theme-reverse, .c-theme-reverse .main_nav-item {
+    color: #fff; }
+  .main_nav-item.c-theme-wash, .c-theme-wash .main_nav-item {
+    color: #fff; }
+  .main_nav-item.is-active {
+    color: #5eabbc; }
+    .main_nav-item.is-active.c-theme-reverse, .c-theme-reverse .main_nav-item.is-active {
+      color: #5eabbc; }
+    .main_nav-item.is-active.c-theme-wash, .c-theme-wash .main_nav-item.is-active {
+      color: #fff; }
+
+.main_nav-item--secondary {
+  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  color: #8C9AA7; }
+  .main_nav-item--secondary.c-theme-reverse, .c-theme-reverse .main_nav-item--secondary {
+    color: #ab8ca8; }
+  .main_nav-item--secondary.c-theme-wash, .c-theme-wash .main_nav-item--secondary {
+    color: #665664; }
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+/* State
+// -------------------------------------------------------------------------- */
+.has-main_header-margin {
+  display: block;
+  margin-left: 250px; }
+
+/* --- Organisms ------------------------------------------------------------ */
+/* =============================================================================
+//  Main header
+// ========================================================================== */
+/*doc
+---
+title: Main Header
+name: main header
+category: organisms
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.main_header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 23px; }
+
+/* Subcomponents
+// -------------------------------------------------------------------------- */
+/* --- section -------------------------------------------------------------- */
+/* Modifiers
+// -------------------------------------------------------------------------- */
+/* State
+// -------------------------------------------------------------------------- */
+.has-main_header-margin {
+  display: block;
+  margin-left: 250px; }
+
+/* --- Regions -------------------------------------------------------------- */
+/* /////////////////////////////////////////////////////////////////////////////
+// Styles of Shame
+// -> put quick and dirty hacks here, then clean up & organize later
+///////////////////////////////////////////////////////////////////////////// */
