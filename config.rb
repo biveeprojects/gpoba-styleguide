@@ -12,8 +12,8 @@ page '/*.txt', layout: false
 # General configuration
 
 config[:images_dir] = 'assets/images'
-config[:css_dir] = 'assets/stylesheets/build'
-config[:js_dir] = 'assets/javascripts/build'
+config[:css_dir] = 'assets/stylesheets/_dist'
+config[:js_dir] = 'assets/javascripts/_dist'
 
 # # ignore css and js, b/c we're handling with external pipeline
 # ignore 'assets/stylesheets/*'
