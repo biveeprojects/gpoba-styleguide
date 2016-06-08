@@ -13,7 +13,7 @@ module.exports = {
         root: __dirname + modulePath,
     },
     output: {
-        path: __dirname + '/source/assets/javascripts/_dist',
+        path: __dirname + '/source/assets/dist/javascripts',
         filename: "bundle.js",
     },
     module: {
@@ -30,6 +30,6 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin("critical", "critical.bundle.js"),
-        new Clean(['.tmp/dist/javscripts']),
+        new Clean(['source/assets/dist/javascripts']),
     ]
 };

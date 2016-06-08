@@ -12,12 +12,12 @@ page '/*.txt', layout: false
 # General configuration
 
 config[:images_dir] = 'assets/images'
-config[:css_dir] = 'assets/stylesheets/_dist'
-config[:js_dir] = 'assets/javascripts/_dist'
+config[:css_dir] = 'assets/dist/stylesheets'
+config[:js_dir] = 'assets/dist/stylesheets'
 
 # # ignore css and js, b/c we're handling with external pipeline
-# ignore 'assets/stylesheets/*'
-# ignore 'assets/javascripts/*'
+ignore 'assets/stylesheets/*'
+ignore 'assets/javascripts/*'
 
 # Set up the blogging extensions
 # -> blog posts get no layout because we're rendering them as sections on chapter pages
@@ -72,10 +72,10 @@ end
 # Reload the browser automatically whenever files change
 configure :development do
     activate :external_pipeline,
-      name: :npm,
-      command: build? ? 'npm run build' : 'npm start',
-      source: "source/assets/",
-      latency: 1
+        name: :npm,
+        command: 'npm start',
+        source: "source/assets/dist",
+        latency: 1
 
     activate :livereload
 end
