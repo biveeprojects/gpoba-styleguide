@@ -9,13 +9,6 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-# With alternative layout
-# page "/path/to/file.html", layout: :otherlayout
-
-# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
-#  which_fake_page: "Rendering a fake page with a local variable" }
-
 # General configuration
 
 config[:images_dir] = 'assets/images'
@@ -26,35 +19,74 @@ config[:js_dir] = 'javascripts'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
-# Reload the browser automatically whenever files change
-configure :development do
-  activate :external_pipeline,
-  name: :npm,
-  command: build? ? 'npm run build' : 'npm start',
-  source: ".tmp/dist",
-  latency: 1
+activate :external_pipeline,
+    name: :npm,
+    command: build? ? 'npm run build' : 'npm start',
+    source: ".tmp/dist",
+    latency: 1
 
-  activate :livereload
+# Set up the blogging extensions
+# -> blog posts get no layout because we're rendering them as sections on chapter pages
+activate :blog do |blog|
+  blog.name = "chapters"
+  blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
+  blog.layout = false
+
+  blog.custom_collections = {
+    chapter: {
+        link: "chapters/{chapter}.html",
+        template: "/chapter.html"
+    }
+  }
 end
+
+activate :directory_indexes
+page "404.html", :directory_index => false
 
 ###
 # Helpers
 ###
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
+helpers do
+    # build an array of the chapters from blog article frontmatter
+    def build_chapters(articles)
+        chapters = []
+        articles.sort_by {|article| article.data.chapter_weight}.each do |article|
+            chapter = article.data.chapter
+            chapters.push(chapter) unless chapters.include? chapter
+        end
+        return chapters
+    end
+
+    def current_page?(url)
+        if current_page.url == url then
+            return true
+        else
+            return false
+        end
+    end
+end
+
+# Generate proxy pages from the blog articles' "chapter" frontmatter
+# build_chapters(blog("chapters").articles).each do |chapter, chapter_weight|
+#     proxy "/#{chapter}.html", "/chapter.html", :locals => {
+#         weight: chapter_weight
+#     }, :ignore => true
 # end
+
+# Reload the browser automatically whenever files change
+configure :development do
+    activate :livereload
+end
 
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
+    # Minify CSS on build
+    # activate :minify_css
 
-  # Minify Javascript on build
-  # activate :minify_javascript
+    # Minify Javascript on build
+    # activate :minify_javascript
 end
 
 # For heroku use https else default to http

@@ -14,29 +14,31 @@ category: core
 Some functions and globals to keep the color scheme DRY and easy to manage in one place. Color for the entire site is handled through structured SASS maps, assigning each color a role:
 
 ```
-$theme--default: (
-    text--primary   : $black,
-    text--secondary : #706F6F,
-    text--tertiary  : darken($gray, 10),
-    bg              : #fff,
-    well            : $gray--superlight,
-    border          : $gray--light,
-    highlight       : $highlight--default,
-    accent          : $blue--dark
+$themes: (
+    'default': (
+        'text': (
+            'primary'    : $black,
+            'secondary'  : darken($gray, 10),
+            'tertiary'   : $gray
+        ),
+        'bg'             : #fff,
+        'well'           : lighten($gray, 20),
+        'border'         : lighten($gray, 20),
+        'highlight'      : $gray
+    ),
 );
 
 ```
-You can easily access these colors by "role" with the `theme()` function, like so:
+
+You can assign these colors in your CSS with the `color` mixin, like so:
 
 ```
-.your-module {
-    color: theme(highlight);
-    background-color: theme(bg);
-
+.your-component {
+    @include color('highlight', 'background-color');
 }
 ```
 
-If the site has multiple color schemes (say, "default" and "reverse" themes), you can specify the theme by passing in a second parameter:
+This will generate selectors all the site's color schemes. If you need a specific color to place in your own selectors, you can use the `theme()` function, like this:
 
 ```
 background-color: theme(bg, reverse);
@@ -53,36 +55,65 @@ The second parameter is optional, and theme() will default to the 'default' them
 // -> PRIVATE, do not use outside this settings file
 
 // neutrals
-$black      : #333;
-$gray       : #666;
+$black             : #332732;
+$super_dark_purple : #4d384b;
+$dark_purple       : #665664;
+$gray_blue         : #8C9AA7;
+$gray              : #DBD9DA;
+$light_gray        : #F2F2F2;
+
+// highlights
+// -> access with mixin "chapter_highlights()" below
+$highlights: (
+    'blue'   : #5eabbc,
+    'green'  : #5dc0ba,
+    'red'    : #f3385a,
+    'orange' : #f5a100,
+    'purple' : #8d64aa,
+);
+
+$highlight--default: map-get($highlights, 'blue');
 
 // Themes
 // ----------------------------------------------------------------------
 // -> PUBLIC, use these for color references
 
-// note: highlight is default; variations are assigned in local styles
 $themes: (
     'default': (
         'text': (
-            'primary'    : $black,
-            'secondary'  : darken($gray, 10),
-            'tertiary'   : $gray
+            'primary'     : $black,
+            'secondary'   : $super_dark_purple,
+            'tertiary'    : $gray_blue,
+            'body'        : $dark_purple,
         ),
-        'bg'             : #fff,
-        'well'           : lighten($gray, 20),
-        'border'         : lighten($gray, 20),
-        'highlight'      : $gray
+        'bg'              : #fff,
+        'well'            : $light_gray,
+        'border'          : $gray,
+        'highlight'       : $highlight--default,
     ),
     'reverse': (
         'text': (
-            'primary'    : #fff,
-            'secondary'  : lighten($gray, 20),
-            'tertiary'   : lighten($black, 20)
+            'primary'     : #fff,
+            'secondary'   : lighten($gray_blue, 10),
+            'tertiary'    : lighten($super_dark_purple, 35),
+            'body'        : $light_gray,
         ),
-        'bg'             : $black,
-        'well'           : darken($black, 20),
-        'border'         : lighten($black, 20),
-        'highlight'      : $gray
+        'bg'              : $super_dark_purple,
+        'well'            : $black,
+        'border'          : lighten($super_dark_purple, 20),
+        'highlight'       : $highlight--default,
+    ),
+    'wash': (
+        'text': (
+            'primary'     : #fff,
+            'secondary'   : $black,
+            'tertiary'    : $dark_purple,
+            'body'        : $dark_purple,
+        ),
+        'bg'              : $highlight--default,
+        'well'            : $dark_purple,
+        'border'          : $super_dark_purple,
+        'highlight'       : #fff,
     )
 );
 

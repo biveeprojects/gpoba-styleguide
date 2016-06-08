@@ -67,16 +67,83 @@ $type-scale: (
 }
 
 @mixin type-scale($size) {
-    @include rem(font-size, $size);
+    @include rem(font-size, type-scale($size));
 }
 
 
 /* Fonts
 // -------------------------------------------------------------------------- */
+// -> font-face mixins use Bourbon
 
-/* ----- Example @Font-face ------------------------------------------------- */
-// -> uses Bourbon
-// @include font-face("aspira-bold", "#{$asset-path-fonts}/Aspira-Demi-webfont", bold, $file-formats: eot svg woff woff2 ttf);
+/* ----- Newslab ------------------------------------------------------------ */
+// -> display font
+
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Latinotype
+ * License URL: http://www.fontspring.com/licenses/latinotype/webfont
+ *
+ *
+ */
+
+@include font-face("newslab-thin", "#{$asset-path-fonts}/newslab/NewslabThin-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("newslab", "#{$asset-path-fonts}/newslab/Newslab-webfont", bold, $file-formats: eot ttf woff2 woff svg);
+
+/* ----- Gibson ------------------------------------------------------------- */
+// -> accent font
+
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Canada Type
+ * License URL: http://www.fontspring.com/fflicense/canada-type
+ *
+ *
+ */
+
+@include font-face("gibson", "#{$asset-path-fonts}/gibson/Gibson-Light-webfont", $file-formats: eot ttf woff svg);
+@include font-face("gibson-bold", "#{$asset-path-fonts}/gibson/Gibson-SemiBold-webfont", bold, $file-formats: eot ttf woff svg);
+
+/* ----- Source Sans Pro ---------------------------------------------------- */
+// -> body font
+// -> from Google fonts: https://www.google.com/fonts/specimen/Source+Sans+Pro
+
+@include font-face("source_sans-light", "#{$asset-path-fonts}/source_sans/sourcesanspro-light-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("source_sans-normal", "#{$asset-path-fonts}/source_sans/sourcesanspro-regular-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("source_sans-normal-italic", "#{$asset-path-fonts}/source_sans/sourcesanspro-italic-webfont", normal, italic, $file-formats: eot ttf woff2 woff svg);
+@include font-face("source_sans-bold", "#{$asset-path-fonts}/source_sans/sourcesanspro-bold-webfont", bold, $file-formats: eot ttf woff2 woff svg);
+
 
 /* Font styles
 // -> PUBLIC, use these to style type globally & in modules
@@ -84,36 +151,57 @@ $type-scale: (
 
 /* ----- Display type ------------------------------------------------------- */
 
-@mixin font-display($weight: normal, $style: normal) {
+@mixin font-display($weight: 'thin', $style: 'normal') {
     // use this setup for a system font
-    font-family: $helvetica;
-    font-weight: #{$weight};
-    font-style: #{$style};
+    // font-family: $helvetica;
+    // font-weight: #{$weight};
+    // font-style: #{$style};
 
     // use this for a custom font
     // -> font style and weight are set in the @font-face declaration above
-    // @if ($style == normal) {
-    //     font-family: "aspira-#{$weight}", $helvetica;
-    // } @else {
-    //     font-family: "aspira-#{$weight}-#{$style}", $helvetica;
-    // }
+    @if ($weight == 'bold') {
+        font-family: "newslab", $helvetica;
+        weight: bold;
+    } @else {
+        font-family: "newslab-#{$weight}", $helvetica;
+        weight: normal;
+    }
+}
+
+@mixin font-accent($weight: 'normal', $style: 'normal') {
+    // use this setup for a system font
+    // font-family: $helvetica;
+    // font-weight: #{$weight};
+    // font-style: #{$style};
+
+    // use this for a custom font
+    // -> font style and weight are set in the @font-face declaration above
+    @if ($weight == 'bold') {
+        font-family: "gibson-bold", $helvetica;
+        weight: bold;
+    } @else {
+        font-family: "gibson", $helvetica;
+        weight: normal;
+    }
 }
 
 /* ----- Body type ---------------------------------------------------------- */
 
-@mixin font-body($weight: normal, $style: normal) {
+@mixin font-body($weight: 'normal', $style: 'normal') {
     // use this setup for a system font
-    font-family: $helvetica;
-    font-weight: #{$weight};
-    font-style: #{$style};
+    // font-family: $helvetica;
+    // font-weight: #{$weight};
+    // font-style: #{$style};
 
     // use this for a custom font
     // -> font style and weight are set in the @font-face declaration above
-    // @if ($style == normal) {
-    //     font-family: "copernicus-#{$weight}", $georgia;
-    // } @else {
-    //     font-family: "copernicus-#{$weight}-#{$style}", $georgia;
-    // }
+    @if ($style == 'normal') {
+        font-family: "source_sans-#{$weight}", "Trebuchet", $verdana;
+    } @else {
+        font-family: "source_sans-#{$weight}-#{$style}", "Trebuchet", $verdana;
+        weight: #{$weight};
+        style: #{$style};
+    }
 }
 
 /* ----- Ampersands --------------------------------------------------------- */
