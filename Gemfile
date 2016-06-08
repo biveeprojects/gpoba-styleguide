@@ -16,3 +16,9 @@ gem 'middleman-blog'
 # String helpers
 gem "string-urlize"
 gem "titleize"
+
+# Adding Rake & Puma for Heroku Hosting
+gem 'puma'
+gem 'rack-contrib'
+gem 'rack-ssl'
+gem 'rack-cache'
