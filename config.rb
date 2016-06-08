@@ -35,6 +35,7 @@ activate :blog do |blog|
 end
 
 activate :directory_indexes
+activate :relative_assets
 page "404.html", :directory_index => false
 
 ###
@@ -87,8 +88,6 @@ configure :build do
 
     # Minify Javascript on build
     # activate :minify_javascript
-
-    activate :relative_assets
 end
 
 # For heroku use https else default to http
