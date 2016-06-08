@@ -4,16 +4,6 @@ require 'rack/contrib/try_static'
 require 'rack/deflater'
 require 'rack/cache'
 
-require 'middleman-core/load_paths'
-::Middleman.setup_load_paths
-
-require 'middleman-core'
-require 'middleman-core/rack'
-
-require 'fileutils'
-FileUtils.mkdir('log') unless File.exist?('log')
-::Middleman::Logger.singleton("log/#{ENV['RACK_ENV']}.log")
-
 ONE_WEEK = 604_800
 
 # Serve files from the build directory
@@ -27,6 +17,15 @@ use Rack::TryStatic,
             { 'Cache-Control' => "public, max-age=#{ONE_WEEK}" }
         ]
     ]
+
+require 'middleman-core'
+require 'middleman-core/rack'
+require 'middleman-core/load_paths'
+::Middleman.setup_load_paths
+
+require 'fileutils'
+FileUtils.mkdir('log') unless File.exist?('log')
+::Middleman::Logger.singleton("log/#{ENV['RACK_ENV']}.log")
 
 app = ::Middleman::Application.new
 
