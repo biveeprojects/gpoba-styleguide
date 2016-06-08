@@ -19,11 +19,7 @@ config[:js_dir] = 'javascripts'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
-activate :external_pipeline,
-    name: :npm,
-    command: build? ? 'npm run build' : 'npm start',
-    source: ".tmp/dist",
-    latency: 1
+
 
 # Set up the blogging extensions
 # -> blog posts get no layout because we're rendering them as sections on chapter pages
@@ -77,6 +73,12 @@ end
 
 # Reload the browser automatically whenever files change
 configure :development do
+    activate :external_pipeline,
+      name: :npm,
+      command: build? ? 'npm run build' : 'npm start',
+      source: ".tmp/dist",
+      latency: 1
+
     activate :livereload
 end
 
