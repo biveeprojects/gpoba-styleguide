@@ -19,12 +19,15 @@ config[:js_dir] = 'assets/dist/stylesheets'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
+set :markdown_engine, :redcarpet
+
 # Set up the blogging extensions
 # -> blog posts get no layout because we're rendering them as sections on chapter pages
 activate :blog do |blog|
   blog.name = "chapters"
-  blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
+  blog.sources = "chapters/{chapter_weight}-{chapter}-{title}.html"
   blog.layout = false
+  blog.permalink = "chapters/{chapter}.html"
 
   blog.custom_collections = {
     chapter: {
