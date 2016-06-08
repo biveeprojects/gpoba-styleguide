@@ -32,10 +32,10 @@ app = ::Middleman::Application.new
 run ::Middleman::Rack.new(app).to_app
 
 # # Forces SSL on all requests
-unless ENV['RACK_ENV'] == 'development'
-  require 'rack/ssl'
-  use Rack::SSL
-end
+# unless ENV['RACK_ENV'] == 'development'
+#   require 'rack/ssl'
+#   use Rack::SSL
+# end
 
 # # Basic Auth:
 # if ENV['RACK_ENV'] == 'production'
