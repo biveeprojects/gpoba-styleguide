@@ -14,6 +14,8 @@ require 'fileutils'
 FileUtils.mkdir('log') unless File.exist?('log')
 ::Middleman::Logger.singleton("log/#{ENV['RACK_ENV']}.log")
 
+ONE_WEEK = 604_800
+
 # Serve files from the build directory
 use Rack::TryStatic,
     root: 'build',
@@ -31,10 +33,10 @@ app = ::Middleman::Application.new
 run ::Middleman::Rack.new(app).to_app
 
 # # Forces SSL on all requests
-# unless ENV['RACK_ENV'] == 'development'
-#   require 'rack/ssl'
-#   use Rack::SSL
-# end
+unless ENV['RACK_ENV'] == 'development'
+  require 'rack/ssl'
+  use Rack::SSL
+end
 
 # # Basic Auth:
 # if ENV['RACK_ENV'] == 'production'
@@ -42,8 +44,6 @@ run ::Middleman::Rack.new(app).to_app
 #     [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
 #   end
 # end
-
-ONE_WEEK = 604_800
 
 # # 404 Support
 # run lambda { |env|
