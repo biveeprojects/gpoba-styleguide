@@ -13,29 +13,31 @@ page '/*.txt', layout: false
 
 config[:images_dir] = 'assets/images'
 config[:css_dir] = 'assets/dist/stylesheets'
-config[:js_dir] = 'assets/dist/stylesheets'
+config[:js_dir] = 'assets/dist/javascripts'
 
 # # ignore css and js, b/c we're handling with external pipeline
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
+activate :relative_assets
+
 # Set up the blogging extensions
 # -> blog posts get no layout because we're rendering them as sections on chapter pages
-activate :blog do |blog|
-  blog.name = "chapters"
-  blog.sources = "chapters/{chapter_weight}-{chapter}/{title}.html"
-  blog.layout = false
+# activate :blog do |blog|
+#   blog.name = "chapters"
+#   blog.sources = "chapters/{chapter}/{title}.html"
+#   blog.permalink = "chapters/{chapter}/{title}.html"
+#   blog.layout = false
 
-  blog.custom_collections = {
-    chapter: {
-        link: "chapters/{chapter}.html",
-        template: "/chapter.html"
-    }
-  }
-end
+#   blog.custom_collections = {
+#     chapter: {
+#         link: "chapters/{chapter}.html",
+#         template: "/chapter.html"
+#     }
+#   }
+# end
 
 activate :directory_indexes
-activate :relative_assets
 page "404.html", :directory_index => false
 
 ###
@@ -45,13 +47,21 @@ page "404.html", :directory_index => false
 # Methods defined in the helpers block are available in templates
 helpers do
     # build an array of the chapters from blog article frontmatter
-    def build_chapters(articles)
+    def get_chapters
         chapters = []
-        articles.sort_by {|article| article.data.chapter_weight}.each do |article|
-            chapter = article.data.chapter
-            chapters.push(chapter) unless chapters.include? chapter
+        data.chapters.each do |chapter|
+            chapters.push(chapter)
         end
         return chapters
+    end
+
+    def next_chapter(chapter)
+        # find next chapter in TOC
+        # chapters = get_chapters;
+    end
+
+    def prev_chapter(chapter)
+        # find previous chapter in TOC
     end
 
     def current_page?(url)
@@ -64,11 +74,11 @@ helpers do
 end
 
 # Generate proxy pages from the blog articles' "chapter" frontmatter
-# build_chapters(blog("chapters").articles).each do |chapter, chapter_weight|
-#     proxy "/#{chapter}.html", "/chapter.html", :locals => {
-#         weight: chapter_weight
-#     }, :ignore => true
-# end
+data.chapters.each do |chapter|
+    proxy "/#{chapter.urlize}.html", "/chapter.html", :locals => {
+        title: chapter
+    }, :ignore => true
+end
 
 # Reload the browser automatically whenever files change
 configure :development do

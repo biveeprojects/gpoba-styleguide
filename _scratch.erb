@@ -1,0 +1,16 @@
+<% build_chapters(blog('chapters').articles).each do |chapter| %>
+    <%# if this link does not point to the current page, just render the chapter title %>
+    <% if !current_page?(chapter_path(chapter)) %>
+        <li><%= link_to chapter.titleize, chapter_path(chapter), :class => "main_nav-item" %></li>
+    <% else %>
+    <%# otherwise, add an 'active' class and render the section titles too %>
+        <li>
+            <%= link_to chapter.titleize, chapter_path(chapter), :class => "main_nav-item is-active" %>
+            <ul class="main_nav-subnav">
+                <% blog("chapters").articles.select {|a| a.data.chapter == chapter }.sort_by {|a| a.data.weight }.each do |section| %>
+                    <li><%= link_to section.data.title, "#{chapter_path(chapter)}##{section.title.urlize}", :class => "main_nav-item main_nav-item--secondary" %></li>
+                <% end %>
+            </ul>
+        </li>
+    <% end %>
+<% end %>

@@ -2,12 +2,14 @@
 layout: layout
 ---
 <%# add the chapter title to this page's metadata %>
-<% current_page.data.title = chapter %>
+<% current_page.add_metadata({
+    'title' => locals[:title]
+}) %>
 
 <article>
-    <h1 class="t-heading t-scale-alpha"><%= chapter.titleize %></h1>
+    <h1 class="t-heading t-scale-alpha"><%= locals[:title].titleize %></h1>
 
-    <% blog("chapters").articles.select {|a| a.data.chapter == chapter }.sort_by {|a| a.data.weight }.each do |section| %>
+    <% sitemap.resources.select {|a| a.data.chapter == locals[:title] }.sort_by {|a| a.data.weight }.each do |section| %>
         <section class="panel" id="<%= section.title.urlize %>">
             <div class="l-wrapper">
                 <h2 class="t-heading t-scale-beta"><%= section.title %></h2>
