@@ -1,12 +1,14 @@
-
 #\ -s puma
+require 'rack'
+require 'rack/contrib/try_static'
+require 'rack/deflater'
+require 'rack/cache'
 
 require 'middleman-core/load_paths'
 ::Middleman.setup_load_paths
 
 require 'middleman-core'
 require 'middleman-core/rack'
-require 'rack/contrib/try_static'
 
 require 'fileutils'
 FileUtils.mkdir('log') unless File.exist?('log')
