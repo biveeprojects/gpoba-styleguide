@@ -26,14 +26,14 @@ config[:js_dir] = 'javascripts'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
-activate :external_pipeline,
-    name: :npm,
-    command: build? ? 'npm run build' : 'npm start',
-    source: ".tmp/dist",
-    latency: 1
-
 # Reload the browser automatically whenever files change
 configure :development do
+  activate :external_pipeline,
+  name: :npm,
+  command: build? ? 'npm run build' : 'npm start',
+  source: ".tmp/dist",
+  latency: 1
+
   activate :livereload
 end
 
