@@ -19,7 +19,9 @@ config[:js_dir] = 'assets/dist/javascripts'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
-activate :relative_assets
+set :markdown_engine, :kramdown
+
+
 
 # Set up the blogging extensions
 # -> blog posts get no layout because we're rendering them as sections on chapter pages
@@ -36,9 +38,6 @@ activate :relative_assets
 #     }
 #   }
 # end
-
-activate :directory_indexes
-page "404.html", :directory_index => false
 
 ###
 # Helpers
@@ -75,10 +74,17 @@ end
 
 # Generate proxy pages from the blog articles' "chapter" frontmatter
 data.chapters.each do |chapter|
-    proxy "/#{chapter.urlize}.html", "/chapter.html", :locals => {
+    proxy "#{chapter.urlize}/index.html", "/chapter.html", :locals => {
         title: chapter
     }, :ignore => true
 end
+
+# activate :directory_indexes
+# page "README.md", :directory_index => false
+# page "LICENSE", :directory_index => false
+# page "404.html", :directory_index => false
+
+activate :relative_assets
 
 # Reload the browser automatically whenever files change
 configure :development do

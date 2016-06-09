@@ -14,3 +14,15 @@
         </li>
     <% end %>
 <% end %>
+
+
+<% sitemap.resources.select {|a| a.data.chapter == locals[:title] }.sort_by {|a| a.data.weight }.each do |section| %>
+    <section class="panel" id="<%= section.title.urlize %>">
+        <div class="l-wrapper">
+            <h2 class="t-heading t-scale-beta"><%= section.title %></h2>
+            <div class="content">
+                <%= section.render %>
+            </div>
+        </div>
+    </section>
+<% end %>

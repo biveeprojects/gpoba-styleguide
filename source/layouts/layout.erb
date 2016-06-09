@@ -26,13 +26,13 @@
                 <ul>
                     <% get_chapters.each do |chapter| %>
                         <% unless current_page?("/#{chapter.urlize}/") %>
-                        <li><%= link_to chapter.titleize, "#{chapter.urlize}", :class => "main_nav-item" %></li>
+                        <li><%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-item" %></li>
                         <% else %>
                         <li>
-                            <%= link_to chapter.titleize, "#{chapter.urlize}", :class => "main_nav-item is-active" %>
+                            <%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-item is-active" %>
                             <ul class="main_nav-subnav">
-                                <% blog("chapters").articles.select {|a| a.data.chapter == chapter }.sort_by {|a| a.data.weight }.each do |section| %>
-                                    <li><%= link_to section.data.title, "#{chapter.urlize}##{section.title.urlize}", :class => "main_nav-item main_nav-item--secondary" %></li>
+                                <% sitemap.resources.select {|r| r.data.chapter == chapter }.sort_by {|r| r.data.weight }.each do |section| %>
+                                    <li><%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-item main_nav-item--secondary" %></li>
                                 <% end %>
                             </ul>
                         </li>
