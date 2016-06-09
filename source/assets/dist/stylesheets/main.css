@@ -509,16 +509,16 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
  *
  */
 @font-face {
-  font-family: "newslab-thin";
+  font-family: "newslab-normal";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/newslab/NewslabThin-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/NewslabThin-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/NewslabThin-webfont.woff") format("woff"), url("/assets/fonts/newslab/NewslabThin-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/NewslabThin-webfont.svg#newslab-thin") format("svg"); }
+  src: url("/assets/fonts/newslab/NewslabThin-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/NewslabThin-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/NewslabThin-webfont.woff") format("woff"), url("/assets/fonts/newslab/NewslabThin-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/NewslabThin-webfont.svg#newslab-normal") format("svg"); }
 
 @font-face {
-  font-family: "newslab";
+  font-family: "newslab-bold";
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/fonts/newslab/Newslab-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/Newslab-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/Newslab-webfont.woff") format("woff"), url("/assets/fonts/newslab/Newslab-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/Newslab-webfont.svg#newslab") format("svg"); }
+  src: url("/assets/fonts/newslab/Newslab-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/Newslab-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/Newslab-webfont.woff") format("woff"), url("/assets/fonts/newslab/Newslab-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/Newslab-webfont.svg#newslab-bold") format("svg"); }
 
 /* ----- Gibson ------------------------------------------------------------- */
 /*
@@ -545,10 +545,10 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
  *
  */
 @font-face {
-  font-family: "gibson";
+  font-family: "gibson-normal";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/gibson/Gibson-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Light-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Light-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Light-webfont.svg#gibson") format("svg"); }
+  src: url("/assets/fonts/gibson/Gibson-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Light-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Light-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Light-webfont.svg#gibson-normal") format("svg"); }
 
 @font-face {
   font-family: "gibson-bold";
@@ -557,36 +557,62 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
   src: url("/assets/fonts/gibson/Gibson-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.svg#gibson-bold") format("svg"); }
 
 /* ----- Source Sans Pro ---------------------------------------------------- */
+/* ----- Merriweather ------------------------------------------------------- */
 @font-face {
-  font-family: "source_sans-light";
+  font-family: "merriweather-normal";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/source_sans/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-light-webfont.svg#source_sans-light") format("svg"); }
+  src: url("/assets/fonts/merriweather/merriweather-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-webfont.svg#merriweather-normal") format("svg"); }
 
 @font-face {
-  font-family: "source_sans-normal";
+  font-family: "merriweather-normal-italic";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-regular-webfont.svg#source_sans-normal") format("svg"); }
+  src: url("/assets/fonts/merriweather/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-italic-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-italic-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-italic-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-italic-webfont.svg#merriweather-normal-italic") format("svg"); }
 
 @font-face {
-  font-family: "source_sans-normal-italic";
-  font-style: italic;
-  font-weight: normal;
-  src: url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-italic-webfont.svg#source_sans-normal-italic") format("svg"); }
-
-@font-face {
-  font-family: "source_sans-bold";
+  font-family: "merriweather-bold";
   font-style: normal;
-  font-weight: bold;
-  src: url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.woff2") format("woff2"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.woff") format("woff"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.ttf") format("truetype"), url("/assets/fonts/source_sans/sourcesanspro-bold-webfont.svg#source_sans-bold") format("svg"); }
+  font-weight: normal;
+  src: url("/assets/fonts/merriweather/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-bold-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-bold-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-bold-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-bold-webfont.svg#merriweather-bold") format("svg"); }
 
-/* Font styles
-// -> PUBLIC, use these to style type globally & in modules
+/* Font mixins
 // -------------------------------------------------------------------------- */
 /* ----- Display type ------------------------------------------------------- */
 /* ----- Body type ---------------------------------------------------------- */
 /* ----- Ampersands --------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+.t-font-display {
+  font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  weight: normal; }
+
+.t-font-display-bold {
+  font-family: "newslab-bold", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  weight: bold; }
+
+.t-font-accent {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal; }
+
+.t-font-accent-bold {
+  font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: bold; }
+
+.t-font-body {
+  font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal; }
+
+.t-font-body-bold {
+  font-family: "merriweather-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: bold; }
+
+.t-font-body-italic {
+  font-family: "merriweather-normal-italic", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal;
+  style: italic; }
+
+/* use the best ampersands from common system fonts... */
 /* ==========================================================================
 //  Global color styles
 // -> base colors are set here on global elements, but modules apply their own
@@ -1213,12 +1239,13 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 /* Globals
 // -------------------------------------------------------------------------- */
 body {
-  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal;
   line-height: 1.4; }
 
 h1, h2, h3, h4, h5, h6,
 .t-heading {
-  font-family: "newslab-thin", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   weight: normal;
   line-height: 1.2;
   margin: 0; }
@@ -1252,11 +1279,12 @@ a {
 
 strong,
 .t-strong {
-  font-family: "source_sans-bold", "Trebuchet", "Verdana", "Geneva", sans-serif; }
+  font-family: "merriweather-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: bold; }
 
 em,
 .t-em {
-  font-family: "source_sans-normal-italic", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  font-family: "merriweather-normal-italic", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   weight: normal;
   style: italic; }
 
@@ -1341,7 +1369,6 @@ address,
 .t-right {
   text-align: right; }
 
-/* use the best ampersands from common system fonts... */
 /* =============================================================================
 //  Global list styles
 // ========================================================================== */
@@ -1386,12 +1413,14 @@ category: atoms
 // -------------------------------------------------------------------------- */
 .form,
 form {
-  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif; }
+  font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal; }
 
 .form-field, .form-textarea,
 textarea,
 input, textarea, select {
-  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
@@ -2008,6 +2037,8 @@ Documentation here
 /* Base
 // -------------------------------------------------------------------------- */
 .main_nav {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal;
   width: 160px;
   width: 10rem;
   display: block;
@@ -2034,7 +2065,8 @@ Documentation here
 .main_nav-item {
   font-size: 13px;
   font-size: 0.8125rem;
-  font-family: "source_sans-bold", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: bold;
   color: #332732;
   text-transform: uppercase; }
   .main_nav-item.c-theme-reverse, .c-theme-reverse .main_nav-item {
@@ -2049,7 +2081,8 @@ Documentation here
       color: #fff; }
 
 .main_nav-item--secondary {
-  font-family: "source_sans-normal", "Trebuchet", "Verdana", "Geneva", sans-serif;
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  weight: normal;
   color: #8C9AA7; }
   .main_nav-item--secondary.c-theme-reverse, .c-theme-reverse .main_nav-item--secondary {
     color: #ab8ca8; }

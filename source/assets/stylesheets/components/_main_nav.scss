@@ -21,6 +21,7 @@ $main_nav-w: 160px; // always scope to namespace
 // -------------------------------------------------------------------------- */
 
 .main_nav {
+    @include font-accent;
     @include rem(width, $main_nav-w);
     display: block;
     position: relative;
@@ -34,9 +35,7 @@ $main_nav-w: 160px; // always scope to namespace
         padding-left: 0;
     }
 
-    > li {
-        margin-bottom: 1em;
-    }
+    > li { margin-bottom: 1em; }
 }
 
 /* Subcomponents
@@ -54,7 +53,7 @@ $main_nav-w: 160px; // always scope to namespace
 
 .main_nav-item {
     @include type-scale('eta');
-    @include font-body('bold');
+    @include font-accent('bold');
     @include color('text' 'primary');
     text-transform: uppercase;
 
@@ -65,7 +64,7 @@ $main_nav-w: 160px; // always scope to namespace
 
     .main_nav-item--secondary {
         // @include type-scale('theta');
-        @include font-body;
+        @include font-accent;
         @include color('text' 'tertiary');
     }
 

@@ -102,8 +102,8 @@ $type-scale: (
  *
  */
 
-@include font-face("newslab-thin", "#{$asset-path-fonts}/newslab/NewslabThin-webfont", $file-formats: eot ttf woff2 woff svg);
-@include font-face("newslab", "#{$asset-path-fonts}/newslab/Newslab-webfont", bold, $file-formats: eot ttf woff2 woff svg);
+@include font-face("newslab-normal", "#{$asset-path-fonts}/newslab/NewslabThin-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("newslab-bold", "#{$asset-path-fonts}/newslab/Newslab-webfont", bold, $file-formats: eot ttf woff2 woff svg);
 
 /* ----- Gibson ------------------------------------------------------------- */
 // -> accent font
@@ -132,73 +132,52 @@ $type-scale: (
  *
  */
 
-@include font-face("gibson", "#{$asset-path-fonts}/gibson/Gibson-Light-webfont", $file-formats: eot ttf woff svg);
+@include font-face("gibson-normal", "#{$asset-path-fonts}/gibson/Gibson-Light-webfont", $file-formats: eot ttf woff svg);
 @include font-face("gibson-bold", "#{$asset-path-fonts}/gibson/Gibson-SemiBold-webfont", bold, $file-formats: eot ttf woff svg);
 
 /* ----- Source Sans Pro ---------------------------------------------------- */
 // -> body font
 // -> from Google fonts: https://www.google.com/fonts/specimen/Source+Sans+Pro
 
-@include font-face("source_sans-light", "#{$asset-path-fonts}/source_sans/sourcesanspro-light-webfont", $file-formats: eot ttf woff2 woff svg);
-@include font-face("source_sans-normal", "#{$asset-path-fonts}/source_sans/sourcesanspro-regular-webfont", $file-formats: eot ttf woff2 woff svg);
-@include font-face("source_sans-normal-italic", "#{$asset-path-fonts}/source_sans/sourcesanspro-italic-webfont", normal, italic, $file-formats: eot ttf woff2 woff svg);
-@include font-face("source_sans-bold", "#{$asset-path-fonts}/source_sans/sourcesanspro-bold-webfont", bold, $file-formats: eot ttf woff2 woff svg);
+// @include font-face("source_sans-light", "#{$asset-path-fonts}/source_sans/sourcesanspro-light-webfont", $file-formats: eot ttf woff2 woff svg);
+// @include font-face("source_sans-normal", "#{$asset-path-fonts}/source_sans/sourcesanspro-regular-webfont", $file-formats: eot ttf woff2 woff svg);
+// @include font-face("source_sans-normal-italic", "#{$asset-path-fonts}/source_sans/sourcesanspro-italic-webfont", normal, italic, $file-formats: eot ttf woff2 woff svg);
+// @include font-face("source_sans-bold", "#{$asset-path-fonts}/source_sans/sourcesanspro-bold-webfont", bold, $file-formats: eot ttf woff2 woff svg);
 
 
-/* Font styles
-// -> PUBLIC, use these to style type globally & in modules
+/* ----- Merriweather ------------------------------------------------------- */
+// -> body font
+// -> from Google fonts: https://www.google.com/fonts/specimen/Merriweather
+
+@include font-face("merriweather-normal", "#{$asset-path-fonts}/merriweather/merriweather-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("merriweather-normal-italic", "#{$asset-path-fonts}/merriweather/merriweather-italic-webfont", $file-formats: eot ttf woff2 woff svg);
+@include font-face("merriweather-bold", "#{$asset-path-fonts}/merriweather/merriweather-bold-webfont", $file-formats: eot ttf woff2 woff svg);
+
+
+/* Font mixins
 // -------------------------------------------------------------------------- */
+// -> PUBLIC, use these to style type globally & in modules
 
 /* ----- Display type ------------------------------------------------------- */
 
-@mixin font-display($weight: 'thin', $style: 'normal') {
-    // use this setup for a system font
-    // font-family: $helvetica;
-    // font-weight: #{$weight};
-    // font-style: #{$style};
-
-    // use this for a custom font
-    // -> font style and weight are set in the @font-face declaration above
-    @if ($weight == 'bold') {
-        font-family: "newslab", $helvetica;
-        weight: bold;
-    } @else {
-        font-family: "newslab-#{$weight}", $helvetica;
-        weight: normal;
-    }
+@mixin font-display($weight: 'normal', $style: 'normal') {
+    font-family: "newslab-#{$weight}", $helvetica;
+    weight: #{$weight};
 }
 
-@mixin font-accent($weight: 'normal', $style: 'normal') {
-    // use this setup for a system font
-    // font-family: $helvetica;
-    // font-weight: #{$weight};
-    // font-style: #{$style};
-
-    // use this for a custom font
-    // -> font style and weight are set in the @font-face declaration above
-    @if ($weight == 'bold') {
-        font-family: "gibson-bold", $helvetica;
-        weight: bold;
-    } @else {
-        font-family: "gibson", $helvetica;
-        weight: normal;
-    }
+@mixin font-accent($weight: 'normal') {
+    font-family: "gibson-#{$weight}", $georgia;
+    weight: #{$weight};
 }
 
 /* ----- Body type ---------------------------------------------------------- */
 
 @mixin font-body($weight: 'normal', $style: 'normal') {
-    // use this setup for a system font
-    // font-family: $helvetica;
-    // font-weight: #{$weight};
-    // font-style: #{$style};
-
-    // use this for a custom font
-    // -> font style and weight are set in the @font-face declaration above
     @if ($style == 'normal') {
-        font-family: "source_sans-#{$weight}", "Trebuchet", $verdana;
+        font-family: "merriweather-#{$weight}", $georgia;
+        weight: #{$weight};
     } @else {
-        font-family: "source_sans-#{$weight}-#{$style}", "Trebuchet", $verdana;
+        font-family: "merriweather-#{$weight}-#{$style}", $georgia;
         weight: #{$weight};
         style: #{$style};
     }
@@ -212,4 +191,25 @@ $type-scale: (
 //   font-family: "Baskerville", "Palatino", "Book Antiqua", serif;
 //   font-style: italic;
 //   font-weight: normal;
+// }
+
+/* Utilities
+// -------------------------------------------------------------------------- */
+// -> PUBLIC, use these to style type globally & in modules
+
+.t-font-display { @include font-display; }
+    .t-font-display-bold { @include font-display('bold'); }
+
+.t-font-accent { @include font-accent; }
+    .t-font-accent-bold { @include font-accent('bold'); }
+
+.t-font-body { @include font-body; }
+    .t-font-body-bold { @include font-body('bold'); }
+    .t-font-body-italic { @include font-body($style: 'italic'); }
+
+/* use the best ampersands from common system fonts... */
+// .t-amp {
+//     @include font-ampersand;
+//     font-size: $type-size-amp; /* relative to whatever type surrounds it -- it renders slightly bigger */
+//     color: inherit;
 // }
