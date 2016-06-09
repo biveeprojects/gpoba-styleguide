@@ -7,7 +7,16 @@ layout: layout
 }) %>
 
 <article>
-    <h1 class="t-heading t-scale-alpha">test</h1>
+    <h1 class="t-heading t-scale-alpha"><%= locals[:title] %></h1>
 
-    test test test
+    <% sitemap.resources.select {|r| r.data.chapter == locals[:title] }.sort_by {|r| r.data.weight }.each do |section| %>
+        <section class="panel" id="<%= section.data.title.urlize %>">
+            <div class="l-wrapper">
+                <h2 class="t-heading t-scale-beta"><%= section.data.title %></h2>
+                <div class="content">
+                    <%= section.render %>
+                </div>
+            </div>
+        </section>
+    <% end %>
 </article>
