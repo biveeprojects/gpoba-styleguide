@@ -19,25 +19,8 @@ config[:js_dir] = 'assets/dist/javascripts'
 ignore 'assets/stylesheets/*'
 ignore 'assets/javascripts/*'
 
+# explicitly set the markdown engine to Kramdown
 set :markdown_engine, :kramdown
-
-
-
-# Set up the blogging extensions
-# -> blog posts get no layout because we're rendering them as sections on chapter pages
-# activate :blog do |blog|
-#   blog.name = "chapters"
-#   blog.sources = "chapters/{chapter}/{title}.html"
-#   blog.permalink = "chapters/{chapter}/{title}.html"
-#   blog.layout = false
-
-#   blog.custom_collections = {
-#     chapter: {
-#         link: "chapters/{chapter}.html",
-#         template: "/chapter.html"
-#     }
-#   }
-# end
 
 ###
 # Helpers
