@@ -27,18 +27,22 @@
             <nav class="main_nav main_nav--fixed@small">
                 <ul>
                     <% get_chapters.each do |chapter| %>
-                        <% unless current_page?("/#{chapter.urlize}/") %>
-                        <li><%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-item" %></li>
-                        <% else %>
-                        <li>
-                            <%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-item is-active" %>
-                            <ul class="main_nav-subnav">
-                                <% sitemap.resources.select {|r| r.data.chapter == chapter }.sort_by {|r| r.data.weight }.each do |section| %>
-                                    <li><%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-item main_nav-item--secondary" %></li>
-                                <% end %>
-                            </ul>
+                        <%# add an 'active' class if this nav item is for the current page %>
+                        <% nav_class = current_page?("/#{chapter.urlize}/") ? "main_nav-item is-active" : "main_nav-item" %>
+                        <li class="<%= nav_class %>">
+                            <%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-link" %>
+
+                            <%# if this is the current page, show the sections too %>
+                            <% if current_page?("/#{chapter.urlize}/") %>
+                                <ul class="main_nav-subnav">
+                                    <% sitemap.resources.select {|r| r.data.chapter == chapter }.sort_by {|r| r.data.weight }.each do |section| %>
+                                        <li class="main_nav-item main_nav-item--secondary">
+                                            <%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary" %>
+                                        </li>
+                                    <% end %>
+                                </ul>
+                            <% end %>
                         </li>
-                        <% end %>
                     <% end %>
                 </ul>
             </nav>

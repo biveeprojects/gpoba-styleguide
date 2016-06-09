@@ -132,7 +132,7 @@ $type-scale: (
  *
  */
 
-@include font-face("gibson-normal", "#{$asset-path-fonts}/gibson/Gibson-Light-webfont", $file-formats: eot ttf woff svg);
+@include font-face("gibson-normal", "#{$asset-path-fonts}/gibson/Gibson-Regular-webfont", $file-formats: eot ttf woff svg);
 @include font-face("gibson-bold", "#{$asset-path-fonts}/gibson/Gibson-SemiBold-webfont", bold, $file-formats: eot ttf woff svg);
 
 /* ----- Source Sans Pro ---------------------------------------------------- */

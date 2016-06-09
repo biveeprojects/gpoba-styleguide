@@ -548,7 +548,7 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
   font-family: "gibson-normal";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/gibson/Gibson-Light-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Light-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Light-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Light-webfont.svg#gibson-normal") format("svg"); }
+  src: url("/assets/fonts/gibson/Gibson-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Regular-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Regular-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Regular-webfont.svg#gibson-normal") format("svg"); }
 
 @font-face {
   font-family: "gibson-bold";
@@ -2044,8 +2044,7 @@ Documentation here
   display: block;
   position: relative;
   list-style: none;
-  margin-left: 0;
-  padding-left: 39px; }
+  margin-left: 0; }
   .main_nav > ul {
     list-style: none;
     margin-left: 0;
@@ -2063,30 +2062,45 @@ Documentation here
     margin-bottom: 0.6em; }
 
 .main_nav-item {
+  display: block;
+  position: relative; }
+  .main_nav-item.is-active::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #5eabbc; }
+
+.main_nav-item--secondary.is-active::before {
+  background-color: #3c8291; }
+
+.main_nav-link {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
   font-size: 13px;
   font-size: 0.8125rem;
   font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   weight: bold;
-  color: #332732;
-  text-transform: uppercase; }
-  .main_nav-item.c-theme-reverse, .c-theme-reverse .main_nav-item {
-    color: #fff; }
-  .main_nav-item.c-theme-wash, .c-theme-wash .main_nav-item {
-    color: #fff; }
-  .main_nav-item.is-active {
+  margin-left: 39px;
+  text-transform: uppercase;
+  color: #332732; }
+  .main_nav-link:hover, .main_nav-link:active {
+    text-decoration: none;
     color: #5eabbc; }
-    .main_nav-item.is-active.c-theme-reverse, .c-theme-reverse .main_nav-item.is-active {
-      color: #5eabbc; }
-    .main_nav-item.is-active.c-theme-wash, .c-theme-wash .main_nav-item.is-active {
-      color: #fff; }
+  .main_nav-item.is-active > .main_nav-link {
+    color: #5eabbc; }
 
-.main_nav-item--secondary {
+.main_nav-link--secondary {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   weight: normal;
   color: #8C9AA7; }
-  .main_nav-item--secondary.c-theme-reverse, .c-theme-reverse .main_nav-item--secondary {
+  .main_nav-link--secondary.c-theme-reverse, .c-theme-reverse .main_nav-link--secondary {
     color: #ab8ca8; }
-  .main_nav-item--secondary.c-theme-wash, .c-theme-wash .main_nav-item--secondary {
+  .main_nav-link--secondary.c-theme-wash, .c-theme-wash .main_nav-link--secondary {
     color: #665664; }
 
 /* Modifiers

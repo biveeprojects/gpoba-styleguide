@@ -27,7 +27,6 @@ $main_nav-w: 160px; // always scope to namespace
     position: relative;
     list-style: none;
     margin-left: 0;
-    padding-left: $l-margin-wide;
 
     > ul {
         list-style: none;
@@ -41,6 +40,7 @@ $main_nav-w: 160px; // always scope to namespace
 /* Subcomponents
 // -------------------------------------------------------------------------- */
 
+// second-tier nav (for sections)
 .main_nav-subnav {
     margin: 0.5em 0 1.5em 0;
 
@@ -51,19 +51,47 @@ $main_nav-w: 160px; // always scope to namespace
     }
 }
 
+// nav items
 .main_nav-item {
-    @include type-scale('eta');
-    @include font-accent('bold');
-    @include color('text' 'primary');
-    text-transform: uppercase;
+    display: block;
+    position: relative;
 
-    &.is-active {
-        @include color('highlight');
+    &.is-active::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: border-w('thick');
+        background-color: theme('highlight');
     }
 }
 
-    .main_nav-item--secondary {
-        // @include type-scale('theta');
+    .main_nav-item--secondary.is-active::before {
+        background-color: darken(theme('highlight'), 15);
+    }
+
+// nav links
+// -> mainly styles type & color
+.main_nav-link {
+    @include transition-default;
+    @include type-scale('eta');
+    @include font-accent('bold');
+    margin-left: $l-margin-wide;
+    text-transform: uppercase;
+    color: theme('text' 'primary');
+
+    &:hover, &:active {
+        text-decoration: none;
+        color: theme('highlight');
+    }
+
+    .main_nav-item.is-active > & { color: theme('highlight'); }
+}
+
+    // secondary nav items in the subnav (see above)
+    .main_nav-link--secondary {
         @include font-accent;
         @include color('text' 'tertiary');
     }
