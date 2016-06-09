@@ -15,16 +15,18 @@ Documentation here
 
 @import "../core/all";
 
-$main_header-w: 250px; // always scope to namespace
+$main_nav-w: 160px; // always scope to namespace
 
 /* Base
 // -------------------------------------------------------------------------- */
 
 .main_nav {
+    @include rem(width, $main_nav-w);
     display: block;
+    position: relative;
     list-style: none;
     margin-left: 0;
-    padding-left: 0;
+    padding-left: $l-margin-wide;
 
     > ul {
         list-style: none;
@@ -71,13 +73,15 @@ $main_header-w: 250px; // always scope to namespace
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
-// .main_header--modifier {}
+@include breakpointify(".main_nav--fixed") {
+    position: fixed;
+}
+
+@include breakpointify(".has-main_nav-margin") {
+    @include rem(margin-left, ($main_nav-w + $l-margin-wide));
+    display: block;
+}
 
 
 /* State
 // -------------------------------------------------------------------------- */
-
-.has-main_header-margin {
-    display: block;
-    margin-left: $main-header-w;
-}

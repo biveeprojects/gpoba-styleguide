@@ -17,12 +17,14 @@
 
     <body>
         <!-- Main header -->
-        <header class="main_header c-well border-right">
+        <header class="l-padding l-padding-left-wide l-padding-right-wide c-theme-reverse">
             <!-- GPOBA logo -->
             <%= link_to "GPOBA", "/", :class => "logo" %>
+        </header>
 
-            <!-- Main navigation -->
-            <nav class="main_nav l-margin-top-wide">
+        <!-- Main navigation -->
+        <div class="dropdown kill-dropdown@small js-dropdown">
+            <nav class="main_nav main_nav--fixed@small">
                 <ul>
                     <% get_chapters.each do |chapter| %>
                         <% unless current_page?("/#{chapter.urlize}/") %>
@@ -40,9 +42,9 @@
                     <% end %>
                 </ul>
             </nav>
-        </header>
+        </div>
 
-        <div class="has-main_header-margin">
+        <div class="has-main_nav-margin@small">
             <%= yield %>
 
             <footer class="l-wrapper border-top">

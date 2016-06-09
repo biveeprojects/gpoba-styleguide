@@ -34,9 +34,13 @@ $z--admin  : 3; // put admin/drupal navs above all the things
 /* Utilities
 // -------------------------------------------------------------------------- */
 
-.l-display-inline { display: inline; }
-.l-display-inline_block { display: inline-block; }
-.l-display-block { display: block; }
+// .l-display-inline { display: inline; }
+// .l-display-inline_block { display: inline-block; }
+// .l-display-block { display: block; }
+
+// @include breakpointify(".l-fixed") {
+//     position: fixed !important;
+// }
 
 // center inline and inline-block elements
 .l-centered {
