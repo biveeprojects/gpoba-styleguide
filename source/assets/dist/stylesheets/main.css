@@ -2351,35 +2351,35 @@ Documentation here
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 37px; } }
+    top: 127px; } }
 
 @media (min-width: 42.01em) {
   .main_nav--fixed\@small {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 37px; } }
+    top: 127px; } }
 
 @media (min-width: 62.01em) {
   .main_nav--fixed\@medium {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 37px; } }
+    top: 127px; } }
 
 @media (min-width: 75.01em) {
   .main_nav--fixed\@large {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 37px; } }
+    top: 127px; } }
 
 @media (min-width: 100.01em) {
   .main_nav--fixed\@huge {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 37px; } }
+    top: 127px; } }
 
 @media (min-width: 30.01em) {
   .has-main_nav-margin\@xsmall {

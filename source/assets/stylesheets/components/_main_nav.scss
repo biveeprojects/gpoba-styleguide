@@ -104,7 +104,7 @@ $main_nav-w: 160px; // always scope to namespace
 @include breakpointify(".main_nav--fixed") {
     @include rem(width, $main_nav-w);
     position: fixed;
-    margin-top: $l-margin-wide;
+    top: ($l-margin-wide * 3) + $l-margin; // TODO fix this
 }
 
 // add a margin to a container to compensate for the sidebar nav
