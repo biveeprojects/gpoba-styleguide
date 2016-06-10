@@ -28,6 +28,13 @@ set :markdown_engine, :kramdown
 
 # Methods defined in the helpers block are available in templates
 helpers do
+    def get_colors
+        colors = []
+        data.colors.each do |color|
+            colors.push(color)
+        end
+        return colors
+    end
     # build an array of the chapters from blog article frontmatter
     def get_chapters
         chapters = []

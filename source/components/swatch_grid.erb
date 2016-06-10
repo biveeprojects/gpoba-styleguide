@@ -1,0 +1,30 @@
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# layout/grid.scss %>
+<%# components/swatch.scss %>
+<%# components/card.scss %>
+
+<%# --- Locals --- %>
+<%# swatches - REQUIRED %>
+<% grid_size ||= 'small' # size of the grid items %>
+
+<ul class="gallery gallery--<%= grid_size %>">
+    <% swatches.each do |swatch| %>
+    <li class="gallery-item card">
+        <div class="card-figure swatch" style="background-color: <%= swatch.hex %>;"></div>
+        <div class="card-content">
+            <h2 class="t-heading t-heading--slug t-scale-zeta c-text-tertiary"><%= swatch.name %></h2>
+            <dl>
+                <% if swatch.hex.present? %>
+                <dt>Hex</dt>
+                <dd><%= swatch.hex %></dd>
+                <% end %>
+                <% if swatch.rgb.present? %>
+                <dt>RGB</dt>
+                <dd><%= swatch.rgb %></dd>
+                <% end %>
+            </dl>
+        </div>
+    </li>
+    <% end %>
+</ul>

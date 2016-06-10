@@ -128,7 +128,6 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -304,8 +303,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -1325,7 +1322,6 @@ p {
 
 a {
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   color: #5eabbc;
   text-decoration: none; }
@@ -1489,7 +1485,6 @@ input, textarea, select {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: normal;
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   padding: 0.5em 1em;
   border-radius: 3px;
@@ -1707,7 +1702,9 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
   text-align: center; }
   .csstransforms .l-centered {
     left: 50%;
-    transform: translateX(-50%); }
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
 
 .l-centered-block {
   display: block;
@@ -1852,7 +1849,6 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -1877,9 +1873,7 @@ Sidebars
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
-      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
-      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -1893,9 +1887,7 @@ Sidebars
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
-      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
-      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -1913,9 +1905,7 @@ Sidebars
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@small .l-sidebar-main {
         -webkit-box-flex: 1;
-        -moz-box-flex: 1;
         box-flex: 1;
-        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -1923,7 +1913,9 @@ Sidebars
     @media (min-width: 42.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@small .l-sidebar-main {
         display: block;
-        flex: none;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
         width: auto; } }
 
 @media (min-width: 62.01em) {
@@ -1936,7 +1928,6 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -1961,9 +1952,7 @@ Sidebars
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
-      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
-      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -1977,9 +1966,7 @@ Sidebars
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
-      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
-      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -1997,9 +1984,7 @@ Sidebars
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar-main {
         -webkit-box-flex: 1;
-        -moz-box-flex: 1;
         box-flex: 1;
-        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -2007,7 +1992,9 @@ Sidebars
     @media (min-width: 62.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@medium .l-sidebar-main {
         display: block;
-        flex: none;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
         width: auto; } }
 
 @media (min-width: 75.01em) {
@@ -2020,7 +2007,6 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -2045,9 +2031,7 @@ Sidebars
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
-      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
-      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -2061,9 +2045,7 @@ Sidebars
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
-      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
-      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -2081,9 +2063,7 @@ Sidebars
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@large .l-sidebar-main {
         -webkit-box-flex: 1;
-        -moz-box-flex: 1;
         box-flex: 1;
-        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -2091,7 +2071,9 @@ Sidebars
     @media (min-width: 75.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@large .l-sidebar-main {
         display: block;
-        flex: none;
+        -webkit-box-flex: 0;
+            -ms-flex: none;
+                flex: none;
         width: auto; } }
 
 /* =============================================================================
@@ -2123,7 +2105,8 @@ Sidebars
      * https://www.drupal.org/node/897638
      */ }
     .is-visually_hidden.focusable:active, .is-visually_hidden.focusable:focus {
-      clip-path: auto;
+      -webkit-clip-path: auto;
+              clip-path: auto;
       height: auto;
       overflow: visible;
       position: static;
@@ -2228,7 +2211,6 @@ Documentation here
 
 .main_nav-link {
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2354,7 +2336,6 @@ Documentation here
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }

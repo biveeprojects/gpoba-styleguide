@@ -17,13 +17,17 @@
 
                     <%# if this is the current page, show the sections too %>
                     <% if current_page?("/#{chapter.urlize}/") %>
-                        <ul class="main_nav-subnav">
-                            <% sitemap.resources.select {|r| r.data.chapter == chapter }.sort_by {|r| r.data.weight }.each do |section| %>
-                                <li class="main_nav-item main_nav-item--secondary">
-                                    <%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary" %>
-                                </li>
-                            <% end %>
-                        </ul>
+                        <%# find all the sections matching this chapter name which are not 'intro' types %>
+                        <% sections = sitemap.resources.select {|r| r.data.chapter == chapter }.select {|r| r.data.type != 'intro' }.sort_by {|r| r.data.weight } %>
+                        <% if sections.length > 0 %>
+                            <ul class="main_nav-subnav">
+                                <% sections.each do |section| %>
+                                    <li class="main_nav-item main_nav-item--secondary">
+                                        <%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary" %>
+                                    </li>
+                                <% end %>
+                            </ul>
+                        <% end %>
                     <% end %>
                 </li>
             <% end %>

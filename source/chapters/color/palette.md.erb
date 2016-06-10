@@ -1,7 +1,20 @@
 ---
 title: "Palette"
 chapter: Color
+type: intro
 weight: 1
 ---
 
-<%= lorem.paragraphs rand(5...8) %>
+[A few sentences on why we're using these colors.]
+
+### Primary palette
+
+GPOBA's main color palette uses a range of neutral grays and dark purples with blue highlights.
+
+<%= partial "components/swatch_grid", :locals => { :swatches => data.color.primary } %>
+
+### Alternate highlights
+
+Blue is the 'default' highlight color, but these secondary highlights are available if you need a broader palette.
+
+<%= partial "components/swatch_grid", :locals => { :swatches => data.color.alternate } %>

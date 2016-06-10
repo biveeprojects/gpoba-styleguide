@@ -1,0 +1,42 @@
+primary:
+  - name: 'blue'
+    hex: '#5eabbc'
+    rgb: 94, 171, 188
+    cmyk: 62, 17, 23, 0
+  - name: 'off-white'
+    hex: '#F2F2F2'
+    rgb: 242, 242, 242
+  - name: 'light gray'
+    hex: '#C3CED9'
+    rgb: 195, 206 217
+    cmyk: 22, 13, 9, 0
+  - name: 'blue-gray'
+    hex: '#8C9AA7'
+    rgb: 140, 154, 167
+    cmyk: 47, 33, 27, 0
+  - name: 'dark purple'
+    hex:  '#665664'
+    rgb: 77, 56, 75
+    cmyk: 64, 76, 47, 40
+  - name: 'off-black'
+    hex: '#332732'
+    rgb: 51, 39, 50
+    cmyk: 67, 74, 55, 61
+
+alternate:
+  - name: 'red'
+    hex: '#f3385a'
+    rgb: 243, 56, 90
+    cmyk: 0, 92, 55, 0
+  - name: 'orange'
+    hex: '#f5a100'
+    rgb: 245, 161, 0
+    cmyk: 0, 42, 100, 0
+  - name: 'green'
+    hex: '#5dc0ba'
+    rgb: 93, 192, 186
+    cmyk: 60, 0, 30, 0
+  - name: 'purple'
+    hex: '#8D63B7'
+    rgb: 141, 99, 183
+    cmyk: 50, 70, 0, 0
