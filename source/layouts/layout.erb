@@ -19,7 +19,10 @@
         <!-- Main header -->
         <header class="l-padding l-padding-left-wide l-padding-right-wide t-font-accent c-theme-reverse">
             <!-- GPOBA logo -->
-            <%= link_to "GPOBA", "/", :class => "logo" %>
+            <% link_to "/", :class => "logo-main_lockup" do %>
+                <%= partial("layouts/partials/logo", :locals => { :classes => "logo logo--gpoba" }) %>
+                Styleguide
+            <% end %>
         </header>
 
         <!-- Main navigation -->

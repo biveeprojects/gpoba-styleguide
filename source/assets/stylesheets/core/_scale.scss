@@ -1,0 +1,63 @@
+/* =============================================================================
+//  Type & layout scale
+// ========================================================================== */
+
+/*doc
+---
+title: Scale
+name: scale
+category: Core
+---
+
+A single, modular scale is used for the entire site: not only type scaling but also spacing and relative proportions throughout the layout.
+
+*/
+
+// Config & mixins
+// -----------------------------------------------------------------------------
+
+// 1:1.618 "golden section" scale
+// -> http://www.modularscale.com/?16,13&px&1.618&web&text
+$scale-global: 1.618;
+
+// --- type scale & sizing -----------------------------------------------------
+
+// default type sizes
+$type-size--default: 16px;
+$type-size-amp: 1.1em; // size of ampersands relative to their context
+$type-line_height: 1.4;
+
+// set type to default body size using REMs
+// -> useful for resetting type size on a container to override parents
+@mixin type-size-default {
+  @include rem(type-size, $type-size--default);
+}
+
+// global type scale
+// -> we could compute this via the modular scale mixins,
+// -> but doing it by hand allows us to tweak certain sizes to suit the fonts we're using
+$type-scale: (
+    'alpha'   : 60px,
+    'beta'    : 37px,
+    'cappa'   : 26px,
+    'delta'   : 23px,
+    'epsilon' : 16px,
+    'zeta'    : 13px,
+    'eta'     : 10px,
+);
+
+@function type-scale($size) {
+    @return map-get($type-scale, $size);
+}
+
+@mixin type-scale($size) {
+    @include rem(font-size, type-scale($size));
+}
+
+// --- modular scale config ----------------------------------------------------
+// -> for layout and spacing
+
+$ms-base: 1;
+$ms-ratio: $scale-global;
+
+// @debug ms-list(1, 10, $ms-base, $ms-ratio);

@@ -453,6 +453,19 @@ The animation library sets global defaults for CSS transitions. Use it in your m
 
 */
 /* =============================================================================
+//  Type & layout scale
+// ========================================================================== */
+/*doc
+---
+title: Scale
+name: scale
+category: Core
+---
+
+A single, modular scale is used for the entire site: not only type scaling but also spacing and relative proportions throughout the layout.
+
+*/
+/* =============================================================================
 //  Type config & scale
 // ========================================================================== */
 /*doc
@@ -585,32 +598,32 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
 // -------------------------------------------------------------------------- */
 .font-display {
   font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  weight: normal; }
+  font-weight: normal; }
 
 .font-display-bold {
   font-family: "newslab-bold", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  weight: bold; }
+  font-weight: bold; }
 
 .font-accent {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal; }
+  font-weight: normal; }
 
 .font-accent-bold {
   font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: bold; }
+  font-weight: bold; }
 
 .font-body {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal; }
+  font-weight: normal; }
 
 .font-body-bold {
   font-family: "merriweather-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: bold; }
+  font-weight: bold; }
 
 .font-body-italic {
   font-family: "merriweather-normal-italic", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
-  style: italic; }
+  font-weight: normal;
+  font-style: italic; }
 
 /* use the best ampersands from common system fonts... */
 /* ==========================================================================
@@ -1240,15 +1253,16 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 // -------------------------------------------------------------------------- */
 body {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
+  font-weight: normal;
   line-height: 1.4; }
 
 h1, h2, h3, h4, h5, h6,
 .t-heading {
-  font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  weight: normal;
+  font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: bold;
+  margin: 0;
   line-height: 1.2;
-  margin: 0; }
+  letter-spacing: -0.02em; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
   .t-heading a {
     color: inherit; }
@@ -1257,6 +1271,11 @@ h1, h2, h3, h4, h5, h6,
     font-family: inherit;
     font-style: normal;
     font-weight: normal; }
+
+.t-heading--title {
+  font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: normal;
+  letter-spacing: -0.03em; }
 
 p {
   font-size: 16px;
@@ -1280,18 +1299,16 @@ a {
 strong,
 .t-strong {
   font-family: "merriweather-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: bold; }
+  font-weight: bold; }
 
 em,
 .t-em {
   font-family: "merriweather-normal-italic", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
-  style: italic; }
+  font-weight: normal;
+  font-style: italic; }
 
 small,
 .t-small {
-  font-size: 11px;
-  font-size: 0.6875rem;
   color: #8C9AA7; }
   small.c-theme-reverse, .c-theme-reverse small,
   .t-small.c-theme-reverse, .c-theme-reverse
@@ -1304,8 +1321,6 @@ small,
 
 figcaption,
 .t-caption {
-  font-size: 11px;
-  font-size: 0.6875rem;
   color: #4d384b; }
   figcaption.c-theme-reverse, .c-theme-reverse figcaption,
   .t-caption.c-theme-reverse, .c-theme-reverse
@@ -1318,8 +1333,8 @@ figcaption,
 
 address,
 .t-address {
-  font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 10px;
+  font-size: 0.625rem;
   color: #4d384b; }
   address.c-theme-reverse, .c-theme-reverse address,
   .t-address.c-theme-reverse, .c-theme-reverse
@@ -1332,25 +1347,37 @@ address,
 
 /* Utilities
 // -------------------------------------------------------------------------- */
-.t-scale-alpha { }
+.t-scale-alpha {
+  font-size: 60px;
+  font-size: 3.75rem; }
 
-.t-scale-beta { }
+.t-scale-beta {
+  font-size: 37px;
+  font-size: 2.3125rem; }
 
-.t-scale-cappa { }
+.t-scale-cappa {
+  font-size: 26px;
+  font-size: 1.625rem; }
 
-.t-scale-delta { }
+.t-scale-delta {
+  font-size: 23px;
+  font-size: 1.4375rem; }
 
-.t-scale-epsilon { }
+.t-scale-epsilon {
+  font-size: 16px;
+  font-size: 1rem; }
 
-.t-scale-zeta { }
+.t-scale-zeta {
+  font-size: 13px;
+  font-size: 0.8125rem; }
 
-.t-scale-eta { }
-
-.t-scale-theta { }
+.t-scale-eta {
+  font-size: 10px;
+  font-size: 0.625rem; }
 
 .t-lead {
-  font-size: 23px;
-  font-size: 1.4375rem;
+  font-size: 16px;
+  font-size: 1rem;
   color: #332732; }
   .t-lead.c-theme-reverse, .c-theme-reverse .t-lead {
     color: #fff; }
@@ -1375,8 +1402,8 @@ address,
 /* Globals
 // -------------------------------------------------------------------------- */
 li {
-  font-size: 13px;
-  font-size: 0.8125rem; }
+  font-size: 10px;
+  font-size: 0.625rem; }
   li strong {
     font-weight: bold; }
 
@@ -1414,13 +1441,13 @@ category: atoms
 .form,
 form {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal; }
+  font-weight: normal; }
 
 .form-field, .form-textarea,
 textarea,
 input, textarea, select {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
+  font-weight: normal;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   transition: all 0.25s;
@@ -1461,64 +1488,64 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 /* Margins
 // -------------------------------------------------------------------------- */
 .l-margin {
-  margin: 23px;
-  margin: 1.4375rem; }
+  margin: 16px;
+  margin: 1rem; }
 
 .l-margin-narrow {
-  margin: 13px !important;
-  margin: 0.8125rem !important; }
+  margin: 10px !important;
+  margin: 0.625rem !important; }
 
 .l-margin-wide {
-  margin: 39px !important;
-  margin: 2.4375rem !important; }
+  margin: 37px !important;
+  margin: 2.3125rem !important; }
 
 .l-margin-left {
-  margin-left: 23px !important;
-  margin-left: 1.4375rem !important; }
+  margin-left: 16px !important;
+  margin-left: 1rem !important; }
 
 .l-margin-left-narrow {
-  margin-left: 13px !important;
-  margin-left: 0.8125rem !important; }
+  margin-left: 10px !important;
+  margin-left: 0.625rem !important; }
 
 .l-margin-left-wide {
-  margin-left: 39px !important;
-  margin-left: 2.4375rem !important; }
+  margin-left: 37px !important;
+  margin-left: 2.3125rem !important; }
 
 .l-margin-right {
-  margin-right: 23px !important;
-  margin-right: 1.4375rem !important; }
+  margin-right: 16px !important;
+  margin-right: 1rem !important; }
 
 .l-margin-right-narrow {
-  margin-right: 13px !important;
-  margin-right: 0.8125rem !important; }
+  margin-right: 10px !important;
+  margin-right: 0.625rem !important; }
 
 .l-margin-right-wide {
-  margin-right: 39px !important;
-  margin-right: 2.4375rem !important; }
+  margin-right: 37px !important;
+  margin-right: 2.3125rem !important; }
 
 .l-margin-top {
-  margin-top: 23px !important;
-  margin-top: 1.4375rem !important; }
+  margin-top: 16px !important;
+  margin-top: 1rem !important; }
 
 .l-margin-top-narrow {
-  margin-top: 13px !important;
-  margin-top: 0.8125rem !important; }
+  margin-top: 10px !important;
+  margin-top: 0.625rem !important; }
 
 .l-margin-top-wide {
-  margin-top: 39px !important;
-  margin-top: 2.4375rem !important; }
+  margin-top: 37px !important;
+  margin-top: 2.3125rem !important; }
 
 .l-margin-bottom {
-  margin-bottom: 23px !important;
-  margin-bottom: 1.4375rem !important; }
+  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important; }
 
 .l-margin-bottom-narrow {
-  margin-bottom: 13px !important;
-  margin-bottom: 0.8125rem !important; }
+  margin-bottom: 10px !important;
+  margin-bottom: 0.625rem !important; }
 
 .l-margin-bottom-wide {
-  margin-bottom: 39px !important;
-  margin-bottom: 2.4375rem !important; }
+  margin-bottom: 37px !important;
+  margin-bottom: 2.3125rem !important; }
 
 .l-no-margin {
   margin: 0 !important;
@@ -1543,64 +1570,64 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 /* Padding
 // -------------------------------------------------------------------------- */
 .l-padding {
-  padding: 23px !important;
-  padding: 1.4375rem !important; }
+  padding: 16px !important;
+  padding: 1rem !important; }
 
 .l-padding-narrow {
-  padding: 13px !important;
-  padding: 0.8125rem !important; }
+  padding: 10px !important;
+  padding: 0.625rem !important; }
 
 .l-padding-wide {
-  padding: 39px !important;
-  padding: 2.4375rem !important; }
+  padding: 37px !important;
+  padding: 2.3125rem !important; }
 
 .l-padding-left {
-  padding-left: 23px !important;
-  padding-left: 1.4375rem !important; }
+  padding-left: 16px !important;
+  padding-left: 1rem !important; }
 
 .l-padding-left-narrow {
-  padding-left: 13px !important;
-  padding-left: 0.8125rem !important; }
+  padding-left: 10px !important;
+  padding-left: 0.625rem !important; }
 
 .l-padding-left-wide {
-  padding-left: 39px !important;
-  padding-left: 2.4375rem !important; }
+  padding-left: 37px !important;
+  padding-left: 2.3125rem !important; }
 
 .l-padding-right {
-  padding-right: 23px !important;
-  padding-right: 1.4375rem !important; }
+  padding-right: 16px !important;
+  padding-right: 1rem !important; }
 
 .l-padding-right-narrow {
-  padding-right: 13px !important;
-  padding-right: 0.8125rem !important; }
+  padding-right: 10px !important;
+  padding-right: 0.625rem !important; }
 
 .l-padding-right-wide {
-  padding-right: 39px !important;
-  padding-right: 2.4375rem !important; }
+  padding-right: 37px !important;
+  padding-right: 2.3125rem !important; }
 
 .l-padding-top {
-  padding-top: 23px !important;
-  padding-top: 1.4375rem !important; }
+  padding-top: 16px !important;
+  padding-top: 1rem !important; }
 
 .l-padding-top-narrow {
-  padding-top: 13px !important;
-  padding-top: 0.8125rem !important; }
+  padding-top: 10px !important;
+  padding-top: 0.625rem !important; }
 
 .l-padding-top-wide {
-  padding-top: 39px !important;
-  padding-top: 2.4375rem !important; }
+  padding-top: 37px !important;
+  padding-top: 2.3125rem !important; }
 
 .l-padding-bottom {
-  padding-bottom: 23px !important;
-  padding-bottom: 1.4375rem !important; }
+  padding-bottom: 16px !important;
+  padding-bottom: 1rem !important; }
 
 .l-padding-bottom-narrow {
-  padding-bottom: 13px !important;
-  padding-bottom: 0.8125rem !important; }
+  padding-bottom: 10px !important;
+  padding-bottom: 0.625rem !important; }
 
 .l-padding-bottom-wide {
-  padding-bottom: 39px !important;
-  padding-bottom: 2.4375rem !important; }
+  padding-bottom: 37px !important;
+  padding-bottom: 2.3125rem !important; }
 
 .l-no-padding {
   padding: 0 !important;
@@ -1701,20 +1728,20 @@ Wrappers
 /* Utilities
 // -------------------------------------------------------------------------- */
 .l-wrapper {
-  max-width: 678px;
+  max-width: 674px;
   display: block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 39px;
-  padding-right: 39px; }
+  padding-left: 37px;
+  padding-right: 37px; }
   .l-wrapper::after {
     clear: both;
     content: "";
     display: table; }
 
 .l-wrapper--wide {
-  max-width: 1102px; }
+  max-width: 1098px; }
 
 /* =============================================================================
 // Sidebar layout classes
@@ -1758,7 +1785,7 @@ Sidebars
       type-size: 16px;
       type-size: 1rem;
       display: inline-block;
-      width: 36.65689%; }
+      width: 19.09927%; }
       .flexbox .l-has-sidebar\@small .l-sidebar {
         display: block; } }
     @media (min-width: 42.01em) and (min-width: 75.01em) {
@@ -1776,12 +1803,12 @@ Sidebars
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
-      padding-right: 23px; } }
+      padding-right: 16px; } }
     @media (min-width: 42.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@small .l-sidebar--left {
         float: left;
-        margin-left: -36.65689%;
-        padding-right: 23px; } }
+        margin-left: -19.09927%;
+        padding-right: 16px; } }
 
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar--right {
@@ -1792,18 +1819,18 @@ Sidebars
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
-      padding-left: 23px; } }
+      padding-left: 16px; } }
     @media (min-width: 42.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@small .l-sidebar--right {
         float: right;
-        margin-right: -36.65689%;
-        padding-left: 23px; } }
+        margin-right: -19.09927%;
+        padding-left: 16px; } }
 
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar-main {
       type-size: 16px;
       type-size: 1rem;
-      width: 63.34311%; }
+      width: 80.90073%; }
       .flexbox .l-has-sidebar\@small .l-sidebar-main {
         -webkit-box-flex: 1;
         -moz-box-flex: 1;
@@ -1842,7 +1869,7 @@ Sidebars
       type-size: 16px;
       type-size: 1rem;
       display: inline-block;
-      width: 36.65689%; }
+      width: 19.09927%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar {
         display: block; } }
     @media (min-width: 62.01em) and (min-width: 75.01em) {
@@ -1860,12 +1887,12 @@ Sidebars
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
-      padding-right: 23px; } }
+      padding-right: 16px; } }
     @media (min-width: 62.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@medium .l-sidebar--left {
         float: left;
-        margin-left: -36.65689%;
-        padding-right: 23px; } }
+        margin-left: -19.09927%;
+        padding-right: 16px; } }
 
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar--right {
@@ -1876,18 +1903,18 @@ Sidebars
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
-      padding-left: 23px; } }
+      padding-left: 16px; } }
     @media (min-width: 62.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@medium .l-sidebar--right {
         float: right;
-        margin-right: -36.65689%;
-        padding-left: 23px; } }
+        margin-right: -19.09927%;
+        padding-left: 16px; } }
 
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar-main {
       type-size: 16px;
       type-size: 1rem;
-      width: 63.34311%; }
+      width: 80.90073%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar-main {
         -webkit-box-flex: 1;
         -moz-box-flex: 1;
@@ -1926,7 +1953,7 @@ Sidebars
       type-size: 16px;
       type-size: 1rem;
       display: inline-block;
-      width: 36.65689%; }
+      width: 19.09927%; }
       .flexbox .l-has-sidebar\@large .l-sidebar {
         display: block; } }
     @media (min-width: 75.01em) and (min-width: 75.01em) {
@@ -1944,12 +1971,12 @@ Sidebars
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
-      padding-right: 23px; } }
+      padding-right: 16px; } }
     @media (min-width: 75.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@large .l-sidebar--left {
         float: left;
-        margin-left: -36.65689%;
-        padding-right: 23px; } }
+        margin-left: -19.09927%;
+        padding-right: 16px; } }
 
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar--right {
@@ -1960,18 +1987,18 @@ Sidebars
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
-      padding-left: 23px; } }
+      padding-left: 16px; } }
     @media (min-width: 75.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@large .l-sidebar--right {
         float: right;
-        margin-right: -36.65689%;
-        padding-left: 23px; } }
+        margin-right: -19.09927%;
+        padding-left: 16px; } }
 
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar-main {
       type-size: 16px;
       type-size: 1rem;
-      width: 63.34311%; }
+      width: 80.90073%; }
       .flexbox .l-has-sidebar\@large .l-sidebar-main {
         -webkit-box-flex: 1;
         -moz-box-flex: 1;
@@ -2030,6 +2057,40 @@ Sidebars
 // -> reusable, composable, self-contained interface elements
 ///////////////////////////////////////////////////////////////////////////// */
 /* --- Atoms ---------------------------------------------------------------- */
+/* ==========================================================================
+//  Logo modules
+// ========================================================================== */
+/* Main logo
+// -------------------------------------------------------------------------- */
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%; }
+
+.logo--gpoba {
+  height: 26px;
+  width: 96px; }
+
+.logo-main_lockup {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal;
+  color: #332732;
+  text-transform: uppercase; }
+  .logo-main_lockup.c-theme-reverse, .c-theme-reverse .logo-main_lockup {
+    color: #fff; }
+  .logo-main_lockup.c-theme-wash, .c-theme-wash .logo-main_lockup {
+    color: #fff; }
+  .logo-main_lockup:hover, .logo-main_lockup:active {
+    color: #332732;
+    text-decoration: none; }
+    .logo-main_lockup:hover.c-theme-reverse, .c-theme-reverse .logo-main_lockup:hover, .logo-main_lockup:active.c-theme-reverse, .c-theme-reverse .logo-main_lockup:active {
+      color: #fff; }
+    .logo-main_lockup:hover.c-theme-wash, .c-theme-wash .logo-main_lockup:hover, .logo-main_lockup:active.c-theme-wash, .c-theme-wash .logo-main_lockup:active {
+      color: #fff; }
+  .logo-main_lockup > .logo {
+    margin-right: 0.5em;
+    margin-top: -0.3em; }
+
 /* --- Molecules ------------------------------------------------------------ */
 /* =============================================================================
 //  Main header
@@ -2048,7 +2109,7 @@ Documentation here
 // -------------------------------------------------------------------------- */
 .main_nav {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
+  font-weight: normal;
   display: block;
   position: relative;
   list-style: none;
@@ -2092,8 +2153,9 @@ Documentation here
   font-size: 13px;
   font-size: 0.8125rem;
   font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: bold;
-  margin-left: 39px;
+  font-weight: bold;
+  display: block;
+  margin-left: 37px;
   text-transform: uppercase;
   color: #332732; }
   .main_nav-link:hover, .main_nav-link:active {
@@ -2104,7 +2166,7 @@ Documentation here
 
 .main_nav-link--secondary {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
-  weight: normal;
+  font-weight: normal;
   color: #8C9AA7; }
   .main_nav-link--secondary.c-theme-reverse, .c-theme-reverse .main_nav-link--secondary {
     color: #ab8ca8; }
@@ -2118,64 +2180,64 @@ Documentation here
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 39px; } }
+    margin-top: 37px; } }
 
 @media (min-width: 42.01em) {
   .main_nav--fixed\@small {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 39px; } }
+    margin-top: 37px; } }
 
 @media (min-width: 62.01em) {
   .main_nav--fixed\@medium {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 39px; } }
+    margin-top: 37px; } }
 
 @media (min-width: 75.01em) {
   .main_nav--fixed\@large {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 39px; } }
+    margin-top: 37px; } }
 
 @media (min-width: 100.01em) {
   .main_nav--fixed\@huge {
     width: 160px;
     width: 10rem;
     position: fixed;
-    margin-top: 39px; } }
+    margin-top: 37px; } }
 
 @media (min-width: 30.01em) {
   .has-main_nav-margin\@xsmall {
-    margin-left: 199px;
-    margin-left: 12.4375rem;
+    margin-left: 197px;
+    margin-left: 12.3125rem;
     display: block; } }
 
 @media (min-width: 42.01em) {
   .has-main_nav-margin\@small {
-    margin-left: 199px;
-    margin-left: 12.4375rem;
+    margin-left: 197px;
+    margin-left: 12.3125rem;
     display: block; } }
 
 @media (min-width: 62.01em) {
   .has-main_nav-margin\@medium {
-    margin-left: 199px;
-    margin-left: 12.4375rem;
+    margin-left: 197px;
+    margin-left: 12.3125rem;
     display: block; } }
 
 @media (min-width: 75.01em) {
   .has-main_nav-margin\@large {
-    margin-left: 199px;
-    margin-left: 12.4375rem;
+    margin-left: 197px;
+    margin-left: 12.3125rem;
     display: block; } }
 
 @media (min-width: 100.01em) {
   .has-main_nav-margin\@huge {
-    margin-left: 199px;
-    margin-left: 12.4375rem;
+    margin-left: 197px;
+    margin-left: 12.3125rem;
     display: block; } }
 
 @media (min-width: 62.01em) {

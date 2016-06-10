@@ -5,5 +5,28 @@
 /* Main logo
 // -------------------------------------------------------------------------- */
 .logo {
-	display: block;
+	display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.logo--gpoba {
+    height: 26px;
+    width: 96px;
+}
+
+.logo-main_lockup {
+    @include font-accent;
+    @include color('text' 'primary');
+    text-transform: uppercase;
+
+    &:hover, &:active {
+        @include color('text' 'primary');
+        text-decoration: none;
+    }
+
+    > .logo {
+        margin-right: 0.5em;
+        margin-top: -0.3em;
+    }
 }

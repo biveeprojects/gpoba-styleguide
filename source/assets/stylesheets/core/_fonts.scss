@@ -34,43 +34,6 @@ Please DO NOT use your own font-family attributes in any circumstance. Always us
 @import "paths";
 
 
-// Config & mixins
-// -----------------------------------------------------------------------------
-
-// default type sizes
-$type-size--default: 16px;
-$type-size-amp: 1.1em; // size of ampersands relative to their context
-$type-line_height: 1.4;
-
-// set type to default body size using REMs
-// -> useful for resetting type size on a container to override parents
-@mixin type-size-default {
-  @include rem(type-size, $type-size--default);
-}
-
-// global type scale
-// -> 1:1.2 scale
-// -> http://www.modularscale.com/?16&&1.2&sass&text
-$type-scale: (
-    'alpha'   : 48px,
-    'beta'    : 39px,
-    'cappa'   : 33px,
-    'delta'   : 28px,
-    'epsilon' : 23px,
-    'zeta'    : 16px,
-    'eta'     : 13px,
-    'theta'   : 11px
-);
-
-@function type-scale($size) {
-    @return map-get($type-scale, $size);
-}
-
-@mixin type-scale($size) {
-    @include rem(font-size, type-scale($size));
-}
-
-
 /* Fonts
 // -------------------------------------------------------------------------- */
 // -> font-face mixins use Bourbon
@@ -162,12 +125,12 @@ $type-scale: (
 
 @mixin font-display($weight: 'normal', $style: 'normal') {
     font-family: "newslab-#{$weight}", $helvetica;
-    weight: #{$weight};
+    font-weight: #{$weight};
 }
 
 @mixin font-accent($weight: 'normal') {
     font-family: "gibson-#{$weight}", $georgia;
-    weight: #{$weight};
+    font-weight: #{$weight};
 }
 
 /* ----- Body type ---------------------------------------------------------- */
@@ -175,11 +138,11 @@ $type-scale: (
 @mixin font-body($weight: 'normal', $style: 'normal') {
     @if ($style == 'normal') {
         font-family: "merriweather-#{$weight}", $georgia;
-        weight: #{$weight};
+        font-weight: #{$weight};
     } @else {
         font-family: "merriweather-#{$weight}-#{$style}", $georgia;
-        weight: #{$weight};
-        style: #{$style};
+        font-weight: #{$weight};
+        font-style: #{$style};
     }
 }
 

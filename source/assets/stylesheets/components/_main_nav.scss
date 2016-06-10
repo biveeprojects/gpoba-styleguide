@@ -75,8 +75,9 @@ $main_nav-w: 160px; // always scope to namespace
 // -> mainly styles type & color
 .main_nav-link {
     @include transition-default;
-    @include type-scale('eta');
+    @include type-scale('zeta');
     @include font-accent('bold');
+    display: block;
     margin-left: $l-margin-wide;
     text-transform: uppercase;
     color: theme('text' 'primary');

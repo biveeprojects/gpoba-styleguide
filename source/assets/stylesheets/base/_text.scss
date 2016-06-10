@@ -18,6 +18,7 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 
 @import "../core/libs";
 @import "../core/fonts";
+@import "../core/scale";
 
 /* Globals
 // -------------------------------------------------------------------------- */
@@ -30,9 +31,10 @@ body {
 // headings
 h1, h2, h3, h4, h5, h6,
 .t-heading {
-    @include font-display;
-    line-height: 1.2;
+    @include font-accent('bold');
     margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 
     a { color: inherit; }
 
@@ -43,9 +45,15 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
+// a "title" heading using the display font
+.t-heading--title {
+    @include font-display;
+    letter-spacing: -0.03em;
+}
+
 // body/inline text
 p {
-    @include type-scale('zeta');
+    @include type-scale('epsilon');
     @include color('text' 'secondary');
 }
 
@@ -85,7 +93,8 @@ address,
 
 // type scale helpers
 @each $name, $size in $type-scale {
-    .t-scale-#{$name} { @include type-scale($size); }
+    // @debug $name, $size
+    .t-scale-#{$name} { @include type-scale($name); }
 }
 
 // the first paragraph, often set slightly bigger
