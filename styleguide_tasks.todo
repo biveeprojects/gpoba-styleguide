@@ -5,9 +5,10 @@ Front-end dev/theming: @jay
       @scott: might need some help on logic for all this. not if best to use blogging extension, etc.
   ✔ fonts @done (16-06-07 16:44)
   ✔ color theme @done (16-06-07 17:32)
-  ☐ header/nav layout
+  ✔ header/nav layout @done (16-06-09 21:34)
+  ☐ logos
   ☐ footer
-  ☐ sections/panels/chapter layout
+  ✔ sections/panels/chapter layout @done (16-06-09 21:34)
   ☐ partials for special stuff like figures, examples, etc
   ☐ mobile nav
 
