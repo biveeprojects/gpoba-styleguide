@@ -1,8 +1,14 @@
-<% filename ||= "logos/gpoba" %>
-<% classes ||= "logo" %>
-<% alt ||= "GPOBA" %>
+<%# Logo component: use picture element to place SVG and PNG fallback %>
+
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# components/logo.scss %>
+
+<%# --- Locals --- %>
+<% filename ||= "logos/gpoba" # filename (sans extension) of the logo %>
+<% classes ||= "logo" # classes on the container %>
+<% alt ||= "GPOBA" # alt tag content %>
 <% link ||= false %>
-<% target ||= '' %>
 
 <picture class="<%= classes %>">
     <!--[if IE 9]><video style="display: none;"><![endif]-->

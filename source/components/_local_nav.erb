@@ -1,6 +1,14 @@
-<% page_path ||= "/" %>
-<% next_page ||= false %>
-<% prev_page ||= false %>
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# base/text.scss %>
+<%# layout/spacing.scss %>
+<%# layout/positioning.scss %>
+<%# components/local_nav.scss %>
+
+<%# --- Locals --- %>
+<% page_path ||= "/" # path of the chapter pages %>
+<% next_page ||= false # title (in data.chapters) of next page %>
+<% prev_page ||= false # title (in data.chapters) of prev page %>
 
 <!-- local nav (next and previous pages) -->
 <nav class="local_nav l-margin-top-wide l-wrapper l-wrapper--wide">

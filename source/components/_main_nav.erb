@@ -1,4 +1,9 @@
-<% breakpoint ||= 'small' %>
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# components/main_nav.scss %>
+
+<%# --- Locals --- %>
+<% breakpoint ||= 'small' # breakpoint where the nav turns into a flyout %>
 
 <!-- Main navigation -->
 <div class="dropdown kill-dropdown@<%= breakpoint %> js-dropdown">
