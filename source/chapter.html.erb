@@ -7,14 +7,20 @@ layout: layout
 }) %>
 
 <article class="l-margin-top-wide">
-    <h1 class="l-wrapper l-margin-bottom-wide t-heading t-heading--title t-scale-alpha c-highlight"><%= locals[:title] %></h1>
+    <h1 class="l-wrapper t-heading t-heading--title t-scale-alpha c-highlight"><%= locals[:title] %></h1>
 
     <% sitemap.resources.select {|r| r.data.chapter == locals[:title] }.sort_by {|r| r.data.weight }.each do |section| %>
-        <section class="l-wrapper l-margin-top-wide" id="<%= section.data.title.urlize %>">
-            <h2 class="t-heading t-scale-beta border-top l-padding-top"><%= section.data.title %></h2>
-            <div class="content">
+        <% if section.data.type == "intro" %>
+            <div class="l-wrapper content">
                 <%= section.render %>
             </div>
-        </section>
+        <% else %>
+            <section class="l-wrapper l-margin-top-wide" id="<%= section.data.title.urlize %>">
+                <h2 class="t-heading t-scale-beta border-top l-padding-top"><%= section.data.title %></h2>
+                <div class="content">
+                    <%= section.render %>
+                </div>
+            </section>
+        <% end %>
     <% end %>
 </article>

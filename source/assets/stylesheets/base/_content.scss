@@ -21,4 +21,12 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
     //     @include border('top');
     //     @include rem(padding-top, $l-margin);
     // }
+
+
 }
+
+// .content--dropcap {
+//     p:first-child, p:first-of-type {
+//         &:first-line { @include type-scale('delta'); }
+//     }
+// }

@@ -1223,12 +1223,15 @@ There are also utility classes that allow you to quickly add a border to a conta
 html {
   font-size: 95%;
   box-sizing: border-box; }
-  @media (min-width: 42.01em) {
+  @media (min-width: 30.01em) {
     html {
       font-size: 100%; } }
-  @media (min-width: 62.01em) {
+  @media (min-width: 42.01em) {
     html {
       font-size: 110%; } }
+  @media (min-width: 62.01em) {
+    html {
+      font-size: 120%; } }
 
 *, *:before, *:after {
   box-sizing: inherit; }

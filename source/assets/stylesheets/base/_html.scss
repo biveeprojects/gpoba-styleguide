@@ -10,12 +10,16 @@ html {
     // and we only have to change one thing
     font-size: 95%;
 
-    @include media(">small") {
+    @include media(">xsmall") {
         font-size: 100%;
     }
 
-    @include media(">medium") {
+    @include media(">small") {
         font-size: 110%;
+    }
+
+    @include media(">medium") {
+        font-size: 120%;
     }
 
     // set everything to roll with border-box sizing
