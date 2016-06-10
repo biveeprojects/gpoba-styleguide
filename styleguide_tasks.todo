@@ -8,10 +8,10 @@ Front-end dev/theming: @jay
   ✔ header/nav layout @done (16-06-09 21:34)
   ✔ logos @done (16-06-09 22:37)
   ✔ footer @done (16-06-10 09:50)
-  ☐ local nav
+  ✔ local nav @done (16-06-10 14:13)
   ✔ sections/panels/chapter layout @done (16-06-09 21:34)
   ☐ partials for special stuff like figures, examples, etc
-  ☐ landing page
+  ✔ landing page @done (16-06-10 14:19)
   ✔ "intro" section for each chapter? @done (16-06-09 23:01)
   ☐ JS for scrolling highlights, sticky nav
   ☐ mobile nav

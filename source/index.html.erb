@@ -2,10 +2,14 @@
 title: home
 ---
 
-<main class="l-wrapper">
-    <h1>GPOBA Style & Tone Guide</h1>
+<main class="l-wrapper l-margin-top-wide">
+    <h1 class="t-heading t-heading--title t-scale-alpha c-highlight">Style &amp; Tone Guide</h1>
 
     <% 3.times do %>
         <p><%= lorem.sentences rand(6...8) %></p>
     <% end %>
 </main>
+
+<%= partial "components/local_nav", :locals => {
+    :next_page => data.chapters[0]
+} %>
