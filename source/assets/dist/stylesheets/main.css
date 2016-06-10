@@ -128,6 +128,7 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -303,6 +304,8 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -1419,6 +1422,7 @@ input, textarea, select {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   weight: normal;
   -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
   transition: all 0.25s;
   padding: 0.5em 1em;
   border-radius: 3px;
@@ -1442,10 +1446,14 @@ input, textarea, select {
 textarea {
   resize: vertical; }
 
-/* /////////////////////////////////////////////////////////////////////////////
-// Layout styles
-// -> global utility classes for basic layout
-///////////////////////////////////////////////////////////////////////////// */
+/* =============================================================================
+//  Global content styles
+// ========================================================================== */
+/*doc
+
+Chapter content -- templated from markdown files -- is wrapped in a "content" container and given special styling, since it's not reachable via component or layout classes.
+
+*/
 /* =============================================================================
 // Global spacing
 // -> used to keep whitespace in the layout consistent
@@ -1614,6 +1622,12 @@ textarea {
   padding-bottom: 0 !important;
   padding-bottom: 0 !important; }
 
+/* Globals
+// -------------------------------------------------------------------------- */
+/* /////////////////////////////////////////////////////////////////////////////
+// Layout styles
+// -> global utility classes for basic layout
+///////////////////////////////////////////////////////////////////////////// */
 /* =============================================================================
 // Global positioning utilities
 // -> place an element relative to its parent
@@ -1626,9 +1640,7 @@ textarea {
   text-align: center; }
   .csstransforms .l-centered {
     left: 50%;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
+    transform: translateX(-50%); }
 
 .l-centered-block {
   display: block;
@@ -1733,6 +1745,7 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
+      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -1757,7 +1770,9 @@ Sidebars
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
+      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
+      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -1771,7 +1786,9 @@ Sidebars
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
+      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
+      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -1789,7 +1806,9 @@ Sidebars
       width: 63.34311%; }
       .flexbox .l-has-sidebar\@small .l-sidebar-main {
         -webkit-box-flex: 1;
+        -moz-box-flex: 1;
         box-flex: 1;
+        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -1797,9 +1816,7 @@ Sidebars
     @media (min-width: 42.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@small .l-sidebar-main {
         display: block;
-        -webkit-box-flex: 0;
-            -ms-flex: none;
-                flex: none;
+        flex: none;
         width: auto; } }
 
 @media (min-width: 62.01em) {
@@ -1812,6 +1829,7 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
+      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -1836,7 +1854,9 @@ Sidebars
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
+      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
+      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -1850,7 +1870,9 @@ Sidebars
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
+      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
+      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -1868,7 +1890,9 @@ Sidebars
       width: 63.34311%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar-main {
         -webkit-box-flex: 1;
+        -moz-box-flex: 1;
         box-flex: 1;
+        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -1876,9 +1900,7 @@ Sidebars
     @media (min-width: 62.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@medium .l-sidebar-main {
         display: block;
-        -webkit-box-flex: 0;
-            -ms-flex: none;
-                flex: none;
+        flex: none;
         width: auto; } }
 
 @media (min-width: 75.01em) {
@@ -1891,6 +1913,7 @@ Sidebars
       display: -webkit-box;
       display: -moz-box;
       display: box;
+      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }
@@ -1915,7 +1938,9 @@ Sidebars
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar--left {
       -webkit-box-ordinal-group: -1;
+      -moz-box-ordinal-group: -1;
       box-ordinal-group: -1;
+      -webkit-order: -1;
       -moz-order: -1;
       order: -1;
       -ms-flex-order: -1;
@@ -1929,7 +1954,9 @@ Sidebars
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar--right {
       -webkit-box-ordinal-group: 1;
+      -moz-box-ordinal-group: 1;
       box-ordinal-group: 1;
+      -webkit-order: 1;
       -moz-order: 1;
       order: 1;
       -ms-flex-order: 1;
@@ -1947,7 +1974,9 @@ Sidebars
       width: 63.34311%; }
       .flexbox .l-has-sidebar\@large .l-sidebar-main {
         -webkit-box-flex: 1;
+        -moz-box-flex: 1;
         box-flex: 1;
+        -webkit-flex: 1;
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -1955,9 +1984,7 @@ Sidebars
     @media (min-width: 75.01em) and (min-width: 75.01em) {
       .l-has-sidebar\@large .l-sidebar-main {
         display: block;
-        -webkit-box-flex: 0;
-            -ms-flex: none;
-                flex: none;
+        flex: none;
         width: auto; } }
 
 /* =============================================================================
@@ -1989,8 +2016,7 @@ Sidebars
      * https://www.drupal.org/node/897638
      */ }
     .is-visually_hidden.focusable:active, .is-visually_hidden.focusable:focus {
-      -webkit-clip-path: auto;
-              clip-path: auto;
+      clip-path: auto;
       height: auto;
       overflow: visible;
       position: static;
@@ -2037,7 +2063,7 @@ Documentation here
 /* Subcomponents
 // -------------------------------------------------------------------------- */
 .main_nav-subnav {
-  margin: 0.5em 0 1.5em 0; }
+  margin: 0.5em 0 1em 0; }
   .main_nav-subnav > ul, .main_nav-subnav > li {
     list-style: none;
     padding-left: 0;
@@ -2061,6 +2087,7 @@ Documentation here
 
 .main_nav-link {
   -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
   transition: all 0.25s;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2090,31 +2117,36 @@ Documentation here
   .main_nav--fixed\@xsmall {
     width: 160px;
     width: 10rem;
-    position: fixed; } }
+    position: fixed;
+    margin-top: 39px; } }
 
 @media (min-width: 42.01em) {
   .main_nav--fixed\@small {
     width: 160px;
     width: 10rem;
-    position: fixed; } }
+    position: fixed;
+    margin-top: 39px; } }
 
 @media (min-width: 62.01em) {
   .main_nav--fixed\@medium {
     width: 160px;
     width: 10rem;
-    position: fixed; } }
+    position: fixed;
+    margin-top: 39px; } }
 
 @media (min-width: 75.01em) {
   .main_nav--fixed\@large {
     width: 160px;
     width: 10rem;
-    position: fixed; } }
+    position: fixed;
+    margin-top: 39px; } }
 
 @media (min-width: 100.01em) {
   .main_nav--fixed\@huge {
     width: 160px;
     width: 10rem;
-    position: fixed; } }
+    position: fixed;
+    margin-top: 39px; } }
 
 @media (min-width: 30.01em) {
   .has-main_nav-margin\@xsmall {
@@ -2145,6 +2177,14 @@ Documentation here
     margin-left: 199px;
     margin-left: 12.4375rem;
     display: block; } }
+
+@media (min-width: 62.01em) {
+  .kill-main_nav-margin\@medium {
+    margin-left: 0; } }
+
+@media (min-width: 75.01em) {
+  .kill-main_nav-margin\@large {
+    margin-left: 0; } }
 
 /* State
 // -------------------------------------------------------------------------- */

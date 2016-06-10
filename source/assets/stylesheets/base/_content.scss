@@ -1,0 +1,24 @@
+/* =============================================================================
+//  Global content styles
+// ========================================================================== */
+
+/*doc
+
+Chapter content -- templated from markdown files -- is wrapped in a "content" container and given special styling, since it's not reachable via component or layout classes.
+
+*/
+
+@import "../core/all";
+@import "../layout/spacing";
+
+/* Globals
+// -------------------------------------------------------------------------- */
+
+.content {
+
+    // headings
+    // h1, h2, h3, h4, h5, h6 {
+    //     @include border('top');
+    //     @include rem(padding-top, $l-margin);
+    // }
+}

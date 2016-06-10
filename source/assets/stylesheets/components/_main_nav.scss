@@ -41,7 +41,7 @@ $main_nav-w: 160px; // always scope to namespace
 
 // second-tier nav (for sections)
 .main_nav-subnav {
-    margin: 0.5em 0 1.5em 0;
+    margin: 0.5em 0 1em 0;
 
     > ul, > li {
         list-style: none;
@@ -99,14 +99,22 @@ $main_nav-w: 160px; // always scope to namespace
 /* Modifiers
 // -------------------------------------------------------------------------- */
 
+// make the nav fixed-position and use as a sidebar
 @include breakpointify(".main_nav--fixed") {
     @include rem(width, $main_nav-w);
     position: fixed;
+    margin-top: $l-margin-wide;
 }
 
+// add a margin to a container to compensate for the sidebar nav
+// -> use with .main_nav--fixed modifier above
 @include breakpointify(".has-main_nav-margin") {
     @include rem(margin-left, ($main_nav-w + $l-margin-wide));
     display: block;
+}
+
+@include breakpointify(".kill-main_nav-margin", $sizes: 'medium' 'large') {
+    margin-left: 0;
 }
 
 
