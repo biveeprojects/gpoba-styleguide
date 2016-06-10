@@ -197,18 +197,18 @@ $type-scale: (
 // -------------------------------------------------------------------------- */
 // -> PUBLIC, use these to style type globally & in modules
 
-.t-font-display { @include font-display; }
-    .t-font-display-bold { @include font-display('bold'); }
+.font-display { @include font-display; }
+    .font-display-bold { @include font-display('bold'); }
 
-.t-font-accent { @include font-accent; }
-    .t-font-accent-bold { @include font-accent('bold'); }
+.font-accent { @include font-accent; }
+    .font-accent-bold { @include font-accent('bold'); }
 
-.t-font-body { @include font-body; }
-    .t-font-body-bold { @include font-body('bold'); }
-    .t-font-body-italic { @include font-body($style: 'italic'); }
+.font-body { @include font-body; }
+    .font-body-bold { @include font-body('bold'); }
+    .font-body-italic { @include font-body($style: 'italic'); }
 
 /* use the best ampersands from common system fonts... */
-// .t-amp {
+// .font-amp {
 //     @include font-ampersand;
 //     font-size: $type-size-amp; /* relative to whatever type surrounds it -- it renders slightly bigger */
 //     color: inherit;

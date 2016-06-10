@@ -22,7 +22,6 @@ $main_nav-w: 160px; // always scope to namespace
 
 .main_nav {
     @include font-accent;
-    @include rem(width, $main_nav-w);
     display: block;
     position: relative;
     list-style: none;
@@ -101,6 +100,7 @@ $main_nav-w: 160px; // always scope to namespace
 // -------------------------------------------------------------------------- */
 
 @include breakpointify(".main_nav--fixed") {
+    @include rem(width, $main_nav-w);
     position: fixed;
 }
 
