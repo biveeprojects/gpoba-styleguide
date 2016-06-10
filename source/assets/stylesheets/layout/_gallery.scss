@@ -60,11 +60,7 @@ There are three size variations: small, medium, and large. Medium is default, so
 
 $gallery-gutter: $grid-gutter;
 
-$gallery-sizes: (
-    'small': 4,
-    'medium': 3,
-    'large': 2
-);
+$gallery-sizes: 2, 3, 4;
 
 @mixin gallery-columns($number: 2, $g: $gallery-gutter) {
     display: inline-block;
@@ -109,37 +105,6 @@ $gallery-sizes: (
 }
 
 
-/* Modifiers
-// -------------------------------------------------------------------------- */
-
-/* --- Column sizing -------------------------------------------------------- */
-
-@each $name, $number in $gallery-sizes {
-    @include breakpointify('.l-gallery--#{$name}', $sizes: 'xsmall' 'small' 'large') {
-        @include display('flex');
-        margin-left: -($gallery-gutter/2);
-        margin-right: -($gallery-gutter/2);
-
-        .l-gallery-item { @include gallery-columns($number); }
-    }
-}
-
-// "xsmall" and "small" columns
-// -> see .l-gallery-item subcomponent for styles
-// .l-gallery--xsmall, .l-gallery--small {
-//     @include media('>xsmall') {
-//         @include display(flex);
-//         // offset for column gutters
-//         margin-left: -($gallery-gutter/2);
-//         margin-right: -($gallery-gutter/2);
-//     }
-// }
-
-// // "large" columns
-// // -> see .l-gallery-item subcomponent for styles
-// .l-gallery--large {}
-
-
 /* Subcomponents
 // -------------------------------------------------------------------------- */
 
@@ -154,22 +119,20 @@ $gallery-sizes: (
 
     @include media('>small') { @include gallery-columns(2); }
     @include media('>medium') { @include gallery-columns(3); }
+}
 
-    // .l-gallery--xsmall & {
-    //     @include gallery-columns(2);
 
-    //     @include media('>xsmall') {  @include gallery-columns(3); }
-    //     @include media('>small') { @include gallery-columns(6); }
-    //     @include media('>large') { @include gallery-columns(8); }
-    // }
+/* Modifiers
+// -------------------------------------------------------------------------- */
 
-    // .l-gallery--small & {
-    //     @include media('>xsmall') {  @include gallery-columns(2); }
-    //     @include media('>small') { @include gallery-columns(3); }
-    //     @include media('>medium') { @include gallery-columns(4); }
-    // }
+/* --- Column sizing -------------------------------------------------------- */
 
-    // .l-gallery--large & {
-    //     @include media('>small') { @include gallery-columns(2); }
-    // }
+@each $number in $gallery-sizes {
+    @include breakpointify('.l-gallery--#{$number}') {
+        @include display('flex');
+        margin-left: -($gallery-gutter/2);
+        margin-right: -($gallery-gutter/2);
+
+        .l-gallery-item { @include gallery-columns($number); }
+    }
 }
