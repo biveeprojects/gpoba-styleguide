@@ -2,7 +2,9 @@
 //  Global list styles
 // ========================================================================== */
 
-// @import "../core";
+@import "../core/all";
+
+$list-table-col: 5em;
 
 /* Globals
 // -------------------------------------------------------------------------- */
@@ -10,16 +12,46 @@
 li {
     @include type-scale('eta');
 
-    strong {
-        font-weight: bold;
-    }
+    strong { font-weight: bold; }
 }
 
-li {
+li { margin-bottom: 0.5em; }
+
+ol, ul, dl {
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
-}
-
-ol, ul {
     margin-left: 1.5em; /* bump to the right a little @ mobile sizes so the numbers/bullets don't run off */
     padding-left: 0;
 }
+
+
+// make a list display like a 2-col table
+.list-table {
+    @include clearfix;
+    margin-left: 0;
+    line-height: 1.4;
+}
+
+    .list-table-label {
+        display: block;
+        clear: left;
+        margin-top: 0.5em;
+
+        // @include respond-to('xsmall') {
+            float: left;
+            width: $list-table-col;
+            margin-right: -100%;
+
+            &:after { content: ":" }
+        // }
+    }
+
+    .list-table-item {
+        display: block;
+        // margin: 0;
+
+        // @include respond-to('xsmall') {
+            float: left;
+            margin: 0.5em 0 0 $list-table-col;
+        // }
+    }

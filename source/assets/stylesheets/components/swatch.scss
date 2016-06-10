@@ -1,0 +1,39 @@
+/* =============================================================================
+//  Swatch component
+// ========================================================================== */
+
+/*doc
+---
+title: Swatch
+name: swatch
+category: atom
+---
+
+Documentation here
+
+*/
+
+// @import "../core/all";
+
+// $component-variable: false; // always scope to namespace
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.swatch {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 6em;
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+// .component-subcomponent {}
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+// .component--modifier {}

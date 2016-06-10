@@ -13,15 +13,23 @@
     <li class="gallery-item card">
         <div class="card-figure swatch" style="background-color: <%= swatch.hex %>;"></div>
         <div class="card-content">
-            <h2 class="t-heading t-heading--slug t-scale-zeta c-text-tertiary"><%= swatch.name %></h2>
-            <dl>
+            <h2 class="t-heading t-heading--slug t-scale-zeta"><%= swatch.name %></h2>
+            <dl class="list-table t-scale-eta">
                 <% if swatch.hex.present? %>
-                <dt>Hex</dt>
-                <dd><%= swatch.hex %></dd>
+                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Hex</dt>
+                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.hex %></dd>
                 <% end %>
                 <% if swatch.rgb.present? %>
-                <dt>RGB</dt>
-                <dd><%= swatch.rgb %></dd>
+                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">RGB</dt>
+                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.rgb %></dd>
+                <% end %>
+                <% if swatch.cmyk.present? %>
+                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">CMYK</dt>
+                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.cmyk %></dd>
+                <% end %>
+                <% if swatch.pantone.present? %>
+                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Pantone</dt>
+                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.pantone %></dd>
                 <% end %>
             </dl>
         </div>
