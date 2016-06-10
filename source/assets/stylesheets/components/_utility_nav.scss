@@ -1,0 +1,43 @@
+/* =============================================================================
+//  Module/component title
+// ========================================================================== */
+
+/*doc
+---
+title: Module
+name: module
+category: core
+---
+
+Documentation here
+
+*/
+
+@import "../core/all";
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+// utility nav for copyright, etc.
+.utility_nav {
+    @include font-accent;
+    list-style: none;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+.utility_nav-item {
+    @include type-scale('eta');
+    @include border('right');
+    display: inline-block;
+    margin-right: 1em;
+    padding-right: 1em;
+
+    &:last-child { border-right: none; }
+
+    small { font-size: 1em; }
+}

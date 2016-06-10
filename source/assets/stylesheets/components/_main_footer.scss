@@ -1,0 +1,48 @@
+/* =============================================================================
+//  Footer component
+// ========================================================================== */
+
+/*doc
+---
+title: Footer
+name: footer
+category: organism
+---
+
+Documentation here
+
+*/
+
+@import "../core/all";
+
+$main_footer-break: em(570px); // breakpoint where layout becomes horizontal
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.main_footer {
+    @include clearfix;
+    display: block;
+    padding: $l-margin $l-margin-wide;
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+.main_footer-group {
+    display: block;
+    margin-top: 1em;
+
+    &:first-child, &.main_footer-group--first { margin: 0; }
+
+    @include media(">#{$main_footer-break}") { margin: 0; }
+}
+
+.main_footer-group--left {
+    @include media(">#{$main_footer-break}") { float: left; }
+}
+
+.main_footer-group--right {
+    @include media(">#{$main_footer-break}") { float: right; }
+}

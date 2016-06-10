@@ -1680,8 +1680,48 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 .l-float-right {
   float: right; }
 
+@media (min-width: 30.01em) {
+  .l-float-right\@xsmall {
+    float: right; } }
+
+@media (min-width: 42.01em) {
+  .l-float-right\@small {
+    float: right; } }
+
+@media (min-width: 62.01em) {
+  .l-float-right\@medium {
+    float: right; } }
+
+@media (min-width: 75.01em) {
+  .l-float-right\@large {
+    float: right; } }
+
+@media (min-width: 100.01em) {
+  .l-float-right\@huge {
+    float: right; } }
+
 .l-float-left {
   float: left; }
+
+@media (min-width: 30.01em) {
+  .l-float-left\@xsmall {
+    float: left; } }
+
+@media (min-width: 42.01em) {
+  .l-float-left\@small {
+    float: left; } }
+
+@media (min-width: 62.01em) {
+  .l-float-left\@medium {
+    float: left; } }
+
+@media (min-width: 75.01em) {
+  .l-float-left\@large {
+    float: left; } }
+
+@media (min-width: 100.01em) {
+  .l-float-left\@huge {
+    float: left; } }
 
 .l-z-top {
   z-index: 2 !important; }
@@ -2091,7 +2131,7 @@ Sidebars
     .logo-main_lockup:hover.c-theme-wash, .c-theme-wash .logo-main_lockup:hover, .logo-main_lockup:active.c-theme-wash, .c-theme-wash .logo-main_lockup:active {
       color: #fff; }
   .logo-main_lockup > .logo {
-    margin-right: 0.5em;
+    margin-right: 0.2em;
     margin-top: -0.3em; }
 
 /* --- Molecules ------------------------------------------------------------ */
@@ -2253,7 +2293,90 @@ Documentation here
 
 /* State
 // -------------------------------------------------------------------------- */
+/* =============================================================================
+//  Module/component title
+// ========================================================================== */
+/*doc
+---
+title: Module
+name: module
+category: core
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.utility_nav {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal;
+  list-style: none;
+  text-transform: uppercase;
+  margin: 0; }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+.utility_nav-item {
+  font-size: 10px;
+  font-size: 0.625rem;
+  border-right: 1px solid #DBD9DA;
+  border-color: #DBD9DA;
+  display: inline-block;
+  margin-right: 1em;
+  padding-right: 1em; }
+  .utility_nav-item.c-theme-reverse, .c-theme-reverse .utility_nav-item {
+    border-color: #886385; }
+  .utility_nav-item.c-theme-wash, .c-theme-wash .utility_nav-item {
+    border-color: #4d384b; }
+  .utility_nav-item:last-child {
+    border-right: none; }
+  .utility_nav-item small {
+    font-size: 1em; }
+
 /* --- Organisms ------------------------------------------------------------ */
+/* =============================================================================
+//  Footer component
+// ========================================================================== */
+/*doc
+---
+title: Footer
+name: footer
+category: organism
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.main_footer {
+  display: block;
+  padding: 16px 37px; }
+  .main_footer::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+.main_footer-group {
+  display: block;
+  margin-top: 1em; }
+  .main_footer-group:first-child, .main_footer-group.main_footer-group--first {
+    margin: 0; }
+  @media (min-width: 35.635em) {
+    .main_footer-group {
+      margin: 0; } }
+
+@media (min-width: 35.635em) {
+  .main_footer-group--left {
+    float: left; } }
+
+@media (min-width: 35.635em) {
+  .main_footer-group--right {
+    float: right; } }
+
 /* --- Regions -------------------------------------------------------------- */
 /* /////////////////////////////////////////////////////////////////////////////
 // Styles of Shame

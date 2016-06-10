@@ -12,7 +12,7 @@ Front-end dev/theming: @jay
   ✔ sections/panels/chapter layout @done (16-06-09 21:34)
   ☐ partials for special stuff like figures, examples, etc
   ☐ landing page
-  ☐ "intro" section for each chapter?
+  ✔ "intro" section for each chapter? @done (16-06-09 23:01)
   ☐ JS for scrolling highlights, sticky nav
   ☐ mobile nav
 

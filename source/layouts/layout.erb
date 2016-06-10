@@ -18,7 +18,7 @@
     <body>
         <!-- Main header -->
         <header class="l-padding l-padding-left-wide l-padding-right-wide t-font-accent c-theme-reverse">
-            <!-- GPOBA logo -->
+            <!-- GPOBA styleguide lockup -->
             <% link_to "/", :class => "logo-main_lockup" do %>
                 <%= partial("layouts/partials/logo", :locals => { :classes => "logo logo--gpoba" }) %>
                 Styleguide
@@ -51,13 +51,33 @@
             </nav>
         </div>
 
-        <div class="has-main_nav-margin@small kill-main_nav-margin@medium">
+        <div class="has-main_nav-margin@small kill-main_nav-margin@medium l-margin-bottom-wide">
             <%= yield %>
-
-            <footer class="l-wrapper border-top">
-                <small>&copy; Copyright <%= Time.now.year %> GPOBA | <a href="http://www.worldbank.org/legalinfo">Legal</a></small>
-            </footer>
         </div>
+        <footer class="main_footer c-theme-reverse">
+            <div class="main_footer-group main_footer-group--left"><!-- GPOBA styleguide lockup -->
+                <% link_to "/", :class => "logo-main_lockup" do %>
+                    <%= partial("layouts/partials/logo", :locals => { :classes => "logo logo--gpoba" }) %>
+                    Styleguide
+                <% end %>
+            </div>
+
+            <nav class="main_footer-group main_footer-group--right">
+                <ul class="utility_nav">
+                    <li class="utility_nav-item">
+                        <small>&copy; Copyright <%= Time.now.year %> GPOBA</small>
+                    </li>
+                    <li class="utility_nav-item">
+                        <a href="http://www.worldbank.org/legalinfo">Legal</a>
+                    </li>
+                    <li class="utility_nav-item">
+                        <a href="http://gpoba.org">gpoba.org</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </footer>
+
         <%= javascript_include_tag "bundle" %>
     </body>
 </html>

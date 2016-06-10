@@ -59,8 +59,8 @@ $z--admin  : 3; // put admin/drupal navs above all the things
     margin-right: auto;
 }
 
-.l-float-right { float: right; }
-.l-float-left { float: left; }
+@include breakpointify('.l-float-right', $default: true) { float: right; }
+@include breakpointify('.l-float-left', $default: true) { float: left; }
 
 // make a panel rise to the top of a layout
 // -> useful if it contains, for instance, stuff like a jump nav that needs to overlay elements below
