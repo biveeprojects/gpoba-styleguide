@@ -60,6 +60,12 @@ There are three size variations: small, medium, and large. Medium is default, so
 
 $gallery-gutter: $grid-gutter;
 
+$gallery-sizes: (
+    'small': 4,
+    'medium': 3,
+    'large': 2
+);
+
 @mixin gallery-columns($number: 2, $g: $gallery-gutter) {
     display: inline-block;
     width: (100%/$number);
@@ -108,20 +114,30 @@ $gallery-gutter: $grid-gutter;
 
 /* --- Column sizing -------------------------------------------------------- */
 
-// "xsmall" and "small" columns
-// -> see .l-gallery-item subcomponent for styles
-.l-gallery--xsmall, .l-gallery--small {
-    @include media('>xsmall') {
-        @include display(flex);
-        // offset for column gutters
+@each $name, $number in $gallery-sizes {
+    @include breakpointify('.l-gallery--#{$name}', $sizes: 'xsmall' 'small' 'large') {
+        @include display('flex');
         margin-left: -($gallery-gutter/2);
         margin-right: -($gallery-gutter/2);
+
+        .l-gallery-item { @include gallery-columns($number); }
     }
 }
 
-// "large" columns
+// "xsmall" and "small" columns
 // -> see .l-gallery-item subcomponent for styles
-.l-gallery--large {}
+// .l-gallery--xsmall, .l-gallery--small {
+//     @include media('>xsmall') {
+//         @include display(flex);
+//         // offset for column gutters
+//         margin-left: -($gallery-gutter/2);
+//         margin-right: -($gallery-gutter/2);
+//     }
+// }
+
+// // "large" columns
+// // -> see .l-gallery-item subcomponent for styles
+// .l-gallery--large {}
 
 
 /* Subcomponents
@@ -139,29 +155,21 @@ $gallery-gutter: $grid-gutter;
     @include media('>small') { @include gallery-columns(2); }
     @include media('>medium') { @include gallery-columns(3); }
 
-    .l-gallery--xsmall & {
-        @include gallery-columns(2);
+    // .l-gallery--xsmall & {
+    //     @include gallery-columns(2);
 
-        @include media('>xsmall') {  @include gallery-columns(3); }
-        @include media('>small') { @include gallery-columns(6); }
-        @include media('>large') { @include gallery-columns(8); }
-    }
+    //     @include media('>xsmall') {  @include gallery-columns(3); }
+    //     @include media('>small') { @include gallery-columns(6); }
+    //     @include media('>large') { @include gallery-columns(8); }
+    // }
 
-    .l-gallery--small & {
-        @include media('>xsmall') {  @include gallery-columns(2); }
-        @include media('>small') { @include gallery-columns(3); }
-        @include media('>medium') { @include gallery-columns(4); }
-    }
+    // .l-gallery--small & {
+    //     @include media('>xsmall') {  @include gallery-columns(2); }
+    //     @include media('>small') { @include gallery-columns(3); }
+    //     @include media('>medium') { @include gallery-columns(4); }
+    // }
 
-    .l-gallery--large & {
-        @include media('>small') { @include gallery-columns(2); }
-    }
-
-    .l-gallery--flush & {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .l-gallery--centered & { text-align: center; }
-    .l-gallery--centered-vertical & { vertical-align: middle; }
+    // .l-gallery--large & {
+    //     @include media('>small') { @include gallery-columns(2); }
+    // }
 }

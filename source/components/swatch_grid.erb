@@ -6,9 +6,9 @@
 
 <%# --- Locals --- %>
 <%# swatches - REQUIRED %>
-<% grid_size ||= 'default' # size of the grid items %>
+<%# grid_size ||= 'default' # size of the grid items %>
 
-<ul class="l-gallery<% if grid_size != 'default' %> l-gallery--<%= grid_size %><% end %>">
+<ul class="l-gallery">
     <% swatches.each do |swatch| %>
     <li class="l-gallery-item">
         <div class="card border">
