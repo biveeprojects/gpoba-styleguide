@@ -6,11 +6,24 @@ Front-end dev/theming: @jay
   ✔ fonts @done (16-06-07 16:44)
   ✔ color theme @done (16-06-07 17:32)
   ✔ header/nav layout @done (16-06-09 21:34)
-  ☐ logos
+  ✔ logos @done (16-06-09 22:37)
   ☐ footer
+  ☐ local nav
   ✔ sections/panels/chapter layout @done (16-06-09 21:34)
   ☐ partials for special stuff like figures, examples, etc
+  ☐ landing page
+  ☐ JS for scrolling highlights, sticky nav
   ☐ mobile nav
+
+  Content: @jay @nico @scott
+  ☐ logo & variations
+  ☐ color swatches
+      ☐ downloads - adobe swatches, affinity?, sass?, pantone/CMYK numbers
+  ☐ typography - scale, fonts, etc.
+  ☐ imagery
+      ☐ write guidelines
+      ☐ collect examples -- good and bad
+
 
   update in boilerplate:
       ✔ borders @done (16-06-06 12:58)
