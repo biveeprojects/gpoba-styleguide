@@ -6,32 +6,34 @@
 
 <%# --- Locals --- %>
 <%# swatches - REQUIRED %>
-<% grid_size ||= 'small' # size of the grid items %>
+<% grid_size ||= 'default' # size of the grid items %>
 
-<ul class="gallery gallery--<%= grid_size %>">
+<ul class="l-gallery<% if grid_size != 'default' %> l-gallery--<%= grid_size %><% end %>">
     <% swatches.each do |swatch| %>
-    <li class="gallery-item card">
-        <div class="card-figure swatch" style="background-color: <%= swatch.hex %>;"></div>
-        <div class="card-content">
-            <h2 class="t-heading t-heading--slug t-scale-zeta"><%= swatch.name %></h2>
-            <dl class="list-table t-scale-eta">
-                <% if swatch.hex.present? %>
-                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Hex</dt>
-                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.hex %></dd>
-                <% end %>
-                <% if swatch.rgb.present? %>
-                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">RGB</dt>
-                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.rgb %></dd>
-                <% end %>
-                <% if swatch.cmyk.present? %>
-                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">CMYK</dt>
-                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.cmyk %></dd>
-                <% end %>
-                <% if swatch.pantone.present? %>
-                    <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Pantone</dt>
-                    <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.pantone %></dd>
-                <% end %>
-            </dl>
+    <li class="l-gallery-item">
+        <div class="card border">
+            <div class="card-figure swatch" style="background-color: <%= swatch.hex %>;"></div>
+            <div class="card-content">
+                <h2 class="t-heading t-heading--slug t-scale-zeta"><%= swatch.name %></h2>
+                <dl class="list-table t-scale-eta">
+                    <% if swatch.hex.present? %>
+                        <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Hex</dt>
+                        <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.hex %></dd>
+                    <% end %>
+                    <% if swatch.rgb.present? %>
+                        <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">RGB</dt>
+                        <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.rgb %></dd>
+                    <% end %>
+                    <% if swatch.cmyk.present? %>
+                        <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">CMYK</dt>
+                        <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.cmyk %></dd>
+                    <% end %>
+                    <% if swatch.pantone.present? %>
+                        <dt class="list-table-label t-heading t-heading--slug c-text-tertiary">Pantone</dt>
+                        <dd class="list-table-item t-caps font-accent c-text-secondary"><%= swatch.pantone %></dd>
+                    <% end %>
+                </dl>
+            </div>
         </div>
     </li>
     <% end %>

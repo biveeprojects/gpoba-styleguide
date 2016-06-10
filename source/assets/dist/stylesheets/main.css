@@ -1550,8 +1550,11 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 // Global spacing
 // -> used to keep whitespace in the layout consistent
 // ========================================================================== */
-/* Margins
+/* Config & Helpers
 // -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+/* --- margins -------------------------------------------------------------- */
 .l-margin {
   margin: 16px;
   margin: 1rem; }
@@ -1632,8 +1635,7 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
   margin-bottom: 0 !important;
   margin-bottom: 0 !important; }
 
-/* Padding
-// -------------------------------------------------------------------------- */
+/* --- padding -------------------------------------------------------------- */
 .l-padding {
   padding: 16px !important;
   padding: 1rem !important; }
@@ -1811,6 +1813,316 @@ Grids
 // -------------------------------------------------------------------------- */
 /* Utilities
 // -------------------------------------------------------------------------- */
+/* =============================================================================
+//  Gallery components
+// -> arrange child elements into rows and columns
+// ========================================================================== */
+/*doc
+---
+title: Gallery
+name: gallery
+category: Organisms
+---
+
+A gallery arranges small bits of content- usually listings or thumbnails - into rows and columns. It is responsive, so the column number will change based on screen width, and column width is fluid (percentage-based).
+
+```html_example
+    <ul class='gallery'>
+        <li class="gallery-item">
+            Wow, I'm in a gallery.
+        </li>
+        <li class="gallery-item">
+            Me too.
+        </li>
+        <li class="gallery-item">
+            Me too.
+        </li>
+        <li class="gallery-item">
+            Me too.
+        </li>
+        <li class="gallery-item">
+            Me too.
+        </li>
+    </ul>
+```
+
+Typically, you'll mark up a gallery as an unordered list, but it will work with most block-level elements (like `<nav>` or `<div>`). Just give the container a "gallery" class and the children a "gallery-item" class.
+
+## Variations
+
+There are three size variations: small, medium, and large. Medium is default, so that's the size you get with just "gallery." This only affects overall column width: a "large" gallery will have fewer columns at any given screen size than a "small" gallery. Note any size variation can be used at any screen size. The best choice mainly depends on the type of content you're displaying. If there's lots of text, it might look squished in a "small" gallery, whereas xsmall icons might get blown up really huge in a "large" gallery.
+
+```
+    <!-- small gallery, with narrow columns -->
+    <ul class="gallery small"></ul>
+
+    <!-- medium gallery, slightly wider columns -->
+    <!-- (default, no modifier needed) -->
+    <ul class="gallery"></ul>
+
+    <!-- large gallery with wide columns -->
+    <ul class="gallery large"></ul>
+```
+
+*/
+/* =============================================================================
+//  Module/component title
+// ========================================================================== */
+/*doc
+---
+title: Module
+name: module
+category: core
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.card {
+  display: block; }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+.card-content {
+  padding: 10px;
+  padding: 0.625rem; }
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+/* Base
+// -------------------------------------------------------------------------- */
+.l-gallery {
+  display: block;
+  position: relative;
+  font-size: 0;
+  list-style: none;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  box-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch; }
+  .l-gallery > ul {
+    padding-left: 0;
+    margin-left: 0;
+    list-style: none; }
+  @media (min-width: 42.01em) {
+    .l-gallery {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-left: -8px;
+      margin-right: -8px; } }
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+/* --- Column sizing -------------------------------------------------------- */
+@media (min-width: 30.01em) {
+  .l-gallery--xsmall, .l-gallery--small {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -8px;
+    margin-right: -8px; } }
+
+/* Subcomponents
+// -------------------------------------------------------------------------- */
+/* --- Gallery Items -------------------------------------------------------- */
+.l-gallery-item {
+  font-size: 16px;
+  font-size: 1rem;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding-bottom: 16px;
+  vertical-align: top; }
+  @media (min-width: 42.01em) {
+    .l-gallery-item {
+      display: inline-block;
+      width: 50%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  @media (min-width: 62.01em) {
+    .l-gallery-item {
+      display: inline-block;
+      width: 33.33333%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  .l-gallery--xsmall .l-gallery-item {
+    display: inline-block;
+    width: 50%;
+    padding-right: 8px;
+    padding-left: 8px;
+    vertical-align: top; }
+    .flexbox .l-gallery--xsmall .l-gallery-item {
+      -webkit-box-flex: 0;
+      -moz-box-flex: 0;
+      box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -moz-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto; }
+    @media (min-width: 30.01em) {
+      .l-gallery--xsmall .l-gallery-item {
+        display: inline-block;
+        width: 33.33333%;
+        padding-right: 8px;
+        padding-left: 8px;
+        vertical-align: top; }
+        .flexbox .l-gallery--xsmall .l-gallery-item {
+          -webkit-box-flex: 0;
+          -moz-box-flex: 0;
+          box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -moz-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto; } }
+    @media (min-width: 42.01em) {
+      .l-gallery--xsmall .l-gallery-item {
+        display: inline-block;
+        width: 16.66667%;
+        padding-right: 8px;
+        padding-left: 8px;
+        vertical-align: top; }
+        .flexbox .l-gallery--xsmall .l-gallery-item {
+          -webkit-box-flex: 0;
+          -moz-box-flex: 0;
+          box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -moz-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto; } }
+    @media (min-width: 75.01em) {
+      .l-gallery--xsmall .l-gallery-item {
+        display: inline-block;
+        width: 12.5%;
+        padding-right: 8px;
+        padding-left: 8px;
+        vertical-align: top; }
+        .flexbox .l-gallery--xsmall .l-gallery-item {
+          -webkit-box-flex: 0;
+          -moz-box-flex: 0;
+          box-flex: 0;
+          -webkit-flex: 0 0 auto;
+          -moz-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto; } }
+  @media (min-width: 30.01em) {
+    .l-gallery--small .l-gallery-item {
+      display: inline-block;
+      width: 50%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery--small .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  @media (min-width: 42.01em) {
+    .l-gallery--small .l-gallery-item {
+      display: inline-block;
+      width: 33.33333%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery--small .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  @media (min-width: 62.01em) {
+    .l-gallery--small .l-gallery-item {
+      display: inline-block;
+      width: 25%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery--small .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  @media (min-width: 42.01em) {
+    .l-gallery--large .l-gallery-item {
+      display: inline-block;
+      width: 50%;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top; }
+      .flexbox .l-gallery--large .l-gallery-item {
+        -webkit-box-flex: 0;
+        -moz-box-flex: 0;
+        box-flex: 0;
+        -webkit-flex: 0 0 auto;
+        -moz-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto; } }
+  .l-gallery--flush .l-gallery-item {
+    padding-left: 0;
+    padding-right: 0; }
+  .l-gallery--centered .l-gallery-item {
+    text-align: center; }
+  .l-gallery--centered-vertical .l-gallery-item {
+    vertical-align: middle; }
+
 /* =============================================================================
 // Wrapper layout classes
 // ===========================================================================*/

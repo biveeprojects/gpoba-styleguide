@@ -17,30 +17,18 @@ Grids
 
 */
 
+// requires Modular Scale, Bourbon, and Modernizr-mixin
 @import "../core/all";
 @import "spacing";
 
 /* Gutters
 // -------------------------------------------------------------------------- */
 
-$gutter: $l-margin; // local reference to global spacing -> see layout/spacing
-$gutter-outside: $l-margin-wide; // local reference to global spacing -> see layout/spacing
+$grid-gutter: $l-margin; // local reference to global spacing -> see layout/spacing
 
-@function add_outside_gutters($w) {
-    // compensate for outside margins (ie padding) and split gutters
-    @return ($w + ($gutter-outside * 2));
-}
 
 /* Grid columns
 // -------------------------------------------------------------------------- */
-
-// scale for ratio-based grids and/or type
-// -> http://alistapart.com/article/content-out-layout
-// $grid-scale: 1 1.618 2.618 4.236 6.854 11.089 17.942 29.030 !default;
-
-// @function ms($n) {
-//     @return nth($grid-scale, $n);
-// }
 
 $grid-default: ms(1) ms(4);
 
@@ -65,19 +53,19 @@ $grid-default: ms(1) ms(4);
 // create a column in a grid
 // @PARAM (number) $loc: the column number where this element will live
 // @PARAM (list) $grid: the relative widths of columns in the grid
-// @PARAM (number) $gutter: width of the gutters b/n columns (note this uses split gutters)
+// @PARAM (number) $grid-gutter: width of the gutters b/n columns (note this uses split gutters)
 // @PARAM (boolean) $last_fill: should the last item expand to fill the remaining space? defaults to true.
 // -> requires SassyLists, Modernizr and modernizr-mixin libraries
-@mixin column($loc, $grid: $grid-default, $gutter: $gutter, $last_fill: true, $split: true) {
+@mixin column($loc, $grid: $grid-default, $grid-gutter: $grid-gutter, $last_fill: true, $split: true) {
     @include type-size-default;
     display: inline-block;
     width: column-w($loc, $grid);
 
     @if ($split == true) {
-        padding-left: ($gutter/2);
-        padding-right: ($gutter/2);
+        padding-left: ($grid-gutter/2);
+        padding-right: ($grid-gutter/2);
     } @else {
-        padding-right: $gutter;
+        padding-right: $grid-gutter;
     }
 
     // adjust padding if this is the first or last element

@@ -1,0 +1,45 @@
+/* =============================================================================
+//  Module/component title
+// ========================================================================== */
+
+/*doc
+---
+title: Module
+name: module
+category: core
+---
+
+Documentation here
+
+*/
+
+// @import "../core/all";
+
+// $component-variable: false; // always scope to namespace
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.card {
+    display: block;
+
+    // @include yep('flexbox') {
+    //     @include display('flex');
+    //     @include flex-direction('column');
+    // }
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+.card-figure {}
+
+.card-content {
+    @include rem(padding, $l-margin-narrow);
+}
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+// .component--modifier {}

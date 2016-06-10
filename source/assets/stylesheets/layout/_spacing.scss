@@ -6,6 +6,9 @@
 @import "../core/libs";
 @import "../core/scale";
 
+/* Config & Helpers
+// -------------------------------------------------------------------------- */
+
 // standard spacing for margins and padding, etc.
 $l-margin: type-scale('epsilon');
 $l-margin-narrow: type-scale('eta');
@@ -13,9 +16,15 @@ $l-margin-wide: type-scale('beta');
 
 $l-sides: left right top bottom;
 
+@function add_outside_margins($w) {
+    // compensate for outside margins (ie padding) and split gutters
+    @return ($w + ($l-margin-wide * 2));
+}
 
-/* Margins
+/* Utilities
 // -------------------------------------------------------------------------- */
+
+/* --- margins -------------------------------------------------------------- */
 
 .l-margin { @include rem(margin, $l-margin); }
 
@@ -34,8 +43,7 @@ $l-sides: left right top bottom;
     .l-no-margin-#{$side} { @include rem(margin-#{$side}, 0 !important); }
 }
 
-/* Padding
-// -------------------------------------------------------------------------- */
+/* --- padding -------------------------------------------------------------- */
 
 .l-padding { @include rem(padding, $l-margin !important); }
 

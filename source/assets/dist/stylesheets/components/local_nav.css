@@ -880,8 +880,11 @@ There are also utility classes that allow you to quickly add a border to a conta
 // Global spacing
 // -> used to keep whitespace in the layout consistent
 // ========================================================================== */
-/* Margins
+/* Config & Helpers
 // -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+/* --- margins -------------------------------------------------------------- */
 .l-margin {
   margin: 16px;
   margin: 1rem; }
@@ -962,8 +965,7 @@ There are also utility classes that allow you to quickly add a border to a conta
   margin-bottom: 0 !important;
   margin-bottom: 0 !important; }
 
-/* Padding
-// -------------------------------------------------------------------------- */
+/* --- padding -------------------------------------------------------------- */
 .l-padding {
   padding: 16px !important;
   padding: 1rem !important; }

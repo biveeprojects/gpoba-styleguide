@@ -41,7 +41,7 @@ $layout-widths: (
 // Set a base width with gutter
 // -> PUBLIC
 @mixin l-base-w($w: "default") {
-    max-width: add_outside_gutters(layout-w($w));
+    max-width: add_outside_margins(layout-w($w));
 }
 
 /* Utilities
