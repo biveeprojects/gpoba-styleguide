@@ -16,67 +16,14 @@
     </head>
 
     <body>
-        <!-- Main header -->
-        <header class="l-padding l-padding-left-wide l-padding-right-wide t-font-accent c-theme-reverse">
-            <!-- GPOBA styleguide lockup -->
-            <% link_to "/", :class => "logo-main_lockup" do %>
-                <%= partial("layouts/partials/logo", :locals => { :classes => "logo logo--gpoba" }) %>
-                Styleguide
-            <% end %>
-        </header>
-
-        <!-- Main navigation -->
-        <div class="dropdown kill-dropdown@small js-dropdown">
-            <nav class="main_nav main_nav--fixed@small">
-                <ul>
-                    <% get_chapters.each do |chapter| %>
-                        <%# add an 'active' class if this nav item is for the current page %>
-                        <% nav_class = current_page?("/#{chapter.urlize}/") ? "main_nav-item is-active" : "main_nav-item" %>
-                        <li class="<%= nav_class %>">
-                            <%= link_to chapter.titleize, "/#{chapter.urlize}/", :class => "main_nav-link" %>
-
-                            <%# if this is the current page, show the sections too %>
-                            <% if current_page?("/#{chapter.urlize}/") %>
-                                <ul class="main_nav-subnav">
-                                    <% sitemap.resources.select {|r| r.data.chapter == chapter }.sort_by {|r| r.data.weight }.each do |section| %>
-                                        <li class="main_nav-item main_nav-item--secondary">
-                                            <%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary" %>
-                                        </li>
-                                    <% end %>
-                                </ul>
-                            <% end %>
-                        </li>
-                    <% end %>
-                </ul>
-            </nav>
-        </div>
+        <%= partial "components/main_header" %>
+        <%= partial "components/main_nav", :locals => { :chapters => get_chapters, :breakpoint => 'small' } %>
 
         <div class="has-main_nav-margin@small kill-main_nav-margin@medium l-margin-bottom-wide">
             <%= yield %>
         </div>
-        <footer class="main_footer c-theme-reverse">
-            <div class="main_footer-group main_footer-group--left"><!-- GPOBA styleguide lockup -->
-                <% link_to "/", :class => "logo-main_lockup" do %>
-                    <%= partial("layouts/partials/logo", :locals => { :classes => "logo logo--gpoba" }) %>
-                    Styleguide
-                <% end %>
-            </div>
 
-            <nav class="main_footer-group main_footer-group--right">
-                <ul class="utility_nav">
-                    <li class="utility_nav-item">
-                        <small>&copy; Copyright <%= Time.now.year %> GPOBA</small>
-                    </li>
-                    <li class="utility_nav-item">
-                        <a href="http://www.worldbank.org/legalinfo">Legal</a>
-                    </li>
-                    <li class="utility_nav-item">
-                        <a href="http://gpoba.org">gpoba.org</a>
-                    </li>
-                </ul>
-            </nav>
-
-        </footer>
+        <%= partial "components/main_footer" %>
 
         <%= javascript_include_tag "bundle" %>
     </body>

@@ -1261,14 +1261,40 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 .t-heading {
+  color: #332732;
   font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: bold;
   margin: 0;
   line-height: 1.2;
   letter-spacing: -0.02em; }
+  h1.c-theme-reverse, .c-theme-reverse h1, h2.c-theme-reverse, .c-theme-reverse h2, h3.c-theme-reverse, .c-theme-reverse h3, h4.c-theme-reverse, .c-theme-reverse h4, h5.c-theme-reverse, .c-theme-reverse h5, h6.c-theme-reverse, .c-theme-reverse h6,
+  .t-heading.c-theme-reverse, .c-theme-reverse
+  .t-heading {
+    color: #fff; }
+  h1.c-theme-wash, .c-theme-wash h1, h2.c-theme-wash, .c-theme-wash h2, h3.c-theme-wash, .c-theme-wash h3, h4.c-theme-wash, .c-theme-wash h4, h5.c-theme-wash, .c-theme-wash h5, h6.c-theme-wash, .c-theme-wash h6,
+  .t-heading.c-theme-wash, .c-theme-wash
+  .t-heading {
+    color: #fff; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
   .t-heading a {
     color: inherit; }
+    h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:hover, h4 a:active, h5 a:hover, h5 a:active, h6 a:hover, h6 a:active,
+    .t-heading a:hover,
+    .t-heading a:active {
+      color: #5eabbc;
+      text-decoration: none; }
+      h1 a:hover.c-theme-reverse, .c-theme-reverse h1 a:hover, h1 a:active.c-theme-reverse, .c-theme-reverse h1 a:active, h2 a:hover.c-theme-reverse, .c-theme-reverse h2 a:hover, h2 a:active.c-theme-reverse, .c-theme-reverse h2 a:active, h3 a:hover.c-theme-reverse, .c-theme-reverse h3 a:hover, h3 a:active.c-theme-reverse, .c-theme-reverse h3 a:active, h4 a:hover.c-theme-reverse, .c-theme-reverse h4 a:hover, h4 a:active.c-theme-reverse, .c-theme-reverse h4 a:active, h5 a:hover.c-theme-reverse, .c-theme-reverse h5 a:hover, h5 a:active.c-theme-reverse, .c-theme-reverse h5 a:active, h6 a:hover.c-theme-reverse, .c-theme-reverse h6 a:hover, h6 a:active.c-theme-reverse, .c-theme-reverse h6 a:active,
+      .t-heading a:hover.c-theme-reverse, .c-theme-reverse
+      .t-heading a:hover,
+      .t-heading a:active.c-theme-reverse, .c-theme-reverse
+      .t-heading a:active {
+        color: #5eabbc; }
+      h1 a:hover.c-theme-wash, .c-theme-wash h1 a:hover, h1 a:active.c-theme-wash, .c-theme-wash h1 a:active, h2 a:hover.c-theme-wash, .c-theme-wash h2 a:hover, h2 a:active.c-theme-wash, .c-theme-wash h2 a:active, h3 a:hover.c-theme-wash, .c-theme-wash h3 a:hover, h3 a:active.c-theme-wash, .c-theme-wash h3 a:active, h4 a:hover.c-theme-wash, .c-theme-wash h4 a:hover, h4 a:active.c-theme-wash, .c-theme-wash h4 a:active, h5 a:hover.c-theme-wash, .c-theme-wash h5 a:hover, h5 a:active.c-theme-wash, .c-theme-wash h5 a:active, h6 a:hover.c-theme-wash, .c-theme-wash h6 a:hover, h6 a:active.c-theme-wash, .c-theme-wash h6 a:active,
+      .t-heading a:hover.c-theme-wash, .c-theme-wash
+      .t-heading a:hover,
+      .t-heading a:active.c-theme-wash, .c-theme-wash
+      .t-heading a:active {
+        color: #fff; }
   h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
   .t-heading strong {
     font-family: inherit;
@@ -1280,6 +1306,14 @@ h1, h2, h3, h4, h5, h6,
   font-weight: normal;
   letter-spacing: -0.03em; }
 
+.t-heading--slug {
+  color: #332732;
+  text-transform: uppercase; }
+  .t-heading--slug.c-theme-reverse, .c-theme-reverse .t-heading--slug {
+    color: #fff; }
+  .t-heading--slug.c-theme-wash, .c-theme-wash .t-heading--slug {
+    color: #fff; }
+
 p {
   font-size: 16px;
   font-size: 1rem;
@@ -1290,6 +1324,9 @@ p {
     color: #332732; }
 
 a {
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
   color: #5eabbc;
   text-decoration: none; }
   a.c-theme-reverse, .c-theme-reverse a {
@@ -1825,8 +1862,8 @@ Sidebars
 
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       display: inline-block;
       width: 19.09927%; }
       .flexbox .l-has-sidebar\@small .l-sidebar {
@@ -1871,8 +1908,8 @@ Sidebars
 
 @media (min-width: 42.01em) {
     .l-has-sidebar\@small .l-sidebar-main {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@small .l-sidebar-main {
         -webkit-box-flex: 1;
@@ -1909,8 +1946,8 @@ Sidebars
 
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       display: inline-block;
       width: 19.09927%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar {
@@ -1955,8 +1992,8 @@ Sidebars
 
 @media (min-width: 62.01em) {
     .l-has-sidebar\@medium .l-sidebar-main {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@medium .l-sidebar-main {
         -webkit-box-flex: 1;
@@ -1993,8 +2030,8 @@ Sidebars
 
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       display: inline-block;
       width: 19.09927%; }
       .flexbox .l-has-sidebar\@large .l-sidebar {
@@ -2039,8 +2076,8 @@ Sidebars
 
 @media (min-width: 75.01em) {
     .l-has-sidebar\@large .l-sidebar-main {
-      type-size: 16px;
-      type-size: 1rem;
+      font-size: 16px;
+      font-size: 1rem;
       width: 80.90073%; }
       .flexbox .l-has-sidebar\@large .l-sidebar-main {
         -webkit-box-flex: 1;
@@ -2294,6 +2331,86 @@ Documentation here
 /* State
 // -------------------------------------------------------------------------- */
 /* =============================================================================
+//  Local nav
+// -> next/prev page links
+// ========================================================================== */
+/*doc
+---
+title: Local nav
+name: local nav
+category: molecules
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.local_nav {
+  display: block;
+  font-size: 0; }
+  @media (min-width: 42.01em) {
+    .flexbox .local_nav {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+.local_nav-item {
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  border-top: 1px solid #DBD9DA;
+  border-color: #DBD9DA;
+  display: block;
+  position: relative;
+  text-align: center; }
+  .local_nav-item.c-theme-reverse, .c-theme-reverse .local_nav-item {
+    border-color: #886385; }
+  .local_nav-item.c-theme-wash, .c-theme-wash .local_nav-item {
+    border-color: #4d384b; }
+  .local_nav-item a:hover {
+    text-decoration: none; }
+  @media (min-width: 42.01em) {
+    .local_nav-item {
+      font-size: 16px;
+      font-size: 1rem;
+      display: inline-block;
+      width: 50%;
+      padding-left: 8px;
+      padding-right: 8px;
+      border-right: 1px solid #DBD9DA;
+      border-color: #DBD9DA;
+      text-align: left; }
+      .local_nav-item:first-child {
+        padding-left: 0; }
+      .local_nav-item:last-child {
+        padding-right: 0; }
+      .flexbox .local_nav-item {
+        display: block; }
+      .local_nav-item.c-theme-reverse, .c-theme-reverse .local_nav-item {
+        border-color: #886385; }
+      .local_nav-item.c-theme-wash, .c-theme-wash .local_nav-item {
+        border-color: #4d384b; }
+      .local_nav-item:last-child {
+        border-right: none; } }
+
+.local_nav-item--left:last-child {
+  width: 100%; }
+
+@media (min-width: 42.01em) {
+  .local_nav-item--right {
+    text-align: right; }
+    .local_nav-item--right:first-child {
+      width: 100%; } }
+
+/* =============================================================================
 //  Module/component title
 // ========================================================================== */
 /*doc
@@ -2323,7 +2440,7 @@ Documentation here
   border-right: 1px solid #DBD9DA;
   border-color: #DBD9DA;
   display: inline-block;
-  margin-right: 1em;
+  margin: 0 1em 0 0;
   padding-right: 1em; }
   .utility_nav-item.c-theme-reverse, .c-theme-reverse .utility_nav-item {
     border-color: #886385; }

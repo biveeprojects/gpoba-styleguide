@@ -1,0 +1,27 @@
+<% page_path ||= "/" %>
+<% next_page ||= false %>
+<% prev_page ||= false %>
+
+<!-- local nav (next and previous pages) -->
+<nav class="local_nav l-margin-top-wide l-wrapper l-wrapper--wide">
+
+    <!-- previous page -->
+    <% unless prev_page == false %>
+    <div class="local_nav-item local_nav-item--left">
+        <% link_to "#{page_path}#{prev_page.urlize}/" do %>
+            <span class="t-heading t-heading--slug t-scale-zeta">Previous</span><br>
+            <span class="t-heading t-heading--title t-scale-cappa c-highlight"><%= prev_page %></span>
+        <% end %>
+    </div>
+    <% end %>
+
+    <!-- next page -->
+    <% unless next_page == false %>
+    <div class="local_nav-item local_nav-item--right">
+        <% link_to "#{page_path}#{next_page.urlize}/" do %>
+            <span class="t-heading t-heading--slug t-scale-zeta">Next</span><br>
+            <span class="t-heading t-heading--title t-scale-cappa c-highlight"><%= next_page %></span>
+        <% end %>
+    </div>
+    <% end %>
+</nav>

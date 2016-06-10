@@ -1,0 +1,1134 @@
+/* =============================================================================
+//  Local nav
+// -> next/prev page links
+// ========================================================================== */
+/*doc
+---
+title: Local nav
+name: local nav
+category: molecules
+---
+
+Documentation here
+
+*/
+/* =============================================================================
+//  External Libraries
+// ========================================================================== */
+/* ==========================================================================
+ * Helpers for converting units (rems, percent, etc.)
+ * ========================================================================== */
+/*doc
+---
+title: Global Variables
+name: settings
+category: Core
+---
+
+We keep global settings to a minimum, to keep variables closely tied to the relevant modules/libraries.
+
+Right now, the only globals we need are a few file path helpers: `$asset-path-images`, `$asset-path-icons`, and `$asset-path-fonts`.
+
+*/
+/* =============================================================================
+// Global breakpoints
+// -> uses include-media library (http://include-media.com)
+// ===========================================================================*/
+/*doc
+---
+title: Global Breakpoints
+name: breakpoints
+category: Core
+---
+
+A series of global breakpoints are used throughout the site. Note that components often use their own local breakpoints (or "tweakpoints") to handle their layout, but the overall layout is based on the globals.
+
+The breakpoints are simply labelled by size: "xsmall," "small," "medium," "large," and "xlarge."
+
+Utility classes are available for each: `.show@[SIZE]`, e.g. `.show@small` These will hide an element below a particular screen width.
+
+```html_example
+<div class="show@medium">You can only see me above "medium" screen sizes.</div>
+```
+
+To access a specific breakpoint value in Sass, use the `screen()` function, as in `max-width: screen('large');`, which will compile to `max-width: 75em;`
+
+*/
+/* Utility classes
+// -------------------------------------------------------------------------- */
+@media (max-width: 29.99em) {
+  .show\@xsmall {
+    display: none !important; } }
+
+@media (min-width: 30.01em) {
+  .hide\@xsmall {
+    display: none !important; } }
+
+@media (max-width: 41.99em) {
+  .show\@small {
+    display: none !important; } }
+
+@media (min-width: 42.01em) {
+  .hide\@small {
+    display: none !important; } }
+
+@media (max-width: 61.99em) {
+  .show\@medium {
+    display: none !important; } }
+
+@media (min-width: 62.01em) {
+  .hide\@medium {
+    display: none !important; } }
+
+@media (max-width: 74.99em) {
+  .show\@large {
+    display: none !important; } }
+
+@media (min-width: 75.01em) {
+  .hide\@large {
+    display: none !important; } }
+
+@media (max-width: 99.99em) {
+  .show\@huge {
+    display: none !important; } }
+
+@media (min-width: 100.01em) {
+  .hide\@huge {
+    display: none !important; } }
+
+/* =============================================================================
+//  Global animation styles
+// ========================================================================== */
+/*doc
+---
+title: Animation
+name: animation
+category: core
+---
+
+The animation library sets global defaults for CSS transitions. Use it in your modules like this:
+
+```
+.your-selector {
+    @include transition-default;
+}
+```
+
+*/
+/* =============================================================================
+//  Type & layout scale
+// ========================================================================== */
+/*doc
+---
+title: Scale
+name: scale
+category: Core
+---
+
+A single, modular scale is used for the entire site: not only type scaling but also spacing and relative proportions throughout the layout.
+
+*/
+/* =============================================================================
+//  Type config & scale
+// ========================================================================== */
+/*doc
+---
+title: Fonts
+name: fonts
+category: Core
+---
+
+Fonts are accessed through SASS placeholders. Just extend the appropriate one. Fonts are applied to type, globally, in _type.scss, and individual modules can set up their own font styles.
+
+Please DO NOT use your own font-family attributes in any circumstance. Always use the mixins.
+
+```
+// display fonts
+// -> headlines, buttons, labels, etc.
+
+@include font-display
+@include font-display(bold)
+
+// body fonts
+// -> paragraphs, captions, etc.
+
+@include font-body
+@include font-body(normal, italic)
+@include font-body(bold)
+```
+
+*/
+/* Fonts
+// -------------------------------------------------------------------------- */
+/* ----- Newslab ------------------------------------------------------------ */
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Latinotype
+ * License URL: http://www.fontspring.com/licenses/latinotype/webfont
+ *
+ *
+ */
+@font-face {
+  font-family: "newslab-normal";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/newslab/NewslabThin-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/NewslabThin-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/NewslabThin-webfont.woff") format("woff"), url("/assets/fonts/newslab/NewslabThin-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/NewslabThin-webfont.svg#newslab-normal") format("svg"); }
+
+@font-face {
+  font-family: "newslab-bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/newslab/Newslab-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/newslab/Newslab-webfont.woff2") format("woff2"), url("/assets/fonts/newslab/Newslab-webfont.woff") format("woff"), url("/assets/fonts/newslab/Newslab-webfont.ttf") format("truetype"), url("/assets/fonts/newslab/Newslab-webfont.svg#newslab-bold") format("svg"); }
+
+/* ----- Gibson ------------------------------------------------------------- */
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2016 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Canada Type
+ * License URL: http://www.fontspring.com/fflicense/canada-type
+ *
+ *
+ */
+@font-face {
+  font-family: "gibson-normal";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/gibson/Gibson-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-Regular-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-Regular-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-Regular-webfont.svg#gibson-normal") format("svg"); }
+
+@font-face {
+  font-family: "gibson-bold";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/assets/fonts/gibson/Gibson-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.woff") format("woff"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.ttf") format("truetype"), url("/assets/fonts/gibson/Gibson-SemiBold-webfont.svg#gibson-bold") format("svg"); }
+
+/* ----- Source Sans Pro ---------------------------------------------------- */
+/* ----- Merriweather ------------------------------------------------------- */
+@font-face {
+  font-family: "merriweather-normal";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/merriweather/merriweather-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-webfont.svg#merriweather-normal") format("svg"); }
+
+@font-face {
+  font-family: "merriweather-normal-italic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/merriweather/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-italic-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-italic-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-italic-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-italic-webfont.svg#merriweather-normal-italic") format("svg"); }
+
+@font-face {
+  font-family: "merriweather-bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/assets/fonts/merriweather/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/merriweather/merriweather-bold-webfont.woff2") format("woff2"), url("/assets/fonts/merriweather/merriweather-bold-webfont.woff") format("woff"), url("/assets/fonts/merriweather/merriweather-bold-webfont.ttf") format("truetype"), url("/assets/fonts/merriweather/merriweather-bold-webfont.svg#merriweather-bold") format("svg"); }
+
+/* Font mixins
+// -------------------------------------------------------------------------- */
+/* ----- Display type ------------------------------------------------------- */
+/* ----- Body type ---------------------------------------------------------- */
+/* ----- Ampersands --------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+.font-display {
+  font-family: "newslab-normal", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: normal; }
+
+.font-display-bold {
+  font-family: "newslab-bold", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: bold; }
+
+.font-accent {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal; }
+
+.font-accent-bold {
+  font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: bold; }
+
+.font-body {
+  font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal; }
+
+.font-body-bold {
+  font-family: "merriweather-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: bold; }
+
+.font-body-italic {
+  font-family: "merriweather-normal-italic", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal;
+  font-style: italic; }
+
+/* use the best ampersands from common system fonts... */
+/* ==========================================================================
+//  Global color styles
+// -> base colors are set here on global elements, but modules apply their own
+// -> refer to colors ONLY via the $theme maps
+// ========================================================================== */
+/*doc
+---
+title: Color
+name: color
+category: core
+---
+
+Some functions and globals to keep the color scheme DRY and easy to manage in one place. Color for the entire site is handled through structured SASS maps, assigning each color a role:
+
+```
+$themes: (
+    'default': (
+        'text': (
+            'primary'    : $black,
+            'secondary'  : darken($gray, 10),
+            'tertiary'   : $gray
+        ),
+        'bg'             : #fff,
+        'well'           : lighten($gray, 20),
+        'border'         : lighten($gray, 20),
+        'highlight'      : $gray
+    ),
+);
+
+```
+
+You can assign these colors in your CSS with the `color` mixin, like so:
+
+```
+.your-component {
+    @include color('highlight', 'background-color');
+}
+```
+
+This will generate selectors all the site's color schemes. If you need a specific color to place in your own selectors, you can use the `theme()` function, like this:
+
+```
+background-color: theme(bg, reverse);
+```
+
+The second parameter is optional, and theme() will default to the 'default' theme map.
+
+*/
+/* Themes
+// -> use the helper class to apply a theme to a module
+// -------------------------------------------------------------------------- */
+body, .c-theme-default {
+  color: #4d384b;
+  background-color: #fff;
+  border-color: #DBD9DA !important; }
+  body ::selection, .c-theme-default ::selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+  body ::-moz-selection, .c-theme-default ::-moz-selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+
+.c-theme-reverse {
+  color: #a9b3bd;
+  background-color: #4d384b;
+  border-color: #886385 !important; }
+  .c-theme-reverse ::selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+  .c-theme-reverse ::-moz-selection {
+    background: #5eabbc;
+    color: #fff;
+    text-shadow: none; }
+
+.c-theme-wash {
+  color: #332732;
+  background-color: #5eabbc;
+  border-color: #4d384b !important; }
+  .c-theme-wash ::selection {
+    background: #fff;
+    color: #fff;
+    text-shadow: none; }
+  .c-theme-wash ::-moz-selection {
+    background: #fff;
+    color: #fff;
+    text-shadow: none; }
+
+/* Helper classes
+// -> use on individual elements to apply special color treatment
+// -------------------------------------------------------------------------- */
+.c-text-primary {
+  color: #332732 !important; }
+  .c-text-primary.c-theme-reverse, .c-theme-reverse .c-text-primary {
+    color: #fff !important; }
+  .c-text-primary.c-theme-wash, .c-theme-wash .c-text-primary {
+    color: #fff !important; }
+
+.c-text-secondary {
+  color: #4d384b !important; }
+  .c-text-secondary.c-theme-reverse, .c-theme-reverse .c-text-secondary {
+    color: #a9b3bd !important; }
+  .c-text-secondary.c-theme-wash, .c-theme-wash .c-text-secondary {
+    color: #332732 !important; }
+
+.c-text-tertiary {
+  color: #8C9AA7 !important; }
+  .c-text-tertiary.c-theme-reverse, .c-theme-reverse .c-text-tertiary {
+    color: #ab8ca8 !important; }
+  .c-text-tertiary.c-theme-wash, .c-theme-wash .c-text-tertiary {
+    color: #665664 !important; }
+
+.c-highlight {
+  color: #5eabbc !important; }
+  .c-highlight.c-theme-reverse, .c-theme-reverse .c-highlight {
+    color: #5eabbc !important; }
+  .c-highlight.c-theme-wash, .c-theme-wash .c-highlight {
+    color: #fff !important; }
+
+.c-highlight-bg {
+  background-color: #5eabbc; }
+  .c-highlight-bg.c-theme-reverse, .c-theme-reverse .c-highlight-bg {
+    background-color: #5eabbc; }
+  .c-highlight-bg.c-theme-wash, .c-theme-wash .c-highlight-bg {
+    background-color: #fff; }
+
+.c-accent {
+  color:  !important; }
+  .c-accent.c-theme-reverse, .c-theme-reverse .c-accent {
+    color:  !important; }
+  .c-accent.c-theme-wash, .c-theme-wash .c-accent {
+    color:  !important; }
+
+.c-well {
+  background-color: #F2F2F2; }
+  .c-well.c-theme-reverse, .c-theme-reverse .c-well {
+    background-color: #332732; }
+  .c-well.c-theme-wash, .c-theme-wash .c-well {
+    background-color: #665664; }
+
+.c-bg {
+  color: #fff; }
+  .c-bg.c-theme-reverse, .c-theme-reverse .c-bg {
+    color: #4d384b; }
+  .c-bg.c-theme-wash, .c-theme-wash .c-bg {
+    color: #5eabbc; }
+
+@media print {
+  [class^="c-"] {
+    background-color: transparent !important; } }
+
+/* =============================================================================
+// Border settings & helpers
+// ===========================================================================*/
+/*doc
+---
+title: Border settings & helpers
+name: borders
+category: core
+---
+
+Some mixins that allow us to keep our border styles DRY and control them from one place. Use these mixins and placeholders instead of writing your own CSS.
+
+```
+.your-selector {
+    // add the default border radius
+    @extend %border-radius;
+
+    // add a thin border on all sides
+    @include border(all, thin);
+
+    // add a thick border on the top and left sides with the highlight color
+    @include border(top left, thick, theme(highlight));
+}
+```
+
+There are also utility classes that allow you to quickly add a border to a container:
+
+```html_example
+<div class="border">
+    <p>I have borders on all sides!</p>
+</div>
+
+<div class="border border-round">
+    <p>I have rounded corners!</p>
+</div>
+
+<div class="border-top">
+    <p>I have borders on just the top!</p>
+</div>
+
+<div class="border-bottom border-right">
+    <p>I have borders on a couple sides. You can combine border classes to cover as many sides as you like.</p>
+</div>
+
+<div class="no-border">
+    <p>I have no borders! Even if I normally would.</p>
+</div>
+```
+
+*/
+.border {
+  border: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border.c-theme-reverse, .c-theme-reverse .border {
+    border-color: #886385; }
+  .border.c-theme-wash, .c-theme-wash .border {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border\@xsmall {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@xsmall.c-theme-reverse, .c-theme-reverse .border\@xsmall {
+      border-color: #886385; }
+    .border\@xsmall.c-theme-wash, .c-theme-wash .border\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border\@small {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@small.c-theme-reverse, .c-theme-reverse .border\@small {
+      border-color: #886385; }
+    .border\@small.c-theme-wash, .c-theme-wash .border\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border\@medium {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@medium.c-theme-reverse, .c-theme-reverse .border\@medium {
+      border-color: #886385; }
+    .border\@medium.c-theme-wash, .c-theme-wash .border\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border\@large {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@large.c-theme-reverse, .c-theme-reverse .border\@large {
+      border-color: #886385; }
+    .border\@large.c-theme-wash, .c-theme-wash .border\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border\@huge {
+    border: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border\@huge.c-theme-reverse, .c-theme-reverse .border\@huge {
+      border-color: #886385; }
+    .border\@huge.c-theme-wash, .c-theme-wash .border\@huge {
+      border-color: #4d384b; } }
+
+.border-top {
+  border-top: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-top.c-theme-reverse, .c-theme-reverse .border-top {
+    border-color: #886385; }
+  .border-top.c-theme-wash, .c-theme-wash .border-top {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-top\@xsmall {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@xsmall.c-theme-reverse, .c-theme-reverse .border-top\@xsmall {
+      border-color: #886385; }
+    .border-top\@xsmall.c-theme-wash, .c-theme-wash .border-top\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-top\@small {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@small.c-theme-reverse, .c-theme-reverse .border-top\@small {
+      border-color: #886385; }
+    .border-top\@small.c-theme-wash, .c-theme-wash .border-top\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-top\@medium {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@medium.c-theme-reverse, .c-theme-reverse .border-top\@medium {
+      border-color: #886385; }
+    .border-top\@medium.c-theme-wash, .c-theme-wash .border-top\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-top\@large {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@large.c-theme-reverse, .c-theme-reverse .border-top\@large {
+      border-color: #886385; }
+    .border-top\@large.c-theme-wash, .c-theme-wash .border-top\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-top\@huge {
+    border-top: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-top\@huge.c-theme-reverse, .c-theme-reverse .border-top\@huge {
+      border-color: #886385; }
+    .border-top\@huge.c-theme-wash, .c-theme-wash .border-top\@huge {
+      border-color: #4d384b; } }
+
+.border-right {
+  border-right: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-right.c-theme-reverse, .c-theme-reverse .border-right {
+    border-color: #886385; }
+  .border-right.c-theme-wash, .c-theme-wash .border-right {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-right\@xsmall {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@xsmall.c-theme-reverse, .c-theme-reverse .border-right\@xsmall {
+      border-color: #886385; }
+    .border-right\@xsmall.c-theme-wash, .c-theme-wash .border-right\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-right\@small {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@small.c-theme-reverse, .c-theme-reverse .border-right\@small {
+      border-color: #886385; }
+    .border-right\@small.c-theme-wash, .c-theme-wash .border-right\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-right\@medium {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@medium.c-theme-reverse, .c-theme-reverse .border-right\@medium {
+      border-color: #886385; }
+    .border-right\@medium.c-theme-wash, .c-theme-wash .border-right\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-right\@large {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@large.c-theme-reverse, .c-theme-reverse .border-right\@large {
+      border-color: #886385; }
+    .border-right\@large.c-theme-wash, .c-theme-wash .border-right\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-right\@huge {
+    border-right: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-right\@huge.c-theme-reverse, .c-theme-reverse .border-right\@huge {
+      border-color: #886385; }
+    .border-right\@huge.c-theme-wash, .c-theme-wash .border-right\@huge {
+      border-color: #4d384b; } }
+
+.border-bottom {
+  border-bottom: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-bottom.c-theme-reverse, .c-theme-reverse .border-bottom {
+    border-color: #886385; }
+  .border-bottom.c-theme-wash, .c-theme-wash .border-bottom {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-bottom\@xsmall {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@xsmall.c-theme-reverse, .c-theme-reverse .border-bottom\@xsmall {
+      border-color: #886385; }
+    .border-bottom\@xsmall.c-theme-wash, .c-theme-wash .border-bottom\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-bottom\@small {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@small.c-theme-reverse, .c-theme-reverse .border-bottom\@small {
+      border-color: #886385; }
+    .border-bottom\@small.c-theme-wash, .c-theme-wash .border-bottom\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-bottom\@medium {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@medium.c-theme-reverse, .c-theme-reverse .border-bottom\@medium {
+      border-color: #886385; }
+    .border-bottom\@medium.c-theme-wash, .c-theme-wash .border-bottom\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-bottom\@large {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@large.c-theme-reverse, .c-theme-reverse .border-bottom\@large {
+      border-color: #886385; }
+    .border-bottom\@large.c-theme-wash, .c-theme-wash .border-bottom\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-bottom\@huge {
+    border-bottom: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-bottom\@huge.c-theme-reverse, .c-theme-reverse .border-bottom\@huge {
+      border-color: #886385; }
+    .border-bottom\@huge.c-theme-wash, .c-theme-wash .border-bottom\@huge {
+      border-color: #4d384b; } }
+
+.border-left {
+  border-left: 1px solid #DBD9DA;
+  border-color: #DBD9DA; }
+  .border-left.c-theme-reverse, .c-theme-reverse .border-left {
+    border-color: #886385; }
+  .border-left.c-theme-wash, .c-theme-wash .border-left {
+    border-color: #4d384b; }
+
+@media (min-width: 30.01em) {
+  .border-left\@xsmall {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@xsmall.c-theme-reverse, .c-theme-reverse .border-left\@xsmall {
+      border-color: #886385; }
+    .border-left\@xsmall.c-theme-wash, .c-theme-wash .border-left\@xsmall {
+      border-color: #4d384b; } }
+
+@media (min-width: 42.01em) {
+  .border-left\@small {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@small.c-theme-reverse, .c-theme-reverse .border-left\@small {
+      border-color: #886385; }
+    .border-left\@small.c-theme-wash, .c-theme-wash .border-left\@small {
+      border-color: #4d384b; } }
+
+@media (min-width: 62.01em) {
+  .border-left\@medium {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@medium.c-theme-reverse, .c-theme-reverse .border-left\@medium {
+      border-color: #886385; }
+    .border-left\@medium.c-theme-wash, .c-theme-wash .border-left\@medium {
+      border-color: #4d384b; } }
+
+@media (min-width: 75.01em) {
+  .border-left\@large {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@large.c-theme-reverse, .c-theme-reverse .border-left\@large {
+      border-color: #886385; }
+    .border-left\@large.c-theme-wash, .c-theme-wash .border-left\@large {
+      border-color: #4d384b; } }
+
+@media (min-width: 100.01em) {
+  .border-left\@huge {
+    border-left: 1px solid #DBD9DA;
+    border-color: #DBD9DA; }
+    .border-left\@huge.c-theme-reverse, .c-theme-reverse .border-left\@huge {
+      border-color: #886385; }
+    .border-left\@huge.c-theme-wash, .c-theme-wash .border-left\@huge {
+      border-color: #4d384b; } }
+
+.no-border {
+  border: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border\@xsmall {
+    border: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border\@small {
+    border: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border\@medium {
+    border: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border\@large {
+    border: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border\@huge {
+    border: none !important; } }
+
+.no-border-top {
+  border-top: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-top\@xsmall {
+    border-top: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-top\@small {
+    border-top: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-top\@medium {
+    border-top: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-top\@large {
+    border-top: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-top\@huge {
+    border-top: none !important; } }
+
+.no-border-right {
+  border-right: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-right\@xsmall {
+    border-right: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-right\@small {
+    border-right: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-right\@medium {
+    border-right: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-right\@large {
+    border-right: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-right\@huge {
+    border-right: none !important; } }
+
+.no-border-bottom {
+  border-bottom: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-bottom\@xsmall {
+    border-bottom: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-bottom\@small {
+    border-bottom: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-bottom\@medium {
+    border-bottom: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-bottom\@large {
+    border-bottom: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-bottom\@huge {
+    border-bottom: none !important; } }
+
+.no-border-left {
+  border-left: none !important; }
+
+@media (min-width: 30.01em) {
+  .no-border-left\@xsmall {
+    border-left: none !important; } }
+
+@media (min-width: 42.01em) {
+  .no-border-left\@small {
+    border-left: none !important; } }
+
+@media (min-width: 62.01em) {
+  .no-border-left\@medium {
+    border-left: none !important; } }
+
+@media (min-width: 75.01em) {
+  .no-border-left\@large {
+    border-left: none !important; } }
+
+@media (min-width: 100.01em) {
+  .no-border-left\@huge {
+    border-left: none !important; } }
+
+/* --- Modifiers ------------------------------------------------------------ */
+.border--thick {
+  border-width: 4px; }
+
+/* =============================================================================
+// Global spacing
+// -> used to keep whitespace in the layout consistent
+// ========================================================================== */
+/* Margins
+// -------------------------------------------------------------------------- */
+.l-margin {
+  margin: 16px;
+  margin: 1rem; }
+
+.l-margin-narrow {
+  margin: 10px !important;
+  margin: 0.625rem !important; }
+
+.l-margin-wide {
+  margin: 37px !important;
+  margin: 2.3125rem !important; }
+
+.l-margin-left {
+  margin-left: 16px !important;
+  margin-left: 1rem !important; }
+
+.l-margin-left-narrow {
+  margin-left: 10px !important;
+  margin-left: 0.625rem !important; }
+
+.l-margin-left-wide {
+  margin-left: 37px !important;
+  margin-left: 2.3125rem !important; }
+
+.l-margin-right {
+  margin-right: 16px !important;
+  margin-right: 1rem !important; }
+
+.l-margin-right-narrow {
+  margin-right: 10px !important;
+  margin-right: 0.625rem !important; }
+
+.l-margin-right-wide {
+  margin-right: 37px !important;
+  margin-right: 2.3125rem !important; }
+
+.l-margin-top {
+  margin-top: 16px !important;
+  margin-top: 1rem !important; }
+
+.l-margin-top-narrow {
+  margin-top: 10px !important;
+  margin-top: 0.625rem !important; }
+
+.l-margin-top-wide {
+  margin-top: 37px !important;
+  margin-top: 2.3125rem !important; }
+
+.l-margin-bottom {
+  margin-bottom: 16px !important;
+  margin-bottom: 1rem !important; }
+
+.l-margin-bottom-narrow {
+  margin-bottom: 10px !important;
+  margin-bottom: 0.625rem !important; }
+
+.l-margin-bottom-wide {
+  margin-bottom: 37px !important;
+  margin-bottom: 2.3125rem !important; }
+
+.l-no-margin {
+  margin: 0 !important;
+  margin: 0 !important; }
+
+.l-no-margin-left {
+  margin-left: 0 !important;
+  margin-left: 0 !important; }
+
+.l-no-margin-right {
+  margin-right: 0 !important;
+  margin-right: 0 !important; }
+
+.l-no-margin-top {
+  margin-top: 0 !important;
+  margin-top: 0 !important; }
+
+.l-no-margin-bottom {
+  margin-bottom: 0 !important;
+  margin-bottom: 0 !important; }
+
+/* Padding
+// -------------------------------------------------------------------------- */
+.l-padding {
+  padding: 16px !important;
+  padding: 1rem !important; }
+
+.l-padding-narrow {
+  padding: 10px !important;
+  padding: 0.625rem !important; }
+
+.l-padding-wide {
+  padding: 37px !important;
+  padding: 2.3125rem !important; }
+
+.l-padding-left {
+  padding-left: 16px !important;
+  padding-left: 1rem !important; }
+
+.l-padding-left-narrow {
+  padding-left: 10px !important;
+  padding-left: 0.625rem !important; }
+
+.l-padding-left-wide {
+  padding-left: 37px !important;
+  padding-left: 2.3125rem !important; }
+
+.l-padding-right {
+  padding-right: 16px !important;
+  padding-right: 1rem !important; }
+
+.l-padding-right-narrow {
+  padding-right: 10px !important;
+  padding-right: 0.625rem !important; }
+
+.l-padding-right-wide {
+  padding-right: 37px !important;
+  padding-right: 2.3125rem !important; }
+
+.l-padding-top {
+  padding-top: 16px !important;
+  padding-top: 1rem !important; }
+
+.l-padding-top-narrow {
+  padding-top: 10px !important;
+  padding-top: 0.625rem !important; }
+
+.l-padding-top-wide {
+  padding-top: 37px !important;
+  padding-top: 2.3125rem !important; }
+
+.l-padding-bottom {
+  padding-bottom: 16px !important;
+  padding-bottom: 1rem !important; }
+
+.l-padding-bottom-narrow {
+  padding-bottom: 10px !important;
+  padding-bottom: 0.625rem !important; }
+
+.l-padding-bottom-wide {
+  padding-bottom: 37px !important;
+  padding-bottom: 2.3125rem !important; }
+
+.l-no-padding {
+  padding: 0 !important;
+  padding: 0 !important; }
+
+.l-no-padding-left {
+  padding-left: 0 !important;
+  padding-left: 0 !important; }
+
+.l-no-padding-right {
+  padding-right: 0 !important;
+  padding-right: 0 !important; }
+
+.l-no-padding-top {
+  padding-top: 0 !important;
+  padding-top: 0 !important; }
+
+.l-no-padding-bottom {
+  padding-bottom: 0 !important;
+  padding-bottom: 0 !important; }
+
+/* =============================================================================
+// Grid layout classes
+// ===========================================================================*/
+/*doc
+---
+title: Grids
+name: grids
+category: Layout
+---
+
+Grids
+
+```html_example
+<a href="#" class="button l-abs top right">Button @ top right</a>
+```
+
+*/
+/* Gutters
+// -------------------------------------------------------------------------- */
+/* Grid columns
+// -------------------------------------------------------------------------- */
+/* Utilities
+// -------------------------------------------------------------------------- */
+/* Base
+// -------------------------------------------------------------------------- */
+.local_nav {
+  display: block;
+  font-size: 0; }
+  @media (min-width: 42.01em) {
+    .flexbox .local_nav {
+      display: -webkit-box;
+      display: -moz-box;
+      display: box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+.local_nav-item {
+  padding-top: 16px;
+  padding-top: 1rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem;
+  border-top: 1px solid #DBD9DA;
+  border-color: #DBD9DA;
+  display: block;
+  position: relative;
+  text-align: center; }
+  .local_nav-item.c-theme-reverse, .c-theme-reverse .local_nav-item {
+    border-color: #886385; }
+  .local_nav-item.c-theme-wash, .c-theme-wash .local_nav-item {
+    border-color: #4d384b; }
+  .local_nav-item a:hover {
+    text-decoration: none; }
+  @media (min-width: 42.01em) {
+    .local_nav-item {
+      font-size: 16px;
+      font-size: 1rem;
+      display: inline-block;
+      width: 50%;
+      padding-left: 8px;
+      padding-right: 8px;
+      border-right: 1px solid #DBD9DA;
+      border-color: #DBD9DA;
+      text-align: left; }
+      .local_nav-item:first-child {
+        padding-left: 0; }
+      .local_nav-item:last-child {
+        padding-right: 0; }
+      .flexbox .local_nav-item {
+        display: block; }
+      .local_nav-item.c-theme-reverse, .c-theme-reverse .local_nav-item {
+        border-color: #886385; }
+      .local_nav-item.c-theme-wash, .c-theme-wash .local_nav-item {
+        border-color: #4d384b; }
+      .local_nav-item:last-child {
+        border-right: none; } }
+
+.local_nav-item--left:last-child {
+  width: 100%; }
+
+@media (min-width: 42.01em) {
+  .local_nav-item--right {
+    text-align: right; }
+    .local_nav-item--right:first-child {
+      width: 100%; } }

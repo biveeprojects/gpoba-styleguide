@@ -34,7 +34,7 @@ Documentation here
     @include type-scale('eta');
     @include border('right');
     display: inline-block;
-    margin-right: 1em;
+    margin: 0 1em 0 0;
     padding-right: 1em;
 
     &:last-child { border-right: none; }

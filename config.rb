@@ -37,13 +37,31 @@ helpers do
         return chapters
     end
 
+    def find_chapter_index(chapter)
+        chapters = get_chapters
+        if chapters.include?(chapter)
+            return chapters.index(chapter)
+        else
+            return false
+        end
+    end
+
     def next_chapter(chapter)
         # find next chapter in TOC
-        # chapters = get_chapters;
+        if find_chapter_index(chapter) < (get_chapters.length - 1)
+            return get_chapters[find_chapter_index(chapter) + 1]
+        else
+            return false
+        end
     end
 
     def prev_chapter(chapter)
         # find previous chapter in TOC
+        if find_chapter_index(chapter) > 0
+            return get_chapters[find_chapter_index(chapter) - 1]
+        else
+            return false
+        end
     end
 
     def current_page?(url)

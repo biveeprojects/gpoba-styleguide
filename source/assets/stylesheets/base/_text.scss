@@ -31,12 +31,20 @@ body {
 // headings
 h1, h2, h3, h4, h5, h6,
 .t-heading {
+    @include color('text' 'primary');
     @include font-accent('bold');
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.02em;
 
-    a { color: inherit; }
+    a {
+        color: inherit;
+
+        &:hover, &:active {
+            @include color('highlight');
+            text-decoration: none;
+        }
+    }
 
     strong {
         font-family: inherit;
@@ -51,6 +59,11 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: -0.03em;
 }
 
+.t-heading--slug {
+    @include color('text' 'primary');
+    text-transform: uppercase;
+}
+
 // body/inline text
 p {
     @include type-scale('epsilon');
@@ -58,6 +71,7 @@ p {
 }
 
 a {
+    @include transition-default;
     @include color('highlight');
     text-decoration: none;
 

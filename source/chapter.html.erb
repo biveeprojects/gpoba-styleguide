@@ -24,3 +24,8 @@ layout: layout
         <% end %>
     <% end %>
 </article>
+
+<%= partial "components/local_nav", :locals => {
+    :prev_page => prev_chapter(locals[:title]),
+    :next_page => next_chapter(locals[:title])
+} %>

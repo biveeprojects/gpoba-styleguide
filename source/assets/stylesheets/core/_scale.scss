@@ -30,7 +30,7 @@ $type-line_height: 1.4;
 // set type to default body size using REMs
 // -> useful for resetting type size on a container to override parents
 @mixin type-size-default {
-  @include rem(type-size, $type-size--default);
+  @include rem(font-size, $type-size--default);
 }
 
 // global type scale

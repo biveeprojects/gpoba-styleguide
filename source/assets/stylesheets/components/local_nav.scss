@@ -1,0 +1,65 @@
+/* =============================================================================
+//  Local nav
+// -> next/prev page links
+// ========================================================================== */
+
+/*doc
+---
+title: Local nav
+name: local nav
+category: molecules
+---
+
+Documentation here
+
+*/
+
+@import "../core/all";
+@import "../layout/spacing";
+@import "../layout/grid";
+
+$local_nav-break: 'small';
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.local_nav {
+    @include column-wrapper($breakpoint: $local_nav-break);
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+.local_nav-item {
+    @include rem(padding-top, $l-margin);
+    @include rem(padding-bottom, $l-margin);
+    @include border(top);
+    display: block;
+    position: relative;
+    text-align: center;
+
+    a:hover { text-decoration: none; }
+
+    @include media(">#{$local_nav-break}") {
+        @include column(1, $grid: 1 1);
+        @include border(right);
+        text-align: left;
+
+        &:last-child { border-right: none; }
+    }
+}
+
+    .local_nav-item--left {
+        &:last-child { width: 100%; }
+    }
+
+    .local_nav-item--right {
+        @include media(">#{$local_nav-break}") {
+            text-align: right;
+
+            // if this is the only item
+            &:first-child { width: 100%; }
+        }
+    }
+
