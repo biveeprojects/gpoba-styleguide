@@ -7,13 +7,14 @@
 <%# --- Locals --- %>
 <%# swatches - REQUIRED %>
 <%# grid_size ||= 'default' # size of the grid items %>
+<% margins ||= ["bottom"] %>
 
-<ul class="l-gallery l-gallery--2@xsmall l-gallery--3@small">
+<ul class="l-gallery<% margins.each do |m| %> l-margin-<%= m %><% end %>">
     <% swatches.each do |swatch| %>
     <li class="l-gallery-item">
-        <div class="card border">
-            <div class="card-figure swatch" style="background-color: <%= swatch.hex %>;"></div>
-            <div class="card-content">
+        <div class="border">
+            <div class="swatch" style="background-color: <%= swatch.hex %>;"></div>
+            <div class="l-padding-narrow">
                 <h2 class="t-heading t-heading--slug t-scale-zeta"><%= swatch.name %></h2>
                 <dl class="list-table t-scale-eta">
                     <% if swatch.hex.present? %>

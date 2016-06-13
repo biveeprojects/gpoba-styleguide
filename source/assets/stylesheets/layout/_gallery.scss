@@ -74,6 +74,7 @@ $gallery-sizes: 2, 3, 4;
         // http://stackoverflow.com/questions/21942183/multiline-flexbox-in-ie11-calculating-widths-incorrectly
         // https://github.com/philipwalton/flexbugs#7-flex-basis-doesnt-account-for-box-sizingborder-box
         // http://codepen.io/philipwalton/pen/XJMWem
+        display: flex;
         @include flex(0 0 auto);
     }
 }
@@ -96,7 +97,7 @@ $gallery-sizes: 2, 3, 4;
         list-style: none;
     }
 
-    @include media('>small') {
+    @include media('>xsmall') {
         @include display(flex);
         // offset for column gutters
         margin-left: -($gallery-gutter/2);
@@ -117,8 +118,9 @@ $gallery-sizes: 2, 3, 4;
     padding-bottom: $gallery-gutter;
     vertical-align: top;
 
-    @include media('>small') { @include gallery-columns(2); }
-    @include media('>medium') { @include gallery-columns(3); }
+    @include media('>xsmall') { @include gallery-columns(2); }
+    @include media('>54em') { @include gallery-columns(3); }
+    // @include media('>medium') { @include gallery-columns(3); }
 }
 
 
@@ -126,13 +128,15 @@ $gallery-sizes: 2, 3, 4;
 // -------------------------------------------------------------------------- */
 
 /* --- Column sizing -------------------------------------------------------- */
+// TODO: specificity issues in media query order -- each successive size overrides the previous ones
+// -- figure out how to make modifiers flexible without conf
 
-@each $number in $gallery-sizes {
-    @include breakpointify('.l-gallery--#{$number}') {
-        @include display('flex');
-        margin-left: -($gallery-gutter/2);
-        margin-right: -($gallery-gutter/2);
+// @each $number in $gallery-sizes {
+//     @include breakpointify('.l-gallery--#{$number}', $sizes: 'small' 'medium' 'large') {
+//         @include display('flex');
+//         margin-left: -($gallery-gutter/2);
+//         margin-right: -($gallery-gutter/2);
 
-        .l-gallery-item { @include gallery-columns($number); }
-    }
-}
+//         .l-gallery-item { @include gallery-columns($number); }
+//     }
+// }
