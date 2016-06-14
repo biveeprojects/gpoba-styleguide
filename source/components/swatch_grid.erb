@@ -1,19 +1,20 @@
 <%# --- Dependencies --- %>
 <%# core/all.scss %>
-<%# layout/grid.scss %>
-<%# components/swatch.scss %>
-<%# components/card.scss %>
+<%# layout/positioning.scss %>
+<%# layout/gallery.scss %>
 
 <%# --- Locals --- %>
 <%# swatches - REQUIRED %>
 <%# grid_size ||= 'default' # size of the grid items %>
-<% margins ||= ["bottom"] %>
+<% margins ||= ["top", "bottom"] %>
 
 <ul class="l-gallery<% margins.each do |m| %> l-margin-<%= m %><% end %>">
     <% swatches.each do |swatch| %>
     <li class="l-gallery-item">
-        <div class="border">
-            <div class="swatch" style="background-color: <%= swatch.hex %>;"></div>
+        <div class="l-flex-fill border">
+            <div class="media-aspect-1-2">
+                <div class="media-aspect-content" style="background-color: <%= swatch.hex %>;"></div>
+            </div>
             <div class="l-padding-narrow">
                 <h2 class="t-heading t-heading--slug t-scale-zeta"><%= swatch.name %></h2>
                 <dl class="list-table t-scale-eta">

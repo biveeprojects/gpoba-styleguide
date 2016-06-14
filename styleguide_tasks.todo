@@ -11,10 +11,18 @@ Front-end dev/theming: @jay
   ✔ local nav @done (16-06-10 14:13)
   ✔ sections/panels/chapter layout @done (16-06-09 21:34)
   ☐ partials for special stuff like figures, examples, etc
+  ☐ download assets button (color palette, typefaces) - link to zip file
   ✔ landing page @done (16-06-10 14:19)
   ✔ "intro" section for each chapter? @done (16-06-09 23:01)
   ☐ JS for scrolling highlights, sticky nav
   ☐ mobile nav
+
+  Design things to discuss/pitch to client (wed?): @jay @nico @scott
+  ☐ logo options (proxima nova, avenir)
+  ☐ new typefaces - newslab, gibson, merriweather
+      ☐ fallback faces for powerpoint, email, etc.? (helvetica, georgia)
+  ☐ color palette - blue w/ purple, alt. highlights
+  ☐ imagery - good and bad examples of on-brand imagery.
 
   Content: @jay @nico @scott
   ☐ logo & variations

@@ -37,6 +37,12 @@ $z--admin  : 3; // put admin/drupal navs above all the things
 // .l-display-inline { display: inline; }
 // .l-display-inline_block { display: inline-block; }
 // .l-display-block { display: block; }
+.l-display-flex {
+    @include yep('flexbox') { display: flex; }
+}
+
+// make a container fill its parent
+.l-flex-fill { flex: 1; }
 
 // @include breakpointify(".l-fixed") {
 //     position: fixed !important;
