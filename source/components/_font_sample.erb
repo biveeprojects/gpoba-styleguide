@@ -1,0 +1,12 @@
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# base/text.scss %>
+
+<%# --- Locals --- %>
+<% font ||= "display" %>
+<% styles ||= ["regular", "bold"] %>
+<blockquote>
+    <% styles.each do |style| %>
+        <p class="font-<%= font %><% unless style == "regular"%> font-<%= font %>-<%= style %><% end %> t-scale-cappa c-highlight" style="overflow-wrap: break-word;">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
+    <% end %>
+</blockquote>

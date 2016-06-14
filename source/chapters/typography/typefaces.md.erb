@@ -4,4 +4,32 @@ chapter: Typography
 weight: 1
 ---
 
-<%= lorem.paragraphs rand(5...8) %>
+### Display
+
+<%= partial "components/font_sample", :locals => { :font => "display" } %>
+
+**Newslab** is used for headlines and titles, generally in a light weight.
+
+- Foundry: [Latinotype](http://www.latinotype.com/30)
+- Vendors: [Fontspring](https://www.fontspring.com/fonts/latinotype/newslab)
+- Alternate system fonts: Georgia, Palatino
+
+### Accent
+
+<%= partial "components/font_sample", :locals => { :font => "accent" } %>
+
+**Gibson** is used for subheads, interface elements, and secondary text like sidebars.
+
+- Foundry: [Canada Type](http://canadatype.net/fonts/gibson)
+- Vendors: [Fontspring](https://www.fontspring.com/fonts/canada-type/gibson)
+- Alternate system fonts: Tahoma, Lucida Grande
+
+### Body
+
+<%= partial "components/font_sample", :locals => { :font => "body", :styles => ["regular", "bold", "italic"] } %>
+
+**Merriweather**, a free font, is used for running text in the main body.
+
+- Foundry: [Sorkin Type](http://sorkintype.com/fonts.html#mw)
+- Vendors: [Google Fonts](https://www.google.com/fonts/specimen/Merriweather), [FontSquirrel](https://www.fontsquirrel.com/fonts/merriweather)
+- Alternative system fonts: Georgia, Palatino

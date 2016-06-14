@@ -4,4 +4,29 @@ chapter: Typography
 weight: 2
 ---
 
-<%= lorem.paragraphs rand(3...8) %>
+A mathematical scale, much like the scales used in music, can be applied to type sizing to enforce consistent proportions in brand type and layout. Typographic scales can carry cultural associations and influence the overall "mood" of a layout, much like the way a song in a minor key often has a different musical effect than one in a major key. A well-implemented scale can have as much effect on the overall tone of your collateral as the color palette, font choices, and imagery.
+
+GPOBA uses the "[Golden Section](https://en.wikipedia.org/wiki/Golden_ratio)," a [1:1.618 ratio](http://www.modularscale.com/?1&em&1.618&web&text), for its scale. A scale with "humanist" associations, it can be found in classical architecture, art, and in  natural patterns like the spiral arrangement of leaves on plants. As a layout scale its proportions often feel comfortable and calm, but also rational and ordered. This all helps to reinforce GPOBA's brand "voice" as one that is human-centered, friendly, and accessible, but also results- and data-driven.
+
+The scale can be calculated in sequence from any base number (such as the size of your body text). The base number you use may change from one context to another, depending on how large or small your type will be set and how wide a range of sizes you need.
+
+A typical screen scale, for instance, may be based on 16-pixel (or 1em) body type:
+
+```
+10px, 13px, 16px, 23px, 26px, 37px, 68px
+```
+
+... where the smallest size may be used for photo captions or the copyright, and the largest for main titling. The body type (16px) falls almost in the middle.
+
+Another example: for a printed report, the body type may be set at 10 points, and your scale would then be:
+
+```
+6pt, 10pt, 16pt, 26pt, 42pt, 69pt
+```
+
+... where, again, captions and sidebars may be set at 6 points, while the cover title is at 69 points.
+
+The scale can be used to calculate page grids and layout proportions as well, where, for instance, the main text column might be wider than the sidebar by a factor of 2.618 (or 2 steps up the scale). This is a good practice, as all the elements of your design -- type treatments, grids, graphic containers, etc. -- will feel more coherent and clear when it revolves around a common set of meaningful relationships. [This article](http://alistapart.com/article/content-out-layout) is an excellent overview of how this works.
+
+[A calculator](http://www.modularscale.com/?1&em&1.618&web&text) is available on the web to help build your scale. Enter your base(s) in the inputs and your scale will be generated automatically.
+

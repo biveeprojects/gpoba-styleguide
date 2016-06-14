@@ -1257,7 +1257,7 @@ Inline text is mostly styled globally and doesn't change a whole lot from one co
 body {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: normal;
-  line-height: 1.4; }
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6,
 .t-heading {
@@ -1493,6 +1493,28 @@ img,
 video {
   vertical-align: middle;
   max-width: 100%; }
+
+figure {
+  margin: 0; }
+
+/* Fix IE SVG scaling issue
+ * https://gist.github.com/larrybotha/7881691
+ */
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src*=".svg"] {
+  width: 100%; }
+
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"],
+  source[type*="svg+xml"] {
+    width: 100%; } }
 
 /* Utilities
 // -------------------------------------------------------------------------- */
@@ -1772,6 +1794,14 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 
 /* Globals
 // -------------------------------------------------------------------------- */
+.content h2, .content h3, .content h4, .content h5, .content h6 {
+  padding-top: 37px;
+  padding-top: 2.3125rem; }
+
+.content blockquote {
+  margin-left: 0;
+  margin-right: 0; }
+
 /* /////////////////////////////////////////////////////////////////////////////
 // Layout styles
 // -> global utility classes for basic layout

@@ -53,6 +53,30 @@ video {
     max-width: 100%;
 }
 
+figure { margin: 0; }
+
+/* Fix IE SVG scaling issue
+ * https://gist.github.com/larrybotha/7881691
+ */
+
+/*
+ * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files
+ *
+ * [1] IE9
+ * [2] IE10+
+ */
+/* 1 */
+.ie9 img[src*=".svg"] {
+  width: 100%;
+}
+/* 2 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src*=".svg"],
+  source[type*="svg+xml"] {
+    width: 100%;
+  }
+}
+
 /* Utilities
 // -------------------------------------------------------------------------- */
 
