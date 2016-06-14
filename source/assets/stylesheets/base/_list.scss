@@ -10,7 +10,7 @@ $list-table-col: 5em;
 // -------------------------------------------------------------------------- */
 
 li {
-    @include type-scale('eta');
+    // @include type-scale('eta');
 
     strong { font-weight: bold; }
 }

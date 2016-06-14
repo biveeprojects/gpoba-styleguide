@@ -17,7 +17,7 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 .content {
 
     // headings
-    h2, h3, h4, h5, h6 {
+    > h2, > h3, > h4, > h5, > h6 {
         // @include border('top');
         @include rem(padding-top, $l-margin-wide);
     }

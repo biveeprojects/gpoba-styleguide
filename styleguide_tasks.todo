@@ -22,17 +22,17 @@ Front-end dev/theming: @jay
   ☐ mobile nav
 
   Design things to discuss/pitch to client (wed?): @jay @nico @scott
-  ☐ logo options (proxima nova, avenir)
+  ✔ logo options (proxima nova, avenir) @done (16-06-14 18:22)
   ✔ new typefaces - newslab, gibson, merriweather @done (16-06-14 18:22)
       ✔ fallback faces for powerpoint, email, etc.? (helvetica, georgia) @done (16-06-14 18:22)
-  ☐ color palette - blue w/ purple, alt. highlights
+  ✔ color palette - blue w/ purple, alt. highlights @done (16-06-14 18:22)
   ☐ imagery - good and bad examples of on-brand imagery.
 
   Content: @jay @nico @scott
   ☐ logo & variations
   ☐ color swatches
       ☐ downloads - adobe swatches, affinity?, sass?, pantone/CMYK numbers
-  ☐ typography - scale, fonts, etc.
+  ✔ typography - scale, fonts, etc. @done (16-06-14 18:22)
   ☐ imagery
       ☐ write guidelines
       ☐ collect examples -- good and bad

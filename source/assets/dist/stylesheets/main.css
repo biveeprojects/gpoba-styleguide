@@ -1441,11 +1441,8 @@ address,
 // ========================================================================== */
 /* Globals
 // -------------------------------------------------------------------------- */
-li {
-  font-size: 10px;
-  font-size: 0.625rem; }
-  li strong {
-    font-weight: bold; }
+li strong {
+  font-weight: bold; }
 
 li {
   margin-bottom: 0.5em; }
@@ -1794,7 +1791,7 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 
 /* Globals
 // -------------------------------------------------------------------------- */
-.content h2, .content h3, .content h4, .content h5, .content h6 {
+.content > h2, .content > h3, .content > h4, .content > h5, .content > h6 {
   padding-top: 37px;
   padding-top: 2.3125rem; }
 
