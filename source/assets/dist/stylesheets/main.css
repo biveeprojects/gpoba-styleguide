@@ -2128,6 +2128,43 @@ Wrappers
 // -> reusable, composable, self-contained interface elements
 ///////////////////////////////////////////////////////////////////////////// */
 /* --- Atoms ---------------------------------------------------------------- */
+/* =============================================================================
+//  Button/component title
+// ========================================================================== */
+/*doc
+---
+title: Button
+name: button
+category: core
+---
+
+Documentation here
+
+*/
+/* Base
+// -------------------------------------------------------------------------- */
+.button {
+  font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-weight: normal;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0.6em 1.5em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #5eabbc; }
+  .button:hover, .button:active {
+    text-decoration: none;
+    background-color: #70b4c3; }
+  .button:active {
+    background-color: #4ca2b5; }
+  .button > strong {
+    font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+    font-weight: bold; }
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+/* Modifiers
+// -------------------------------------------------------------------------- */
 /* ==========================================================================
 //  Logo modules
 // ========================================================================== */

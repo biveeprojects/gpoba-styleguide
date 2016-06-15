@@ -1,0 +1,13 @@
+<%# --- Dependencies --- %>
+<%# core/all.scss %>
+<%# layout/positioning.scss %>
+<%# components/button.scss %>
+
+<%# --- Locals --- %>
+<%# label - REQUIRED %>
+<%# file - REQUIRED %>
+<% filetype ||= false %>
+
+<% link_to file, :class => "button t-scale-zeta" do %>
+    <strong><%= label %></strong><% if filetype %> (<%= filetype %>)<% end %>
+<% end %>

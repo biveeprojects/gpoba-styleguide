@@ -18,3 +18,9 @@ Blue and dark purple are the main colors of GPOBA's primary palette, with a rang
 Blue is the 'default' highlight color, but these secondary highlights are available if you need a broader palette.
 
 <%= partial "components/swatch_grid", :locals => { :swatches => data.color.alternate } %>
+
+#### Download
+
+<%= partial "components/download_button", :locals => { :label => "Adobe Swatch File", :filetype => "ase", :file => "media/gpoba.ase.zip" } %>
+
+<%= partial "components/download_button", :locals => { :label => "Affinity Palette File", :filetype => "afpallete", :file => "media/gpoba.ase.zip" } %>

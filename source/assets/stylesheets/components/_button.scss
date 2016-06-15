@@ -1,0 +1,51 @@
+/* =============================================================================
+//  Button/component title
+// ========================================================================== */
+
+/*doc
+---
+title: Button
+name: button
+category: core
+---
+
+Documentation here
+
+*/
+
+@import "../core/all";
+
+// $component-variable: false; // always scope to namespace
+
+/* Base
+// -------------------------------------------------------------------------- */
+
+.button {
+    @include font-accent;
+    @include border-radius;
+    display: inline-block;
+    padding: 0.6em 1.5em;
+    text-transform: uppercase;
+    color: theme('bg');
+    background-color: theme('highlight');
+
+    &:hover, &:active {
+        text-decoration: none;
+        background-color: lighten(theme('highlight'), 5);
+    }
+
+    &:active { background-color: darken(theme('highlight'), 5); }
+
+    > strong { @include font-accent('bold'); }
+}
+
+
+/* Subcomponent
+// -------------------------------------------------------------------------- */
+
+// .button-subcomponent {}
+
+/* Modifiers
+// -------------------------------------------------------------------------- */
+
+// .button--modifier {}
