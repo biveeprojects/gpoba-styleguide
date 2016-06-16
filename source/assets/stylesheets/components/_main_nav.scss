@@ -23,11 +23,14 @@ $main_nav-w: 160px; // always scope to namespace
 // -------------------------------------------------------------------------- */
 
 .main_nav {
+    @include border('bottom');
     @include font-accent;
     display: block;
     position: relative;
     list-style: none;
     margin-left: 0;
+    padding-top: $l-margin;
+    padding-bottom: $l-margin;
 
     > ul {
         list-style: none;
@@ -69,10 +72,6 @@ $main_nav-w: 160px; // always scope to namespace
     }
 }
 
-    // .main_nav-item--secondary.is-active::before {
-    //     background-color: darken(theme('highlight'), 15);
-    // }
-
 // nav links
 // -> mainly styles type & color
 .main_nav-link {
@@ -89,20 +88,7 @@ $main_nav-w: 160px; // always scope to namespace
         color: theme('highlight');
     }
 
-    &.is-active {
-        color: theme('highlight');
-
-        &::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: border-w('thick');
-            background-color: theme('highlight');
-        }
-    }
+    .main_nav-item.is-active > &, &.is-active { color: theme('highlight'); }
 }
 
     // secondary nav items in the subnav (see above)
@@ -133,7 +119,9 @@ $main_nav-w: 160px; // always scope to namespace
     top: 0;
     margin-top: ($l-margin-wide * 3); // TODO fix this
     padding-top: $l-margin;
+    padding-bottom: 0;
     z-index: $z--high;
+    border-bottom: none;
 
     &.is-fixed {
         position: fixed;

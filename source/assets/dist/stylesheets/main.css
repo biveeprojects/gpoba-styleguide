@@ -2216,12 +2216,20 @@ Documentation here
 /* Base
 // -------------------------------------------------------------------------- */
 .main_nav {
+  border-bottom: 1px solid #DBD9DA;
+  border-color: #DBD9DA;
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: normal;
   display: block;
   position: relative;
   list-style: none;
-  margin-left: 0; }
+  margin-left: 0;
+  padding-top: 16px;
+  padding-bottom: 16px; }
+  .main_nav.c-theme-reverse, .c-theme-reverse .main_nav {
+    border-color: #886385; }
+  .main_nav.c-theme-wash, .c-theme-wash .main_nav {
+    border-color: #4d384b; }
   .main_nav > ul {
     list-style: none;
     margin-left: 0;
@@ -2266,17 +2274,8 @@ Documentation here
   .main_nav-link:hover, .main_nav-link:active {
     text-decoration: none;
     color: #5eabbc; }
-  .main_nav-link.is-active {
+  .main_nav-item.is-active > .main_nav-link, .main_nav-link.is-active {
     color: #5eabbc; }
-    .main_nav-link.is-active::before {
-      content: " ";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 4px;
-      background-color: #5eabbc; }
 
 .main_nav-link--secondary {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
@@ -2306,7 +2305,9 @@ Documentation here
     top: 0;
     margin-top: 111px;
     padding-top: 16px;
-    z-index: 2; }
+    padding-bottom: 0;
+    z-index: 2;
+    border-bottom: none; }
     .main_nav--fixed\@small.is-fixed {
       position: fixed;
       margin-top: 0;
@@ -2320,7 +2321,9 @@ Documentation here
     top: 0;
     margin-top: 111px;
     padding-top: 16px;
-    z-index: 2; }
+    padding-bottom: 0;
+    z-index: 2;
+    border-bottom: none; }
     .main_nav--fixed\@medium.is-fixed {
       position: fixed;
       margin-top: 0;
