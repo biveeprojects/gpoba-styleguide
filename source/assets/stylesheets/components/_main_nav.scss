@@ -130,13 +130,15 @@ $main_nav-w: 160px; // always scope to namespace
 @include breakpointify(".main_nav--fixed", $sizes: 'small' 'medium') {
     @include rem(width, $main_nav-w);
     position: absolute;
+    top: 0;
     margin-top: ($l-margin-wide * 3); // TODO fix this
-    // padding-top: $l-margin;
+    padding-top: $l-margin;
     z-index: $z--high;
 
     &.is-fixed {
         position: fixed;
-        // margin-top: 0;
+        margin-top: 0;
+        top: 0;
     }
 }
 

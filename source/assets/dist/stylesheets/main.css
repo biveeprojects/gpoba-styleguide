@@ -2303,20 +2303,28 @@ Documentation here
     width: 160px;
     width: 10rem;
     position: absolute;
+    top: 0;
     margin-top: 111px;
+    padding-top: 16px;
     z-index: 2; }
     .main_nav--fixed\@small.is-fixed {
-      position: fixed; } }
+      position: fixed;
+      margin-top: 0;
+      top: 0; } }
 
 @media (min-width: 62.01em) {
   .main_nav--fixed\@medium {
     width: 160px;
     width: 10rem;
     position: absolute;
+    top: 0;
     margin-top: 111px;
+    padding-top: 16px;
     z-index: 2; }
     .main_nav--fixed\@medium.is-fixed {
-      position: fixed; } }
+      position: fixed;
+      margin-top: 0;
+      top: 0; } }
 
 @media (min-width: 30.01em) {
   .has-main_nav-margin\@xsmall {

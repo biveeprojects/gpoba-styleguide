@@ -17,6 +17,7 @@ webpackJsonp([1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// --- sticky main nav ---------------------------------------------------------
 	(0, _jquery2.default)(document).ready(function (_) {
 	    if ((0, _jquery2.default)('.js-sticky').length > 0) {
 	        _sticky2.default.init('.js-sticky', {
