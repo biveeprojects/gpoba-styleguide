@@ -5,13 +5,28 @@ webpackJsonp([1],[
   \*******************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	var _jquery = __webpack_require__(/*! jquery */ 3);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
-
+	
+	var _sticky = __webpack_require__(/*! libs/sticky */ 4);
+	
+	var _sticky2 = _interopRequireDefault(_sticky);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	(0, _jquery2.default)(document).ready(function (_) {
+	    if ((0, _jquery2.default)('.js-sticky').length > 0) {
+	        _sticky2.default.init('.js-sticky', {
+	            highlightEl: '.js-sticky-highlight',
+	            stopEl: '.js-sticky-stop'
+	        });
+	
+	        _sticky2.default.viewportMargin = 2;
+	    }
+	});
 
 /***/ },
 /* 1 */,
@@ -9837,6 +9852,180 @@ webpackJsonp([1],[
 	return jQuery;
 	}));
 
+
+/***/ },
+/* 4 */
+/*!**************************************************!*\
+  !*** ./source/assets/javascripts/libs/sticky.js ***!
+  \**************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// Sticky module
+	// -> make an element "sticky" (fixed) depending on scroll position
+	//
+	// by Bivee
+	// bivee.co, github.com/biveeco
+	// -----------------------------------------------------------------------------
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _jquery = __webpack_require__(/*! jquery */ 3);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// -> PUBLIC (exported) API
+	var api = {
+	
+	    // --- base settings and their defaults ------------------------------------
+	    // -> these can be changed globally and should persist across multiple init() calls
+	    fixedClass: "is-fixed",
+	    currentClass: "is-active",
+	    bottomClass: "at-bottom",
+	    viewportMargin: 4,
+	
+	    // --- main function -------------------------------------------------------
+	    // @param STRING el: a selector for element(s) we want to make sticky
+	    // @param STRING parentEl (optional): a parent element in which the element is sticky
+	    // @param STRING highlightEl (optional): an element you'd like the highlight on scroll. uses attribute value.
+	    // @param STRING stopEl (optional): element which "stops" the sticky behavior
+	    init: function init(el) {
+	        var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	
+	
+	        // defaults for options parameter
+	        var parentEl = options.parentEl || window,
+	            stopEl = options.stopEl || false,
+	            highlightEl = options.highlightEl || false,
+	            highlightTargetAttr = options.highlightTargetAttr || "href";
+	
+	        // debugger;
+	
+	        (0, _jquery2.default)(el).each(function () {
+	            var elH = (0, _jquery2.default)(el).outerHeight(),
+	                // height of the sticky element
+	            parentH = (0, _jquery2.default)(parentEl).height(),
+	                // height of the parent element
+	            $highlightEl = highlightEl ? (0, _jquery2.default)(highlightEl) : false,
+	                // store a reference to jquery object
+	            stopPos = (0, _jquery2.default)(stopEl).length > 0 ? (0, _jquery2.default)(stopEl).offset().top : false,
+	                // vertical pos of the "stop" element, if there is one
+	            yPosInit = (0, _jquery2.default)(el).offset().top; // target element's offset (distance to top)
+	
+	            // call the toggle function to set correct initial state
+	            toggleSticky(el, elH, yPosInit, stopPos);
+	
+	            // now do things when we scroll
+	            (0, _jquery2.default)(parentEl).scroll(function () {
+	                toggleSticky(el, {
+	                    elH: elH,
+	                    offset: yPosInit,
+	                    stopPos: stopPos
+	                });
+	
+	                // highlight the current nav item based on scroll position
+	                if ($highlightEl) {
+	                    toggleHighlight($highlightEl, highlightTargetAttr);
+	                }
+	            });
+	
+	            // reset the target element's offset & height when the window resizes
+	            (0, _jquery2.default)(parentEl).resize(function () {
+	                toggleSticky(el, {
+	                    elH: (0, _jquery2.default)(el).outerHeight(),
+	                    offset: (0, _jquery2.default)(el).offset().top,
+	                    stopPos: stopPos
+	                });
+	            });
+	        });
+	    }
+	};
+	
+	// --- Toggle stickiness -------------------------------------------------------
+	// -> Decide whether the element should be sticky or not
+	// -> PRIVATE
+	// @param STRING el: selector for the element we want to make sticky
+	// @param NUMBER elH (optional): height of the sticky element
+	// @param NUMBER offset (optional): the element's distance to the top of the page
+	// @param NUMBER stopPos (optional): the vertical position of the 'stop' element
+	function toggleSticky(el) {
+	    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	
+	
+	    // optional params and their defaults
+	    // -> pass these values in b/c recalculating them is slow
+	    var elH = options.elH || (0, _jquery2.default)(el).outerHeight(),
+	        offset = options.offset || (0, _jquery2.default)(el).offset().top,
+	        stopPos = options.stopPos || false;
+	
+	    var scrollPos = (0, _jquery2.default)(window).scrollTop(),
+	        scrollBottom = scrollPos + elH;
+	
+	    // if we've scrolled up to or past the "sticky" point...
+	    if (offset <= scrollPos) {
+	        // add the 'fixed' class to the element
+	        (0, _jquery2.default)(el).addClass(api.fixedClass);
+	
+	        // also remove the "bottom" class if we care about that
+	        if (stopPos && scrollBottom <= stopPos) {
+	            (0, _jquery2.default)(el).removeClass(api.bottomClass);
+	        }
+	        console.log("sticky");
+	
+	        // otherwise, if we're scrolled above or below the sticky point...
+	    } else {
+	            // remove the fixed class
+	            (0, _jquery2.default)(el).removeClass(api.fixedClass);
+	            console.log("not sticky");
+	
+	            // if we care about a bottom point, check to see if we're below it
+	            if (stopPos && scrollBottom >= stopPos) {
+	                (0, _jquery2.default)(el).addClass(api.bottomClass);
+	                console.log("at bottom");
+	            }
+	        }
+	}
+	
+	// --- Toggle highlights -------------------------------------------------------
+	// -> add a 'highlight' class to an anchor element when we scroll past its href target
+	// -> PRIVATE
+	function toggleHighlight($el) {
+	    var targetAttr = arguments.length <= 1 || arguments[1] === undefined ? "href" : arguments[1];
+	
+	    $el.each(function () {
+	        var $target = (0, _jquery2.default)((0, _jquery2.default)(this).attr(targetAttr));
+	
+	        // see if the target element (section, usually) is visible in the window
+	        if (checkVisible($target)) {
+	            // if so, add the "active" class to the relevant child
+	            (0, _jquery2.default)(this).addClass(api.currentClass);
+	            // console.log($(this).attr('href') + " is visible");
+	        } else {
+	                // otherwise, remove it
+	                (0, _jquery2.default)(this).removeClass(api.currentClass);
+	            };
+	    });
+	}
+	
+	// --- Check if the element is visible on-screen -------------------------------
+	// -> http://bit.ly/1Tz9Unm
+	// -> PRIVATE
+	function checkVisible(el) {
+	    var viewportMargin = (0, _jquery2.default)(window).height() / api.viewportMargin,
+	        // Viewport Height
+	    scrollPos = (0, _jquery2.default)(window).scrollTop(),
+	        // Scroll Top
+	    yPos = (0, _jquery2.default)(el).offset().top,
+	        elH = (0, _jquery2.default)(el).outerHeight();
+	
+	    return yPos < viewportMargin + scrollPos && yPos > scrollPos + viewportMargin - elH;
+	}
+	
+	exports.default = api;
 
 /***/ }
 ]);

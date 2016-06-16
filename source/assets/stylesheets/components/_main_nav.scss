@@ -14,6 +14,8 @@ Documentation here
 */
 
 @import "../core/all";
+@import "../layout/spacing";
+@import "../layout/positioning";
 
 $main_nav-w: 160px; // always scope to namespace
 
@@ -67,9 +69,9 @@ $main_nav-w: 160px; // always scope to namespace
     }
 }
 
-    .main_nav-item--secondary.is-active::before {
-        background-color: darken(theme('highlight'), 15);
-    }
+    // .main_nav-item--secondary.is-active::before {
+    //     background-color: darken(theme('highlight'), 15);
+    // }
 
 // nav links
 // -> mainly styles type & color
@@ -78,7 +80,7 @@ $main_nav-w: 160px; // always scope to namespace
     @include type-scale('zeta');
     @include font-accent('bold');
     display: block;
-    margin-left: $l-margin-wide;
+    padding-left: $l-margin-wide;
     text-transform: uppercase;
     color: theme('text' 'primary');
 
@@ -87,13 +89,37 @@ $main_nav-w: 160px; // always scope to namespace
         color: theme('highlight');
     }
 
-    .main_nav-item.is-active > & { color: theme('highlight'); }
+    &.is-active {
+        color: theme('highlight');
+
+        &::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: border-w('thick');
+            background-color: theme('highlight');
+        }
+    }
 }
 
     // secondary nav items in the subnav (see above)
     .main_nav-link--secondary {
         @include font-accent;
         @include color('text' 'tertiary');
+
+        &.is-active::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: border-w('thick');
+            background-color: darken(theme('highlight'), 15);
+        }
     }
 
 
@@ -101,10 +127,17 @@ $main_nav-w: 160px; // always scope to namespace
 // -------------------------------------------------------------------------- */
 
 // make the nav fixed-position and use as a sidebar
-@include breakpointify(".main_nav--fixed") {
+@include breakpointify(".main_nav--fixed", $sizes: 'small' 'medium') {
     @include rem(width, $main_nav-w);
-    position: fixed;
-    top: ($l-margin-wide * 3) + $l-margin; // TODO fix this
+    position: absolute;
+    margin-top: ($l-margin-wide * 3); // TODO fix this
+    // padding-top: $l-margin;
+    z-index: $z--high;
+
+    &.is-fixed {
+        position: fixed;
+        // margin-top: 0;
+    }
 }
 
 // add a margin to a container to compensate for the sidebar nav

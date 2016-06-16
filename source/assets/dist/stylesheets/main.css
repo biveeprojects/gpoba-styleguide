@@ -2251,9 +2251,6 @@ Documentation here
     width: 4px;
     background-color: #5eabbc; }
 
-.main_nav-item--secondary.is-active::before {
-  background-color: #3c8291; }
-
 .main_nav-link {
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
@@ -2263,14 +2260,23 @@ Documentation here
   font-family: "gibson-bold", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: bold;
   display: block;
-  margin-left: 37px;
+  padding-left: 37px;
   text-transform: uppercase;
   color: #332732; }
   .main_nav-link:hover, .main_nav-link:active {
     text-decoration: none;
     color: #5eabbc; }
-  .main_nav-item.is-active > .main_nav-link {
+  .main_nav-link.is-active {
     color: #5eabbc; }
+    .main_nav-link.is-active::before {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: #5eabbc; }
 
 .main_nav-link--secondary {
   font-family: "gibson-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
@@ -2280,43 +2286,37 @@ Documentation here
     color: #ab8ca8; }
   .main_nav-link--secondary.c-theme-wash, .c-theme-wash .main_nav-link--secondary {
     color: #665664; }
+  .main_nav-link--secondary.is-active::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #3c8291; }
 
 /* Modifiers
 // -------------------------------------------------------------------------- */
-@media (min-width: 30.01em) {
-  .main_nav--fixed\@xsmall {
-    width: 160px;
-    width: 10rem;
-    position: fixed;
-    top: 127px; } }
-
 @media (min-width: 42.01em) {
   .main_nav--fixed\@small {
     width: 160px;
     width: 10rem;
-    position: fixed;
-    top: 127px; } }
+    position: absolute;
+    margin-top: 111px;
+    z-index: 2; }
+    .main_nav--fixed\@small.is-fixed {
+      position: fixed; } }
 
 @media (min-width: 62.01em) {
   .main_nav--fixed\@medium {
     width: 160px;
     width: 10rem;
-    position: fixed;
-    top: 127px; } }
-
-@media (min-width: 75.01em) {
-  .main_nav--fixed\@large {
-    width: 160px;
-    width: 10rem;
-    position: fixed;
-    top: 127px; } }
-
-@media (min-width: 100.01em) {
-  .main_nav--fixed\@huge {
-    width: 160px;
-    width: 10rem;
-    position: fixed;
-    top: 127px; } }
+    position: absolute;
+    margin-top: 111px;
+    z-index: 2; }
+    .main_nav--fixed\@medium.is-fixed {
+      position: fixed; } }
 
 @media (min-width: 30.01em) {
   .has-main_nav-margin\@xsmall {

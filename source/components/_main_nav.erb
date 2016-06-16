@@ -7,7 +7,7 @@
 
 <!-- Main navigation -->
 <div class="dropdown kill-dropdown@<%= breakpoint %> js-dropdown">
-    <nav class="main_nav main_nav--fixed@<%= breakpoint %>">
+    <nav class="main_nav main_nav--fixed@<%= breakpoint %> js-sticky">
         <ul>
             <% chapters.each do |chapter| %>
                 <%# add an 'active' class if this nav item is for the current page %>
@@ -23,7 +23,7 @@
                             <ul class="main_nav-subnav">
                                 <% sections.each do |section| %>
                                     <li class="main_nav-item main_nav-item--secondary">
-                                        <%= link_to section.data.title, "/#{chapter.urlize}/index.html##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary" %>
+                                        <%= link_to section.data.title, "##{section.data.title.urlize}", :class => "main_nav-link main_nav-link--secondary js-sticky-highlight" %>
                                     </li>
                                 <% end %>
                             </ul>
