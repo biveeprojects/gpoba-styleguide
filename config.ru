@@ -27,9 +27,12 @@ end
 # Basic Auth:
 if ENV['RACK_ENV'] == 'production'
   use Rack::Auth::Basic, "Restricted Area" do |username, password|
-    # [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
-    username == 'foo' && password == 'bar'
+    [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
   end
+end
+
+use Rack::Auth::Basic, "Restricted Area" do |username, password|
+  [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
 end
 
 # 404 Support
