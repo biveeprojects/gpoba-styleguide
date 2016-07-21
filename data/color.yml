@@ -6,6 +6,7 @@ primary:
   - name: 'off-white'
     hex: '#F2F2F2'
     rgb: 242, 242, 242
+    cmyk: 242, 242, 242
   - name: 'light gray'
     hex: '#C3CED9'
     rgb: 195, 206 217
