@@ -10,14 +10,6 @@ use Rack::Auth::Basic, "Restricted Area" do |u, p|
   [u, p] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
 end
 
-# # Basic Auth:
-# if ENV['RACK_ENV'] == 'production'
-#   use Rack::Auth::Basic, "Restricted Area" do |username, password|
-#     [username, password] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
-#   end
-# end
-
-
 # Serve files from the build directory
 use Rack::TryStatic,
     root: 'build',
