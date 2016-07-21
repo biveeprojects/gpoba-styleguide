@@ -31,9 +31,8 @@ end
 #   end
 # end
 
-use Rack::Auth::Basic, "Restricted Area" do |username, password|
-  # [username, password] == [ [ENV['HTTP_AUTH_USER'], [ENV['HTTP_AUTH_PASS'] ]
-  username == 'foo' && password == 'bar'
+use Rack::Auth::Basic, "Restricted Area" do |u, p|
+  [u, p] == [ENV['HTTP_AUTH_USER'], ENV['HTTP_AUTH_PASS']]
 end
 
 # 404 Support
