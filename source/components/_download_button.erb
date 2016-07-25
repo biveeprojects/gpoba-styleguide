@@ -7,7 +7,8 @@
 <%# label - REQUIRED %>
 <%# file - REQUIRED %>
 <% filetype ||= false %>
+<% target ||= '_blank' %>
 
-<% link_to file, :class => "button t-scale-zeta" do %>
+<% link_to file, class: "button t-scale-zeta", target: target do %>
     <strong><%= label %></strong><% if filetype %> (<%= filetype %>)<% end %>
 <% end %>
