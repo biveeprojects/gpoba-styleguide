@@ -34,9 +34,9 @@ alternate:
     rgb: 245, 161, 0
     cmyk: 0, 42, 100, 0
   - name: 'green'
-    hex: '#5dc0ba'
-    rgb: 93, 192, 186
-    cmyk: 60, 0, 30, 0
+    hex: '#409555'
+    rgb: 40, 95, 55
+    cmyk: 76, 19, 90, 0
   - name: 'purple'
     hex: '#8D63B7'
     rgb: 141, 99, 183
