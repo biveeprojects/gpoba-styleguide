@@ -128,7 +128,6 @@ dfn {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -304,8 +303,6 @@ input[type="radio"] {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -1325,7 +1322,6 @@ p {
 
 a {
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   color: #5eabbc;
   text-decoration: none; }
@@ -1587,7 +1583,6 @@ input, textarea, select {
   font-family: "merriweather-normal", "Georgia", "Cambria", "Times New Roman", "Times", serif;
   font-weight: normal;
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   padding: 0.5em 1em;
   border-radius: 3px;
@@ -1812,16 +1807,22 @@ Chapter content -- templated from markdown files -- is wrapped in a "content" co
 /* Utilities
 // -------------------------------------------------------------------------- */
 .flexbox .l-display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .l-flex-fill {
-  flex: 1; }
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
 
 .l-centered {
   text-align: center; }
   .csstransforms .l-centered {
     left: 50%;
-    transform: translateX(-50%); }
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
 
 .l-centered-block {
   display: block;
@@ -1960,30 +1961,24 @@ There are three size variations: small, medium, and large. Medium is default, so
   font-size: 0;
   list-style: none;
   -webkit-box-orient: horizontal;
-  -moz-box-orient: horizontal;
   box-orient: horizontal;
   -webkit-box-direction: normal;
-  -moz-box-direction: normal;
   box-direction: normal;
-  -webkit-flex-direction: row;
   -moz-flex-direction: row;
   flex-direction: row;
   -ms-flex-direction: row;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   box-lines: multiple;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -webkit-box-align: stretch;
-  -moz-box-align: stretch;
   box-align: stretch;
-  -webkit-align-items: stretch;
   -moz-align-items: stretch;
   -ms-align-items: stretch;
   -o-align-items: stretch;
-  align-items: stretch;
+  -ms-grid-row-align: stretch;
+      align-items: stretch;
   -ms-flex-align: stretch; }
   .l-gallery > ul {
     padding-left: 0;
@@ -1994,7 +1989,6 @@ There are three size variations: small, medium, and large. Medium is default, so
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex;
@@ -2021,12 +2015,12 @@ There are three size variations: small, medium, and large. Medium is default, so
       vertical-align: top; }
       .flexbox .l-gallery-item {
         -webkit-box-flex: 0;
-        -moz-box-flex: 0;
         box-flex: 0;
-        -webkit-flex: 0 0 auto;
         -moz-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex; } }
   @media (min-width: 54.01em) {
     .l-gallery-item {
@@ -2037,12 +2031,12 @@ There are three size variations: small, medium, and large. Medium is default, so
       vertical-align: top; }
       .flexbox .l-gallery-item {
         -webkit-box-flex: 0;
-        -moz-box-flex: 0;
         box-flex: 0;
-        -webkit-flex: 0 0 auto;
         -moz-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex; } }
 
 /* Modifiers
@@ -2114,7 +2108,8 @@ Wrappers
      * https://www.drupal.org/node/897638
      */ }
     .is-visually_hidden.focusable:active, .is-visually_hidden.focusable:focus {
-      clip-path: auto;
+      -webkit-clip-path: auto;
+              clip-path: auto;
       height: auto;
       overflow: visible;
       position: static;
@@ -2261,7 +2256,6 @@ Documentation here
 
 .main_nav-link {
   -webkit-transition: all 0.25s;
-  -moz-transition: all 0.25s;
   transition: all 0.25s;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -2393,7 +2387,6 @@ Documentation here
       display: -webkit-box;
       display: -moz-box;
       display: box;
-      display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex; } }

@@ -9975,18 +9975,18 @@ webpackJsonp([1],[
 	        if (stopPos && scrollBottom <= stopPos) {
 	            (0, _jquery2.default)(el).removeClass(api.bottomClass);
 	        }
-	        console.log("sticky");
+	        // console.log("sticky");
 	
 	        // otherwise, if we're scrolled above or below the sticky point...
 	    } else {
 	            // remove the fixed class
 	            (0, _jquery2.default)(el).removeClass(api.fixedClass);
-	            console.log("not sticky");
+	            // console.log("not sticky");
 	
 	            // if we care about a bottom point, check to see if we're below it
 	            if (stopPos && scrollBottom >= stopPos) {
 	                (0, _jquery2.default)(el).addClass(api.bottomClass);
-	                console.log("at bottom");
+	                // console.log("at bottom");
 	            }
 	        }
 	}
